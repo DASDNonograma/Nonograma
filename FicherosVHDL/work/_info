@@ -1,0 +1,587 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/intelFPGA/18.1
+Ecmd_process
+Z0 w1707314206
+Z1 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
+Z2 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z3 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+Z4 dF:/DiseinoAvanzado/Proyecto_vhdl
+Z5 8F:/DiseinoAvanzado/Proyecto_vhdl/LCD_CMD_PROCESS.vhd
+Z6 FF:/DiseinoAvanzado/Proyecto_vhdl/LCD_CMD_PROCESS.vhd
+l0
+L10
+Vh64jdbj38kG0nSC_gnJNk0
+!s100 ^EzK;C[LzTXE3oN^Ue@fR3
+Z7 OV;C;10.5b;63
+32
+Z8 !s110 1707314265
+!i10b 1
+Z9 !s108 1707314265.000000
+Z10 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|F:/DiseinoAvanzado/Proyecto_vhdl/LCD_CMD_PROCESS.vhd|
+Z11 !s107 F:/DiseinoAvanzado/Proyecto_vhdl/LCD_CMD_PROCESS.vhd|
+!i113 1
+Z12 o-work work -2002 -explicit
+Z13 tExplicit 1 CvgOpt 0
+Acmd_process_arch
+R1
+R2
+R3
+DEx4 work 11 cmd_process 0 22 h64jdbj38kG0nSC_gnJNk0
+l61
+L29
+V5D?:`PS_`jO>?_Oi1jSU]2
+!s100 6odhU=K=iARak2a:S15lZ0
+R7
+32
+R8
+!i10b 1
+R9
+R10
+R11
+!i113 1
+R12
+R13
+Ecmd_process_tb
+Z14 w1707314606
+R1
+R2
+R3
+R4
+Z15 8F:\DiseinoAvanzado\Proyecto_vhdl\TESTBENCH\LCD_CMD_PROCESS_tb.vhd
+Z16 FF:\DiseinoAvanzado\Proyecto_vhdl\TESTBENCH\LCD_CMD_PROCESS_tb.vhd
+l0
+L9
+V6Db<]in[]b_8W@<Hl?V@;3
+!s100 ]m4MGoR`9g;_^bkb0OfBK1
+R7
+32
+Z17 !s110 1707314605
+!i10b 1
+Z18 !s108 1707314605.000000
+Z19 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|F:\DiseinoAvanzado\Proyecto_vhdl\TESTBENCH\LCD_CMD_PROCESS_tb.vhd|
+Z20 !s107 F:\DiseinoAvanzado\Proyecto_vhdl\TESTBENCH\LCD_CMD_PROCESS_tb.vhd|
+!i113 1
+R12
+R13
+Aarch_cmd_process_tb
+R1
+R2
+R3
+Z21 DEx4 work 14 cmd_process_tb 0 22 6Db<]in[]b_8W@<Hl?V@;3
+l55
+L14
+VUKj<CIGaR3_TZ[]Hi0`cQ1
+!s100 UU9A`5h5ZH15dflZJEiLZ0
+R7
+32
+R17
+!i10b 1
+R18
+R19
+R20
+!i113 1
+R12
+R13
+Ede10_standard_nonogramaneitor
+Z22 w1707259640
+R1
+R2
+R3
+R4
+Z23 8F:/DiseinoAvanzado/Proyecto_quartus/DE10_Standard_nonogramaneitor.vhd
+Z24 FF:/DiseinoAvanzado/Proyecto_quartus/DE10_Standard_nonogramaneitor.vhd
+l0
+L5
+VjBY`kILkZhDYzJ3D>M56n0
+!s100 O6XzMG;kT<zBz:MeizMa_2
+R7
+32
+Z25 !s110 1707314264
+!i10b 1
+Z26 !s108 1707314264.000000
+Z27 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|F:/DiseinoAvanzado/Proyecto_quartus/DE10_Standard_nonogramaneitor.vhd|
+Z28 !s107 F:/DiseinoAvanzado/Proyecto_quartus/DE10_Standard_nonogramaneitor.vhd|
+!i113 1
+R12
+R13
+Artl
+R1
+R2
+R3
+DEx4 work 29 de10_standard_nonogramaneitor 0 22 jBY`kILkZhDYzJ3D>M56n0
+l248
+L118
+VcM0SnQ5h?I<]?HLcFb4Nl1
+!s100 SUi2eH23Rbj0FQk[3a7aU1
+R7
+32
+R25
+!i10b 1
+R26
+R27
+R28
+!i113 1
+R12
+R13
+Elcd_cmd_process
+Z29 w1707068942
+R1
+R2
+R3
+R4
+Z30 8F:/DiseinoAvanzado/Proyecto_vhdl/LCD_CMD_PROCESS/LCD_CMD_PROCESS.vhd
+Z31 FF:/DiseinoAvanzado/Proyecto_vhdl/LCD_CMD_PROCESS/LCD_CMD_PROCESS.vhd
+l0
+L10
+Vi3FK?kEZG?KaR<]bbaF@F0
+!s100 @mOYcAh[PWHF>9ee9?7982
+R7
+32
+Z32 !s110 1707068995
+!i10b 1
+Z33 !s108 1707068995.000000
+Z34 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|F:/DiseinoAvanzado/Proyecto_vhdl/LCD_CMD_PROCESS/LCD_CMD_PROCESS.vhd|
+Z35 !s107 F:/DiseinoAvanzado/Proyecto_vhdl/LCD_CMD_PROCESS/LCD_CMD_PROCESS.vhd|
+!i113 1
+R12
+R13
+Alcd_cmd_process_arch
+R1
+R2
+R3
+DEx4 work 15 lcd_cmd_process 0 22 i3FK?kEZG?KaR<]bbaF@F0
+l61
+L29
+V<fS>7zD1E1b<FFUh3VAPf2
+!s100 C[G[1FY?8O8LeXk[gGc;m2
+R7
+32
+R32
+!i10b 1
+R33
+R34
+R35
+!i113 1
+R12
+R13
+Elcd_cmd_process_tb
+Z36 w1707069028
+R1
+R2
+R3
+R4
+Z37 8F:/DiseinoAvanzado/Proyecto_vhdl/LCD_CMD_PROCESS/LCD_CMD_PROCESS_tb.vhd
+Z38 FF:/DiseinoAvanzado/Proyecto_vhdl/LCD_CMD_PROCESS/LCD_CMD_PROCESS_tb.vhd
+l0
+L9
+VekbU1<KbEZDQRM4h38OaS0
+!s100 ?Wl9W=2>bXlD>zV41C@i<0
+R7
+32
+Z39 !s110 1707069031
+!i10b 1
+Z40 !s108 1707069031.000000
+Z41 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|F:/DiseinoAvanzado/Proyecto_vhdl/LCD_CMD_PROCESS/LCD_CMD_PROCESS_tb.vhd|
+Z42 !s107 F:/DiseinoAvanzado/Proyecto_vhdl/LCD_CMD_PROCESS/LCD_CMD_PROCESS_tb.vhd|
+!i113 1
+R12
+R13
+Aarch_lcd_cmd_process_tb
+R1
+R2
+R3
+DEx4 work 18 lcd_cmd_process_tb 0 22 ekbU1<KbEZDQRM4h38OaS0
+l55
+L14
+VMLOdPN?f87lN57A3ASk5_3
+!s100 DlhzbzQGXOQkVe0Ym]VWS1
+R7
+32
+R39
+!i10b 1
+R40
+R41
+R42
+!i113 1
+R12
+R13
+Elcd_ctrl_ent
+Z43 w1706317042
+R1
+R2
+R3
+R4
+Z44 8F:/DiseinoAvanzado/Proyecto_vhdl/LCD_CTRL.vhd
+Z45 FF:/DiseinoAvanzado/Proyecto_vhdl/LCD_CTRL.vhd
+l0
+L10
+VLZ^cSG4Rf>Xn]dN7z7a;W3
+!s100 B0N=]^59eHMOzE=6nkI:A0
+R7
+32
+Z46 !s110 1707314266
+!i10b 1
+Z47 !s108 1707314266.000000
+Z48 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|F:/DiseinoAvanzado/Proyecto_vhdl/LCD_CTRL.vhd|
+Z49 !s107 F:/DiseinoAvanzado/Proyecto_vhdl/LCD_CTRL.vhd|
+!i113 1
+R12
+R13
+Alcd_ctrl_arch
+R1
+R2
+R3
+DEx4 work 12 lcd_ctrl_ent 0 22 LZ^cSG4Rf>Xn]dN7z7a;W3
+l71
+L30
+V3;ILkbnJSVkj`mXFa8FU`1
+!s100 nE2c`9_WbedAXBlYoTe;>3
+R7
+32
+R46
+!i10b 1
+R47
+R48
+R49
+!i113 1
+R12
+R13
+Elcd_ctrl_tb
+Z50 w1706316046
+R1
+R2
+R3
+R4
+Z51 8F:/DiseinoAvanzado/Proyecto_vhdl/TESTBENCH/LCD_CTRL_tb.vhd
+Z52 FF:/DiseinoAvanzado/Proyecto_vhdl/TESTBENCH/LCD_CTRL_tb.vhd
+l0
+L9
+VR=H;djOX0AZhzT_Mh<72F0
+!s100 ^=afPRLR0U:l455JTVH2:3
+R7
+32
+Z53 !s110 1707314268
+!i10b 1
+Z54 !s108 1707314268.000000
+Z55 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|F:/DiseinoAvanzado/Proyecto_vhdl/TESTBENCH/LCD_CTRL_tb.vhd|
+Z56 !s107 F:/DiseinoAvanzado/Proyecto_vhdl/TESTBENCH/LCD_CTRL_tb.vhd|
+!i113 1
+R12
+R13
+Aarch_lcd_ctrl_tb
+R1
+R2
+R3
+DEx4 work 11 lcd_ctrl_tb 0 22 R=H;djOX0AZhzT_Mh<72F0
+l53
+L14
+VFY_9234LFCOGAm?D5LXhS0
+!s100 WciI9QEJhoV0`=3H9VlA=3
+R7
+32
+R53
+!i10b 1
+R54
+R55
+R56
+!i113 1
+R12
+R13
+Elcd_drawing
+Z57 w1706319354
+R1
+R2
+R3
+R4
+Z58 8F:/DiseinoAvanzado/Proyecto_vhdl/LCD_DRAWING.vhd
+Z59 FF:/DiseinoAvanzado/Proyecto_vhdl/LCD_DRAWING.vhd
+l0
+L10
+VSZioNCSFV2>mgE8`AV;^^0
+!s100 S[K^ddclLOCUfPVDRUQ211
+R7
+32
+R46
+!i10b 1
+R47
+Z60 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|F:/DiseinoAvanzado/Proyecto_vhdl/LCD_DRAWING.vhd|
+Z61 !s107 F:/DiseinoAvanzado/Proyecto_vhdl/LCD_DRAWING.vhd|
+!i113 1
+R12
+R13
+Aarch_lcd_drawing
+R1
+R2
+R3
+DEx4 work 11 lcd_drawing 0 22 SZioNCSFV2>mgE8`AV;^^0
+l50
+L25
+VhofI4G88gI;GJQZ?cMCn_3
+!s100 ^QJfJ97LoReAHV;@>RQld1
+R7
+32
+R46
+!i10b 1
+R47
+R60
+R61
+!i113 1
+R12
+R13
+Elcd_drawing_tb
+Z62 w1706317472
+R1
+R2
+R3
+R4
+Z63 8F:/DiseinoAvanzado/Proyecto_vhdl/TESTBENCH/LCD_DRAWING_tb_drawfig.vhd
+Z64 FF:/DiseinoAvanzado/Proyecto_vhdl/TESTBENCH/LCD_DRAWING_tb_drawfig.vhd
+l0
+L9
+VoMELcI[2RGS55TBZj3A_K2
+!s100 DQ[QfTnI4dWdOmTIMHDnE2
+R7
+32
+R53
+!i10b 1
+R54
+Z65 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|F:/DiseinoAvanzado/Proyecto_vhdl/TESTBENCH/LCD_DRAWING_tb_drawfig.vhd|
+Z66 !s107 F:/DiseinoAvanzado/Proyecto_vhdl/TESTBENCH/LCD_DRAWING_tb_drawfig.vhd|
+!i113 1
+R12
+R13
+Aarch_lcd_drawing_tb_drawfig
+R1
+R2
+R3
+Z67 DEx4 work 14 lcd_drawing_tb 0 22 oMELcI[2RGS55TBZj3A_K2
+l74
+L14
+VG2ac7^ZkX;=18?aDM9_@g2
+!s100 LCXYAIi_^?K>jA36gVU?L1
+R7
+32
+R53
+!i10b 1
+R54
+R65
+R66
+!i113 1
+R12
+R13
+Aarch_lcd_drawing_tb_delscreen
+R1
+R2
+R3
+R67
+l74
+L14
+V7b5Pc?VNAa<?8mXVD]T;H1
+!s100 9AiI`?m]U]JB=z<:E<Ud@2
+R7
+32
+R53
+!i10b 1
+R54
+!s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|F:/DiseinoAvanzado/Proyecto_vhdl/TESTBENCH/LCD_DRAWING_tb_delscreen.vhd|
+!s107 F:/DiseinoAvanzado/Proyecto_vhdl/TESTBENCH/LCD_DRAWING_tb_delscreen.vhd|
+!i113 1
+R12
+R13
+FF:/DiseinoAvanzado/Proyecto_vhdl/TESTBENCH/LCD_DRAWING_tb_delscreen.vhd
+w1706317448
+8F:/DiseinoAvanzado/Proyecto_vhdl/TESTBENCH/LCD_DRAWING_tb_delscreen.vhd
+Aarch_lcd_drawing_tb
+R1
+R2
+R3
+R67
+l74
+L14
+VYJahgE?5V1@Yf7KH3nGO>3
+!s100 ^<J@RW5WAaCJLohFQz;T;3
+R7
+32
+!s110 1706317378
+!i10b 1
+!s108 1706317378.000000
+!s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|F:/DiseinoAvanzado/Proyecto_vhdl/LCD_DRAWING_tb_drawfig.vhd|
+!s107 F:/DiseinoAvanzado/Proyecto_vhdl/LCD_DRAWING_tb_drawfig.vhd|
+!i113 1
+R12
+R13
+w1706317378
+FF:/DiseinoAvanzado/Proyecto_vhdl/LCD_DRAWING_tb_drawfig.vhd
+8F:/DiseinoAvanzado/Proyecto_vhdl/LCD_DRAWING_tb_drawfig.vhd
+Elcd_uart
+Z68 w1707051068
+R1
+R2
+R3
+R4
+Z69 8F:/DiseinoAvanzado/Proyecto_vhdl/LCD_UART/LCD_UART.vhd
+Z70 FF:/DiseinoAvanzado/Proyecto_vhdl/LCD_UART/LCD_UART.vhd
+l0
+L10
+VgIR6bkm@6jG<>kGJ;__TX0
+!s100 jDLXJ72DbQGhhm8DB52if3
+R7
+32
+Z71 !s110 1707068131
+!i10b 1
+Z72 !s108 1707068130.000000
+Z73 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|F:/DiseinoAvanzado/Proyecto_vhdl/LCD_UART/LCD_UART.vhd|
+Z74 !s107 F:/DiseinoAvanzado/Proyecto_vhdl/LCD_UART/LCD_UART.vhd|
+!i113 1
+R12
+R13
+Alcd_uart_arch
+R1
+R2
+R3
+DEx4 work 8 lcd_uart 0 22 gIR6bkm@6jG<>kGJ;__TX0
+l57
+L25
+VPZZBk1R7kBBBoZi=30f8C1
+!s100 I@Rag;HHQYj]QRIDA3H@n3
+R7
+32
+R71
+!i10b 1
+R72
+R73
+R74
+!i113 1
+R12
+R13
+Elcd_uart_tb
+Z75 w1707051336
+R1
+R2
+R3
+R4
+Z76 8F:/DiseinoAvanzado/Proyecto_vhdl/LCD_UART/LCD_UART_tb.vhd
+Z77 FF:/DiseinoAvanzado/Proyecto_vhdl/LCD_UART/LCD_UART_tb.vhd
+l0
+L9
+VSN=XeEoTeI5>gDlFC^ADz1
+!s100 Y[moC?8YTR?iUL@<kGBl=1
+R7
+32
+R71
+!i10b 1
+Z78 !s108 1707068131.000000
+Z79 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|F:/DiseinoAvanzado/Proyecto_vhdl/LCD_UART/LCD_UART_tb.vhd|
+Z80 !s107 F:/DiseinoAvanzado/Proyecto_vhdl/LCD_UART/LCD_UART_tb.vhd|
+!i113 1
+R12
+R13
+Aarch_lcd_uart_tb
+R1
+R2
+R3
+DEx4 work 11 lcd_uart_tb 0 22 SN=XeEoTeI5>gDlFC^ADz1
+l44
+L14
+Vg?<9QcX@_EZcA@2edZ^>71
+!s100 ClBnb769FM124lNMmh]cU3
+R7
+32
+R71
+!i10b 1
+R78
+R79
+R80
+!i113 1
+R12
+R13
+Emod_uart
+Z81 w1707259834
+R1
+R2
+R3
+R4
+Z82 8F:/DiseinoAvanzado/Proyecto_vhdl/LCD_UART.vhd
+Z83 FF:/DiseinoAvanzado/Proyecto_vhdl/LCD_UART.vhd
+l0
+L10
+VoZ;U]`HFD`o:iH?S]HQg31
+!s100 dhWmiJRalHm7`AKnP0A6[2
+R7
+32
+R8
+!i10b 1
+R9
+Z84 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|F:/DiseinoAvanzado/Proyecto_vhdl/LCD_UART.vhd|
+Z85 !s107 F:/DiseinoAvanzado/Proyecto_vhdl/LCD_UART.vhd|
+!i113 1
+R12
+R13
+Amod_uart_arch
+R1
+R2
+R3
+DEx4 work 8 mod_uart 0 22 oZ;U]`HFD`o:iH?S]HQg31
+l57
+L25
+VIEAAKe1al3VUk6PCB9eI70
+!s100 H8CSUc`fdR<4XaO5RE2DP0
+R7
+32
+R8
+!i10b 1
+R9
+R84
+R85
+!i113 1
+R12
+R13
+Emod_uart_tb
+Z86 w1707259864
+R1
+R2
+R3
+R4
+Z87 8F:/DiseinoAvanzado/Proyecto_vhdl/TESTBENCH/LCD_UART_tb.vhd
+Z88 FF:/DiseinoAvanzado/Proyecto_vhdl/TESTBENCH/LCD_UART_tb.vhd
+l0
+L9
+Vo2T>4H<PkK9F6=i=1QJkh1
+!s100 a]dePa?l6Hlj`Qk=G]IWE0
+R7
+32
+Z89 !s110 1707314269
+!i10b 1
+Z90 !s108 1707314269.000000
+Z91 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|F:/DiseinoAvanzado/Proyecto_vhdl/TESTBENCH/LCD_UART_tb.vhd|
+Z92 !s107 F:/DiseinoAvanzado/Proyecto_vhdl/TESTBENCH/LCD_UART_tb.vhd|
+!i113 1
+R12
+R13
+Aarch_mod_uart_tb
+R1
+R2
+R3
+DEx4 work 11 mod_uart_tb 0 22 o2T>4H<PkK9F6=i=1QJkh1
+l44
+L14
+VMkbjAU7>NzUPn5ENYXknN1
+!s100 ZFCP@4f:XEaDD4_H0QNYE1
+R7
+32
+R89
+!i10b 1
+R90
+R91
+R92
+!i113 1
+R12
+R13
