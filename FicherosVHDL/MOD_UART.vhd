@@ -1,6 +1,3 @@
--- Plantilla tipo para la descripcion de un modulo diseñado segun la 
--- metodologia vista en clase: UC+UP
-
 -- Declaracion librerias
 library ieee;
 use ieee.std_logic_1164.all;	-- libreria para tipo std_logic

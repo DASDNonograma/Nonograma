@@ -18,16 +18,16 @@ component cmd_process is
       (
       clk,reset_l:  in std_logic;
 
-  -- In
-  CHAR : unsigned(7 downto 0);
-  CMD_PX_GO : in std_logic;
-  NONO_Init_Done : in std_logic;
-  DONE_CMD: in std_logic;
-
-  -- Out
-  COMMAND:  out std_logic_vector(2 downto 0);
-  OUT_CMD:  out std_logic;
-  NONO_INI: out  std_logic
+      -- In
+      CHAR : unsigned(7 downto 0);
+      CMD_PX_GO : in std_logic;
+      DONE_CMD: in std_logic;
+      DONE_BIT: in std_logic;
+      
+      -- Out
+      COMMAND:  out std_logic_vector(2 downto 0);
+      OUT_CMD:  out std_logic;
+      INI_NONO: out  std_logic
       );
 end component;
 
@@ -39,14 +39,14 @@ signal CLK: std_logic:='0';
 signal reset_l : std_logic:='1';
 
 signal CMD_PX_GO : std_logic;
-signal CHAR : unsigned(7 downto 0);
+signal CHAR : unsigned(7 downto 0) := "00000000";
 signal DONE_CMD: std_logic;
+signal DONE_BIT: std_logic;
 
 
 signal COMMAND: std_logic_vector(2 downto 0);
 signal OUT_CMD: std_logic;
-signal NONO_Init_Done: std_logic;
-signal NONO_INI: std_logic;
+signal INI_NONO: std_logic;
 
 
 -- A la senial de reloj se le da un un valor inicial. Al resto de entradas del
@@ -60,13 +60,11 @@ DUT: cmd_process port map (
       reset_l => reset_l,
       CHAR => CHAR,
       CMD_PX_GO => CMD_PX_GO,
-      NONO_Init_Done => NONO_Init_Done,
       DONE_CMD => DONE_CMD,
+      DONE_BIT => DONE_BIT,
       COMMAND => COMMAND,
       OUT_CMD => OUT_CMD,
-      NONO_INI => NONO_INI
-      
-     
+      INI_NONO => INI_NONO
 );
 
 -- Definicion de la señal de reloj mediante una asignacion concurrente
@@ -83,34 +81,67 @@ begin
 
 -- Inicializacion de las entradas del modulo
 CMD_PX_GO <= '0';
-NONO_Init_Done <= '0';
 CHAR <= "01010100"; -- caracter T en ASCII
 DONE_CMD <= '0';
-
+DONE_BIT <= '0';
 
 reset_l<='0';
 --asignaciones iniciales;
 wait for 4 ns; -- introduciendo un retardo de 4 ns para no estar justo en el flanco de reloj
 reset_l<='1';
 
+-- Letra leida T, no deberia hacer nada
 wait for 20 ns;
 CMD_PX_GO <= '1';
 wait for 20 ns;
 CMD_PX_GO <= '0';
 wait for 100 ns;
-NONO_INIT_DONE <= '1';
-wait for 20 ns;
-NONO_init_done <= '0';
 
 
--- Volver a enviar T, que es un comando invalido, CMD_OUT tiene que ser 0
-wait for 20 ns;
+
+-- Empezando inicializacion, simulando que se ha enviado un fichero de nonograma, por lo tanto
+-- recibe una i y luego 100 digitos de 0 o 1
+CHAR <= "01101001"; -- i en ASCII
 CMD_PX_GO <= '1';
 wait for 20 ns;
 CMD_PX_GO <= '0';
+wait for 40 ns;
 
-wait for 100 ns;
+-- enviando 100 digitos de 0 o 1
+for i in 0 to 49 loop
+   CHAR <= "00110001"; -- 1 en ASCII
+   CMD_PX_GO <= '1';
+   wait for 20 ns;
+   CMD_PX_GO <= '0';
 
+   wait for 60 ns;
+   done_bit <= '1';
+   wait for 20 ns;
+   done_bit <= '0';
+
+end loop;
+
+for i in 0 to 49 loop
+      CHAR <= "00110000"; -- 0 en ASCII
+      CMD_PX_GO <= '1';
+      wait for 20 ns;
+      CMD_PX_GO <= '0';
+   
+      wait for 60 ns;
+      done_bit <= '1';
+      wait for 20 ns;
+      done_bit <= '0';
+   
+   end loop;
+   
+
+
+ -- ahora deberia de estar en modo nonograma
+
+
+
+
+-- Modo nonograma, probando los comandos
 
 -- caracter w en ASCII, tendria que salir que el commando es 000
 
