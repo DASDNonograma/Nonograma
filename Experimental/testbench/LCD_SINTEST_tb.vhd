@@ -6,14 +6,14 @@ use ieee.numeric_std.all;
 
 -- Definición entidad testbench: entidad vacía
 
-entity lcd_fourier_tb is
+entity lcd_sintest_tb is
 
-end lcd_fourier_tb;
+end lcd_sintest_tb;
 
 -- Definición arquitectura 
-architecture arch_lcd_fourier_tb of lcd_fourier_tb is
+architecture arch_lcd_sintest_tb of lcd_sintest_tb is
 -- Declaración del módulo que queremos testear con sus entradas y saidas
-component lcd_fourier_ent is 
+component LCD_SINTEST is 
    port
       (
             clk,reset_l:  in std_logic;
@@ -53,7 +53,7 @@ signal RGB: unsigned (15 downto 0);
 begin -- comienzo de la arquitectura
 
 -- Mapeamos las señales internas con las entradas salidas del módulo .
-DUT: lcd_fourier_ent port map (clk,reset_l,DONE_COLOUR,DONE_CURSOR,OP_SETCURSOR,XCOL,YROW,OP_DRAWCOLOUR,NUMPIX,RGB);
+DUT: LCD_SINTEST port map (clk,reset_l,DONE_COLOUR,DONE_CURSOR,OP_SETCURSOR,XCOL,YROW,OP_DRAWCOLOUR,NUMPIX,RGB);
 CLK<= not CLK after 10 ns; 
 
 process
@@ -74,5 +74,5 @@ wait;
 end process;
 
 
-end arch_lcd_fourier_tb;
+end arch_lcd_sintest_tb;
 

@@ -21,7 +21,8 @@ entity nono_cursor is
   CURSORX: out unsigned (3 downto 0);
   CURSORY: out unsigned (3 downto 0);
   UPDATE_CURSOR: out std_logic;
-  TOGGLE_CURSOR: out std_logic
+  TOGGLE_CURSOR: out std_logic;
+  DONE_CMD: out std_logic
 
 
 	
@@ -33,7 +34,7 @@ architecture nono_cursor_arch of nono_cursor is
 
   -- declaracion de tipos y señales internas del sistema
   --	tipo nuevo para el estado de la UC y dos señales de ese tipo
-  type tipo_estado is (E_W8_INI, E_W8_CMD, E_CMD_DECODE, E_REDRAW_CELL, E_REDRAW_CURSOR, E_TOGGLE);
+  type tipo_estado is (E_W8_INI, E_W8_CMD, E_CMD_DECODE, E_REDRAW_CELL, E_REDRAW_CURSOR, E_TOGGLE, E_DONE);
    
   -- UC
   signal epres,esig: tipo_estado;
@@ -85,7 +86,8 @@ architecture nono_cursor_arch of nono_cursor is
   COUNTX <= '1' when (incr_decr = '1' and VERT = '0') else '0';
 
 
-
+ -- done cmd cuando vuelve a E_W8_CMD desde e_redraw_cursor o e_toggle
+  DONE_CMD <= '1' when (epres = E_DONE) else '0';
   
   ----------------------------------------
   ------ UNIDAD DE CONTROL ---------------
@@ -107,8 +109,9 @@ architecture nono_cursor_arch of nono_cursor is
         when E_W8_CMD => if (OUT_COMMAND = '1') then esig <= E_CMD_DECODE; else esig <= E_W8_CMD; end if;
         when E_CMD_DECODE => if (cursor_cmd = '1') then esig <= E_REDRAW_CELL; else esig <= E_TOGGLE ; end if;
         when E_REDRAW_CELL => if (done_update = '1') then esig <= E_REDRAW_CURSOR; else esig <= E_REDRAW_CELL; end if;
-        when E_REDRAW_CURSOR => if (done_update = '1') then esig <= E_W8_CMD; else esig <= E_REDRAW_CURSOR; end if;
-        when E_TOGGLE => if (done_toggle = '1') then esig <= E_W8_CMD; else esig <= E_TOGGLE; end if;  
+        when E_REDRAW_CURSOR => if (done_update = '1') then esig <= E_DONE; else esig <= E_REDRAW_CURSOR; end if;
+        when E_TOGGLE => if (done_toggle = '1') then esig <= E_DONE; else esig <= E_TOGGLE; end if;  
+        when E_DONE => esig <= E_W8_INI;
        
         when others => esig <= epres;
       end case;

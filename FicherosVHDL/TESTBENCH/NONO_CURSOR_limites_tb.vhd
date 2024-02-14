@@ -28,7 +28,8 @@ component nono_cursor is
             CURSORX: out unsigned (3 downto 0);
             CURSORY: out unsigned (3 downto 0);
             UPDATE_CURSOR: out std_logic;
-            TOGGLE_CURSOR: out std_logic
+            TOGGLE_CURSOR: out std_logic;
+            DONE_CMD: out std_logic
           
           
       );
@@ -45,6 +46,7 @@ signal CURSORX: unsigned (3 downto 0);
 signal CURSORY: unsigned (3 downto 0);
 signal UPDATE_CURSOR: std_logic;
 signal TOGGLE_CURSOR: std_logic;
+signal DONE_CMD: std_logic;
 
 
 
@@ -69,7 +71,8 @@ DUT: nono_cursor port map
             CURSORX => CURSORX,
             CURSORY => CURSORY,
             UPDATE_CURSOR => UPDATE_CURSOR,
-            TOGGLE_CURSOR => TOGGLE_CURSOR
+            TOGGLE_CURSOR => TOGGLE_CURSOR,
+            DONE_CMD => DONE_CMD
       );
 
 -- Definición de la señal de reloj mediante una asignación concurrente
