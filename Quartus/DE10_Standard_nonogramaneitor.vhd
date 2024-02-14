@@ -6,12 +6,8 @@ entity DE10_Standard_nonogramaneitor is
  port(
 	-- CLOCK ----------------
 	CLOCK_50	: in	std_logic;
---	CLOCK2_50	: in	std_logic;
---	CLOCK3_50	: in	std_logic;
---	CLOCK4_50	: in	std_logic;
 	-- KEY ----------------
-	KEY 		: in	std_logic_vector(2 downto 0);
---	KEY 		: in	std_logic_vector(3 downto 0);
+	KEY 		: in	std_logic_vector(3 downto 0);
 	-- LEDR ----------------
 --	LEDR 		: out	std_logic_vector(9 downto 0);
 	-- SW ----------------
@@ -25,13 +21,7 @@ entity DE10_Standard_nonogramaneitor is
    LT24_RS			: out	std_logic;
    LT24_WR_N		: out	std_logic;
    LT24_D			: out	std_logic_vector(15 downto 0);
-	-- Touch --
--- LT24_ADC_PENIRQ_N	: in	std_logic;
--- LT24_ADC_DOUT		: in	std_logic;
--- LT24_ADC_BUSY		: in	std_logic;
--- LT24_ADC_DIN		: out	std_logic;
--- LT24_ADC_DCLK		: out	std_logic;
--- LT24_ADC_CS_N		: out	std_logic;
+
 	-- UART --
 	UART_RX		: in	std_logic
 	-- GPIO default ----------------
@@ -70,131 +60,71 @@ entity DE10_Standard_nonogramaneitor is
 --	ADC_DIN		: out	std_logic;
 --	ADC_DOUT	: in	std_logic;
 --	ADC_SCLK	: out	std_logic;
-	-- HSMC default ------------------
--- HSMC_CLKIN0     	:in    	std_logic;
--- HSMC_CLKIN_N1   	:in    	std_logic;
--- HSMC_CLKIN_N2   	:in    	std_logic;
--- HSMC_CLKIN_P1   	:in    	std_logic;
--- HSMC_CLKIN_P2   	:in    	std_logic;
--- HSMC_CLKOUT0    	:out   	std_logic;
--- HSMC_CLKOUT_N1  	:out   	std_logic;
--- HSMC_CLKOUT_N2  	:out   	std_logic;
--- HSMC_CLKOUT_P1  	:out   	std_logic;
--- HSMC_CLKOUT_P2  	:out   	std_logic;
--- HSMC_D          	:inout 	std_logic_vector(3 downto 0);
--- HSMC_RX_D_N     	:inout 	std_logic_vector(16 downto 0);
--- HSMC_RX_D_P     	:inout 	std_logic_vector(16 downto 0);
--- HSMC_SCL        	:out   	std_logic;
--- HSMC_SDA        	:inout 	std_logic;
--- HSMC_TX_D_N     	:inout 	std_logic_vector(16 downto 0);
--- HSMC_TX_D_P     	:inout 	std_logic_vector(16 downto 0);
-	-- IRDA ----------------
---	IRDA_RXD	: in	std_logic;
---	IRDA_TXD	: out	std_logic;
+
 	-- PS2 ----------------
 --	PS2_CLK		: in	std_logic;
 --	PS2_CLK2	: in	std_logic;
 --	PS2_DAT		: inout	std_logic;
 --	PS2_DAT2	: inout	std_logic;
-	-- Video-In ----------------
---	TD_CLK27	: in	std_logic;
---	TD_DATA		: in	std_logic_vector(7 downto 0);
---	TD_HS		: in	std_logic;
---	TD_RESET_N	: out	std_logic;
---	TD_VS		: in	std_logic;
-	-- VGA ----------------
---	VGA_B		: out	std_logic_vector(7 downto 0);
---	VGA_BLANK_N	: out	std_logic;
---	VGA_CLK		: out	std_logic;
---	VGA_G		: out	std_logic_vector(7 downto 0);
---	VGA_HS		: out	std_logic;
---	VGA_R		: out	std_logic_vector(7 downto 0);
---	VGA_SYNC_N	: out	std_logic;
---	VGA_VS		: out	std_logic;	: out	std_logic
 ); -- ***OJO*** ultimo de la lista sin ;
 
 end;
 
 architecture rtl of DE10_Standard_nonogramaneitor is 
-	signal clk, reset_l   : std_logic;
 
-		
-	-- LCD_SETUP <-> LCD_CTRL
-  signal d: unsigned (15 downto 0);
-	signal cs_n, wr_n, rs, init_done : std_logic;
-	
 
-  -- LCD_CTRL <-> LCD_DRAWING
-  signal OP_SETCURSOR_local, OP_DRAWCOLOUR_local : std_logic;
-  signal DONE_COLOUR_local, DONE_CURSOR_local: std_logic;
-	signal rgb_local : unsigned (15 downto 0);
-  signal xcol_local : unsigned (7 downto 0);
-  signal yrow_local :unsigned (8 downto 0);
-  signal numpix_local : unsigned (16 downto 0);
 
-  
-  -- LCD_DRAWING
-  signal COLOUR_CODE_local : unsigned(2 downto 0);
-  signal DEL_SCREEN_local, DRAW_FIG_local : std_logic;
 
-  -- CMD_PROCESS <-> MOD_UART
-  signal CMD_PX_GO_local : std_logic;
-  signal CHAR_local : unsigned(7 downto 0);
 
-  -- CMD_PROCESS <-> this
-  signal NONO_Init_Done_local : std_logic;
-  signal DONE_CMD_local : std_logic;
-  signal COMMAND_local : std_logic_vector(2 downto 0);
-  signal OUT_CMD_local : std_logic;
-  signal NONO_INI_local : std_logic;
 
-  
+
+
+
+
+component NONO_GFX is
+  port (
+	clk,reset_l:  in std_logic;
+
+  -- in
+  CMD_PX_GO: in std_logic;
+  INI_NONO: in std_logic;
+  COMMAND: in std_logic_vector(2 downto 0);
+  CURSORX, CURSORY: in unsigned(3 downto 0);
+  UPDATE_CURSOR, TOGGLE_CURSOR: in std_logic;
+  DONE_FIG, DONE_DEL: in std_logic;
+
+  -- OUT
+
+  XCOOR:        out unsigned(7 downto 0);
+  YCOOR:        out unsigned(8 downto 0);
+  COLOUR_CODE:  out unsigned(2 downto 0);
+  DRAW_CUAD, DRAW_TRIA, DRAW_LINE, VERTICAL: out std_logic;
+  DEL_SCREEN:   out std_logic;
+  DONE_UPDATE, DONE_TOGGLE: out std_logic
+ 
+  );
+end component;
+
 
 component LCD_DRAWING  
 port(
     Clk,RESET_L: in STD_LOGIC;
-	 -- in
-    COLOUR_CODE: in unsigned(2 downto 0);
-    DEL_SCREEN,DRAW_FIG,DONE_CURSOR,DONE_COLOUR: in std_logic;
-	 -- out
-    OP_SETCURSOR,OP_DRAWCOLOUR: out STD_LOGIC;
-    XCOL: out unsigned(7 downto 0);
-    YROW: out unsigned(8 downto 0);
-    RGB:out unsigned(15 downto 0);
-    NUM_PIX: out unsigned(16 downto 0)
+  --IN
+  COLOUR_CODE : in unsigned(2 downto 0);
+  DEL_SCREEN,DRAW_TRIA,DONE_CURSOR,DONE_COLOUR,DRAW_CUAD,DRAW_LINE,VERTICAL : in std_logic;
+  XCOR : in unsigned(7 downto 0);
+  YCOR : in unsigned(8 downto 0);
+
+  --OUT
+  OP_SETCURSOR, OP_DRAWCOLOUR : out STD_LOGIC;
+  DONE_FIG, DONE_DEL : out std_logic;
+  XCOL : out unsigned(7 downto 0);
+  YROW : out unsigned(8 downto 0);
+  RGB : out unsigned(15 downto 0);
+NUM_PIX : out unsigned(16 downto 0)
 );
 end component;
 
-component mod_uart is
-  port (
-	clk,reset_l:  in std_logic;
-
-  -- In
-  RX : in std_logic;
-
-  -- Out
-  CMD_PX_GO : out std_logic;
-  CHAR : out unsigned(7 downto 0)
-  
-  );
-end component;
-
-component cmd_process is
-  port (
-	clk,reset_l:  in std_logic;
-
-  -- In
-  CHAR : unsigned(7 downto 0);
-  CMD_PX_GO : in std_logic;
-  NONO_Init_Done : in std_logic;
-  DONE_CMD: in std_logic;
-
-  -- Out
-  COMMAND:  out std_logic_vector(2 downto 0);
-  OUT_CMD:  out std_logic;
-  NONO_INI: out  std_logic
-  );
-end component;
 	
 component lcd_ctrl_ent 
   port (
@@ -240,6 +170,48 @@ component LT24Setup
  );
 end component;
 
+
+
+
+
+
+	signal clk, reset_l   : std_logic;
+
+		
+	-- LCD_SETUP <-> LCD_CTRL
+  signal d: unsigned (15 downto 0);
+	signal cs_n, wr_n, rs, init_done : std_logic;
+	
+
+  -- LCD_CTRL <-> LCD_DRAWING
+  signal OP_SETCURSOR_local, OP_DRAWCOLOUR_local : std_logic;
+  signal DONE_COLOUR_local, DONE_CURSOR_local: std_logic;
+	signal rgb_local : unsigned (15 downto 0);
+  signal xcol_local : unsigned (7 downto 0);
+  signal yrow_local :unsigned (8 downto 0);
+  signal numpix_local : unsigned (16 downto 0);
+
+  
+  -- LCD_DRAWING <-> NONO_GFX
+  signal DEL_SCREEN_local, draw_cuad_local, draw_tria_local, draw_line_local, vertical_local: std_logic;
+  signal xcor_local: unsigned (7 downto 0);
+  signal ycor_local: unsigned (8 downto 0);
+  signal COLOUR_CODE_local: unsigned (2 downto 0);
+  signal done_fig_local, done_del_local: std_logic;
+
+
+  -- nono_gfx -> this
+  signal nono_ini_local: std_logic;
+  signal command_local: std_logic_vector(2 downto 0);
+  signal cursorx_local, cursory_local: unsigned(3 downto 0);
+  signal update_cursor_local, toggle_cursor_local: std_logic;
+
+  signal done_update_local, done_toggle_local: std_logic;
+  
+
+  
+
+
 --------------------------------------------------------------------
 -- architecture body
 --------------------------------------------------------------------
@@ -248,44 +220,72 @@ end component;
 begin
 	clk <= CLOCK_50;
 	reset_l <= KEY(0);
-  --DEL_SCREEN_local <= not (KEY(1));
-  --DRAW_FIG_local <= not (KEY(2));
 	
-  del_screen_local <= nono_ini_local;
-  -- draw_fig_local = '1' cuando el comando no es "111" y commandgo = '1'
-  draw_fig_local <= '1' when (command_local /= "111" and out_cmd_local = '1') else '0';
-  nono_init_done_local <= '1';
-  done_cmd_local <= '1';
-  
-	
+  -- nono_gfx -> this
+	command_local <= "000";
+  cursorx_local <= unsigned(SW(3 downto 0));
+  cursory_local <= unsigned(SW(7 downto 4));
+  nono_ini_local <= KEY(1);
+  update_cursor_local <= KEY(2);
+  toggle_cursor_local <= KEY(3);
+
+
 -- portmaps
+
+gfx: NONO_GFX port map(
+  clk => clk,
+  reset_l => reset_l,
+  CMD_PX_GO => '0',
+  INI_NONO => nono_ini_local,
+  COMMAND => command_local,
+  CURSORX => cursorx_local,
+  CURSORY => cursory_local,
+  UPDATE_CURSOR => update_cursor_local,
+  TOGGLE_CURSOR => toggle_cursor_local,
+  DONE_FIG => done_fig_local,
+  DONE_DEL => done_del_local,
+
+  XCOOR => xcor_local,
+  YCOOR => ycor_local,
+  COLOUR_CODE => COLOUR_CODE_local,
+  DRAW_CUAD => draw_cuad_local,
+  DRAW_TRIA => draw_tria_local,
+  DRAW_LINE => draw_line_local,
+  VERTICAL => vertical_local,
+  DEL_SCREEN => del_screen_local,
+  DONE_UPDATE => done_update_local,
+  DONE_TOGGLE => done_toggle_local
+);
+
+
+draw: LCD_DRAWING port map(
+  Clk => clk,
+  RESET_L => reset_l,
+
+  COLOUR_CODE => COLOUR_CODE_local,
+  DEL_SCREEN => DEL_SCREEN_local,
+  DRAW_TRIA => DRAW_TRIA_local,
+  DONE_CURSOR => DONE_CURSOR_local,
+  DONE_COLOUR => DONE_COLOUR_local,
+  DRAW_CUAD => DRAW_CUAD_local,
+  DRAW_LINE => DRAW_LINE_local,
+  VERTICAL => VERTICAL_local,
+  XCOR => xcor_local,
+  YCOR => ycor_local,
+
+  OP_SETCURSOR => OP_SETCURSOR_local,
+  OP_DRAWCOLOUR => OP_DRAWCOLOUR_local,
+  DONE_FIG => done_fig_local,
+  DONE_DEL => done_del_local,
+  XCOL => xcol_local,
+  YROW => yrow_local,
+  RGB => rgb_local,
+  NUM_PIX => numpix_local
+);
   
--- portmap cmd_process
-  cmd_proc: cmd_process port map (
-    clk => clk,
-    reset_l => reset_l,
-  --in
-    CHAR => CHAR_local,
-    CMD_PX_GO => CMD_PX_GO_local,
-    NONO_Init_Done => NONO_Init_Done_local,
-    DONE_CMD => DONE_CMD_local,
-  --out
-    COMMAND => COMMAND_local,
-    OUT_CMD => OUT_CMD_local,
-    NONO_INI => NONO_INI_local
-  );
 
-  -- portmap mod_uart
-  uart: mod_uart port map (
-    clk => clk,
-    reset_l => reset_l,
 
-    RX => UART_RX,
-
-    CMD_PX_GO => CMD_PX_GO_local,
-    CHAR => CHAR_local
-    );
-
+ 
 
   setup: LT24Setup port map (
 	    -- CLOCK and Reset_l ----------------
@@ -334,24 +334,7 @@ begin
 	
   );
   
-  COLOUR_CODE_local <= unsigned(SW(2 downto 0));
-  drw: LCD_DRAWING port map(
-      Clk         => clk,
-      RESET_L     => reset_l,
-    -- in
-      COLOUR_CODE   => COLOUR_CODE_local,
-      DEL_SCREEN    => DEL_SCREEN_local,
-      DRAW_FIG      => DRAW_FIG_local,
-      DONE_CURSOR   => DONE_CURSOR_local,
-      DONE_COLOUR   => DONE_COLOUR_local,
-    -- out
-      OP_SETCURSOR  => OP_SETCURSOR_local,
-      OP_DRAWCOLOUR => OP_DRAWCOLOUR_local,
-      XCOL          => XCOL_local,
-      YROW          => YROW_local,
-      RGB           => RGB_local,
-      NUM_PIX       => NUMPIX_local
-);
+  
 
 
 end rtl;

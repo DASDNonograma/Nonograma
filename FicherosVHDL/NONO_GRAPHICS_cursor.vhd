@@ -15,6 +15,7 @@ entity nono_graphics_cursor is
   -- Out
   XCOOR_int : out unsigned (7 downto 0);
   YCOOR_int : out unsigned (8 downto 0);
+  COLOUR_CODE_int: out unsigned (2 downto 0);
   DRAW_CUAD_int, DRAW_TRIA_int: out std_logic;
   DONE_UPDATE, DONE_TOGGLE: out std_logic;
   addr_int: out unsigned (6 downto 0);
@@ -64,6 +65,8 @@ architecture nono_graphics_cursor_arch of nono_graphics_cursor is
 
   signal valor_multiplicacion   : unsigned (8 downto 0);
 
+  signal colour_code_inte: unsigned (2 downto 0);
+  
 
   -- seniales para los registros rcusorx 4 bits
   signal rcursorx: unsigned (3 downto 0); signal ld_cursor: std_logic;
@@ -101,6 +104,8 @@ architecture nono_graphics_cursor_arch of nono_graphics_cursor is
   ----------------------------------------
   ------ Logica combinacional ---------------
   ----------------------------------------
+  
+
   offset_x_int <= to_unsigned (23, 9);--"00000000";
   offset_y_int <= to_unsigned (17, 9);--"000000000";
 
@@ -111,6 +116,16 @@ architecture nono_graphics_cursor_arch of nono_graphics_cursor is
   incr_same <= '1' when (incr_if_same = '1' and data_out = sol_out) else '0';
 
   action <= '1' when (update_cursor = '1' or toggle_cursor = '1') else '0';
+
+
+  -- mux para seleccionar color
+  -- cuando esta en el estado drawtria, el color es 010, cuando es drawcuad, el color depende de data_out, si es 0, es 000, si es 1, es 111
+  colour_code_inte <=   "010" when (epres = E_DRAWTRIA) else
+                        "000" when (data_out = '0') else
+                        "111" when (data_out = '1') 
+                        else "110";
+  
+  colour_code_int <= colour_code_inte;
 
   -- traduccion de cursor a coordenadas (in_xcoor_int <= rcursorx * (17+4) + offset_x_int)
    valor_multiplicacion <= (rcursorx * to_unsigned(17+4, 5) + offset_x_int);
@@ -153,7 +168,7 @@ architecture nono_graphics_cursor_arch of nono_graphics_cursor is
           else esig <= E_TRADUCCION1;
           end if;
         when E_READ => esig <= E_DRAWCUAD;
-        when E_FLIP => esig <= E_DRAWCUAD;
+        when E_FLIP => esig <= E_READ;
         when E_DRAWCUAD => 
           if (done_fig = '0') then esig <= E_DRAWCUAD;
           elsif (done_fig = '1' and TOGGLE_CURSOR = '1') then esig <= E_CHECK_WIN;

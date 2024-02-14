@@ -29,9 +29,9 @@ set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to KEY[0]
 set_location_assignment PIN_AK4 -to KEY[1]
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to KEY[1]
 set_location_assignment PIN_AA14 -to KEY[2]
-# set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to KEY[2]
-# set_location_assignment PIN_AA15 -to KEY[3]
-# set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to KEY[3]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to KEY[2]
+set_location_assignment PIN_AA15 -to KEY[3]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to KEY[3]
 
 #============================================================
 # LEDR
@@ -735,7 +735,7 @@ set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to UART_RX
 # End of pin and io_standard assignments
 #============================================================
 
-set_global_assignment -name LAST_QUARTUS_VERSION "18.1.1 Standard Edition"
+set_global_assignment -name LAST_QUARTUS_VERSION "18.1.0 Lite Edition"
 set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
 set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
 set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
@@ -743,10 +743,12 @@ set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
-set_global_assignment -name VHDL_FILE ../Proyecto_vhdl/LCD_UART.vhd
-set_global_assignment -name VHDL_FILE ../Proyecto_vhdl/LCD_CMD_PROCESS.vhd
-set_global_assignment -name VHDL_FILE ../Proyecto_vhdl/LCD_DRAWING.vhd
-set_global_assignment -name VHDL_FILE ../Proyecto_vhdl/LCD_CTRL.vhd
+set_global_assignment -name VHDL_FILE ../FicherosVHDL/LCD_CTRL.vhd
+set_global_assignment -name VHDL_FILE ../FicherosVHDL/SUBMODULE_RAM.vhd
+set_global_assignment -name VHDL_FILE ../FicherosVHDL/NONO_GRAPHICS_grid.vhd
+set_global_assignment -name VHDL_FILE ../FicherosVHDL/NONO_GRAPHICS_cursor.vhd
+set_global_assignment -name VHDL_FILE ../FicherosVHDL/NONO_GFX.vhd
+set_global_assignment -name VHDL_FILE ../FicherosVHDL/LCD_DRAWING.2.0.vhd
 set_global_assignment -name VHDL_FILE DE10_Standard_nonogramaneitor.vhd
 set_global_assignment -name SDC_FILE DE10_Standard_nonogramaneitor.sdc
 set_global_assignment -name VHDL_FILE ../LT24Setup/romsinc.vhd

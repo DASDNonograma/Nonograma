@@ -11,7 +11,7 @@ entity lcd_drawing_tb is
 end lcd_drawing_tb;
 
 -- Definicion arquitectura 
-architecture arch_lcd_drawing_tb_drawfig of lcd_drawing_tb is
+architecture arch_lcd_drawing_tb_drawfig2 of lcd_drawing_tb is
 -- Declaracion del modulo que queremos testear con sus entradas y saidas
 component lcd_ctrl_Ent is 
    port
@@ -159,5 +159,5 @@ wait;
 end process;
 
 
-end arch_lcd_drawing_tb_drawfig;
+end arch_lcd_drawing_tb_drawfig2;
 
