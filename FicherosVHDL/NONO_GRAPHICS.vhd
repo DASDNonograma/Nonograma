@@ -12,7 +12,7 @@ entity nono_graphics is
         COMMAND: in std_logic_vector(2 downto 0);
         CURSOR_POSX, CURSOR_POSY: in unsigned(3 downto 0);
         --OUT
-        DRAW_TRIA,DRAW_CUAD,DRAW_LINE,DEL_SCREEN: out std_logic;
+        DRAW_TRIA,DRAW_CUAD,DRAW_LINE,DEL_SCREEN,VERTICAL: out std_logic;
         DONE_UPDATE,DONE_CURSOR,NONO_init_DONE,DONE_BIT: out std_logic;
         XCOOR: out unsigned(7 downto 0);
         YCOOR: out unsigned(8 downto 0);
@@ -45,7 +45,7 @@ begin
 -- UNIDAD DE CONTROL --
 -----------------------
 
--- proceso sincrono que actualiza el estado en flanco de reloj. Reset as�ncrono.
+-- proceso sincrono que actualiza el estado en flanco de reloj. Reset as?ncrono.
 process (clk,RESET_L)
 begin
   if RESET_L='0' then epres<=E_W8_INI;
@@ -73,12 +73,16 @@ process(epres,NONO_INI,OUT_CMD,END_SOL,DONE_DEL,DONE_FIG,CONT_FIG,XLIM_CUAD,YLIM
             when E_CL_FIG => esig<=E_LD_POS;
             when E_LD_POS => esig<=E_DIB_FIG;
             when E_DIB_FIG => if(DONE_FIG='1') then 
-                                if(CONT_FIG=to_unsigned(2,2)) then 
+                                if(CONT_FIG=to_unsigned(3,2)) then 
                                     if (XLIM_CUAD='0' or YLIM_CUAD='0') then esig<=E_LD_POS;
                                     else esig<=E_CL_FIG;
                                     end if;
                                 elsif (CONT_FIG=to_unsigned(1,2)) then
-                                    if (XLIM_LINE='0' or YLIM_LINE='0') then esig<=E_LD_POS;
+                                    if (XLIM_LINE='0') then esig<=E_LD_POS;
+                                    else esig<=E_CL_FIG;
+                                    end if;
+                                elsif (CONT_FIG=to_unsigned(2,2)) then
+                                    if (YLIM_LINE='0') then esig<=E_LD_POS;
                                     else esig<=E_CL_FIG;
                                     end if;
                                 else esig<=E_W8_CURSOR;
@@ -104,38 +108,41 @@ DEL_SCREEN<='1' when (epres=E_LD_SOL and END_SOL='1') else '0';
 
 LD_CONT_FIG<='1' when (epres=E_W8_DEL and DONE_DEL='1') else '0';
 
-CL_FIG<='1' when ((epres=E_W8_DEL and DONE_DEL='1') or (epres=E_DIB_FIG  and DONE_FIG='1' and ((CONT_FIG=to_unsigned(1,2) and  XLIM_LINE='1' and YLIM_LINE='1') or (CONT_FIG=to_unsigned(2,2) and  XLIM_CUAD='1' and YLIM_CUAD='1')))) else '0';
+CL_FIG<='1' when ((epres=E_W8_DEL and DONE_DEL='1') or (epres=E_DIB_FIG  and DONE_FIG='1' and ((CONT_FIG=to_unsigned(1,2) and  XLIM_LINE='1') or (CONT_FIG=to_unsigned(2,2) and YLIM_LINE='1') or (CONT_FIG=to_unsigned(3,2) and  XLIM_CUAD='1' and YLIM_CUAD='1')))) else '0';
 
 LD_XPOS<='1' when (epres=E_CL_FIG or (epres=E_DIB_FIG and DONE_FIG='1' and 
-            ((CONT_FIG=to_unsigned(1,2) and XLIM_LINE='1' and YLIM_LINE='0') or (CONT_FIG=to_unsigned(2,2) and XLIM_CUAD='1' and YLIM_CUAD='0')))) else '0';
+            (((CONT_FIG=to_unsigned(1,2) or CONT_FIG=to_unsigned(2,2)) and XLIM_LINE='1' and YLIM_LINE='0') or (CONT_FIG=to_unsigned(3,2) and XLIM_CUAD='1' and YLIM_CUAD='0')))) else '0';
 
 LD_YPOS<='1' when (epres=E_CL_FIG) else '0';
 
-LD_CUAD<='1' when (epres=E_CL_FIG and CONT_FIG=to_unsigned(2,2)) else '0';
+LD_CUAD<='1' when (epres=E_CL_FIG and CONT_FIG=to_unsigned(3,2)) else '0';
 
-LD_LINE<='1' when (epres=E_CL_FIG and CONT_FIG=to_unsigned(1,2)) else '0';
+LD_LINE<='1' when (epres=E_CL_FIG and (CONT_FIG=to_unsigned(1,2) or CONT_FIG=to_unsigned(2,2))) else '0';
 
 LD_TRIA<='1' when (epres=E_CL_FIG and CONT_FIG=to_unsigned(0,2)) else '0';
 
-DRAW_CUAD<='1' when (epres=E_DIB_FIG and CONT_FIG=to_unsigned(2,2) and DONE_FIG='0') else '0';
+DRAW_CUAD<='1' when (epres=E_DIB_FIG and CONT_FIG=to_unsigned(3,2) and DONE_FIG='0') else '0';
 
-DRAW_LINE<='1' when (epres=E_DIB_FIG and CONT_FIG=to_unsigned(1,2) and DONE_FIG='0') else '0';
+DRAW_LINE<='1' when (epres=E_DIB_FIG and (CONT_FIG=to_unsigned(1,2) or CONT_FIG=to_unsigned(2,2)) and DONE_FIG='0') else '0';
 
 DRAW_TRIA<='1' when (epres=E_DIB_FIG and CONT_FIG=to_unsigned(0,2) and DONE_FIG='0') else '0';
 
-DECR_CONT_FIG<='1' when (epres=E_DIB_FIG  and DONE_FIG='1' and ((CONT_FIG=to_unsigned(1,2) and  XLIM_LINE='1' and YLIM_LINE='1') or (CONT_FIG=to_unsigned(2,2) and  XLIM_CUAD='1' and YLIM_CUAD='1'))) else '0';
+VERTICAL<='1' when (epres=E_DIB_FIG and (CONT_FIG=to_unsigned(1,2)) and DONE_FIG='0') else '0';
 
-INCR_XPOS<='1' when (epres=E_DIB_FIG and DONE_FIG='1' and ((CONT_FIG=to_unsigned(1,2) and XLIM_LINE='0') or (CONT_FIG=to_unsigned(2,2) and XLIM_CUAD='0'))) else '0';
+DECR_CONT_FIG<='1' when (epres=E_DIB_FIG  and DONE_FIG='1' and ((CONT_FIG=to_unsigned(1,2) and  XLIM_LINE='1') or (CONT_FIG=to_unsigned(2,2) and  YLIM_LINE='1') or (CONT_FIG=to_unsigned(3,2) and  XLIM_CUAD='1' and YLIM_CUAD='1'))) else '0';
 
-INCR_YPOS<='1' when (epres=E_DIB_FIG and DONE_FIG='1'and  ((CONT_FIG=to_unsigned(1,2) and  XLIM_LINE='1' and YLIM_LINE='0') or (CONT_FIG=to_unsigned(2,2) and  XLIM_CUAD='1' and YLIM_CUAD='0'))) else '0';
+INCR_XPOS<='1' when (epres=E_DIB_FIG and DONE_FIG='1' and ((CONT_FIG=to_unsigned(1,2) and XLIM_LINE='0') or (CONT_FIG=to_unsigned(3,2) and XLIM_CUAD='0'))) else '0';
+
+INCR_YPOS<='1' when (epres=E_DIB_FIG and DONE_FIG='1'and  ((CONT_FIG=to_unsigned(2,2) and YLIM_LINE='0') or (CONT_FIG=to_unsigned(3,2) and  XLIM_CUAD='1' and YLIM_CUAD='0'))) else '0';
+
 
 -----------------------
 -- UNIDAD DE PROCESO --
 -----------------------
 
 --CONSTANTES
-XINI<=to_unsigned(18,8);
-YINI<=to_unsigned(58,9);
+XINI<=to_unsigned(13,8);
+YINI<=to_unsigned(53,9);
 
 --CONTADOR SOL
 process (clk,RESET_L)
@@ -185,7 +192,7 @@ process (clk,RESET_L)
 begin
 if (RESET_L='0') then CONT_FIG<=to_unsigned(0,2);
 elsif clk'event and clk='1' then
-if (LD_CONT_FIG='1') then CONT_FIG<=to_unsigned(2,2); 
+if (LD_CONT_FIG='1') then CONT_FIG<=to_unsigned(3,2); 
 elsif (DECR_CONT_FIG='1') then
  CONT_FIG<=CONT_FIG-1;
 end if;
@@ -196,14 +203,14 @@ end process;
 
 
 --OPERACIONES XFIG
---xline=xini+xpos*4+xpos*10
-XLINE<=XINI + ("0" & RXPOS & "000")+ ("000" & RXPOS  & "0" ) +("00" & RXPOS & "00") ;
-YLINE<=YINI +  ("00" & RYPOS  & "000") + ("0000" & RYPOS  & "0") +("000" & RYPOS & "00") ;
+--xline=xini+xpos*4+xpos*17
+XLINE<=XINI + ("00" & RXPOS & "00")+ ("0000" & RXPOS  ) +( RXPOS & "0000") ;
+YLINE<=YINI +  ("000" & RYPOS  & "00") + ("00000" & RYPOS ) +("0" & RYPOS & "0000") ;
 
---XcuaD=XINI+XPOS*10+(XPOS+1)*4
+--XcuaD=XINI+XPOS*17+(XPOS+1)*4
 
-XCUAD<=XINI +("0" & RXPOS & "000")+ ("000" & RXPOS  & "0" ) +("00" & (RXPOS+1) & "00") ;
-YCUAD<=YINI + ("00" & RYPOS  & "000") + ("0000" & RYPOS  & "0")+ ("000" & (RYPOS+1) & "00") ;
+XCUAD<=XINI +(  RXPOS & "0000")+ ("0000" & RXPOS  ) +("00" & (RXPOS+1) & "00") ;
+YCUAD<=YINI + ("0" & RYPOS  & "0000") + ("00000" & RYPOS )+ ("000" & (RYPOS+1) & "00") ;
 
 
 
@@ -218,10 +225,10 @@ end process;
 
 
 --COMPARADOR LIM_CUAD,LIM_LINE
-XLIM_CUAD<='1' when (RXPOS=10 or RXPOS>10) else '0';
-YLIM_CUAD<='1' when (RYPOS=10 or RYPOS>10) else '0';
-XLIM_LINE<='1' when (RXPOS=11 or RXPOS>11) else '0';
-YLIM_LINE<='1' when (RYPOS=11 or RYPOS>11) else '0';
+XLIM_CUAD<='1' when (RXPOS=9 or RXPOS>9) else '0';
+YLIM_CUAD<='1' when (RYPOS=9 or RYPOS>9) else '0';
+XLIM_LINE<='1' when (RXPOS=10 or RXPOS>10) else '0';
+YLIM_LINE<='1' when (RYPOS=10 or RYPOS>10) else '0';
 
 
 --BIESTABLE SEL_xxx
