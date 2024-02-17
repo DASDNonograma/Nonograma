@@ -9,7 +9,7 @@ z2
 cModel Technology
 dC:/intelFPGA/18.1
 Ecmd_process
-Z0 w1707611283
+Z0 w1708038573
 Z1 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
 Z2 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
 Z3 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
@@ -22,9 +22,9 @@ VX_K<0J0Q>_d@JhAkiC^@i1
 !s100 j:E2]Zo<PT?gA09Djc>CJ3
 Z7 OV;C;10.5b;63
 32
-Z8 !s110 1707873176
+Z8 !s110 1708115462
 !i10b 1
-Z9 !s108 1707873176.000000
+Z9 !s108 1708115462.000000
 Z10 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/wicrux/Documents/GitHub/Nonograma/FicherosVHDL/CMD_PROCESS.vhd|
 Z11 !s107 C:/Users/wicrux/Documents/GitHub/Nonograma/FicherosVHDL/CMD_PROCESS.vhd|
 !i113 1
@@ -91,7 +91,7 @@ R18
 R12
 R13
 Ede10_standard_nonogramaneitor
-Z19 w1707873959
+Z19 w1708121019
 R1
 R2
 R3
@@ -104,9 +104,9 @@ Vm5aKk4;odz=^3J81ZT@B=1
 !s100 M7ZRZL@28UjWgYck@EFGi2
 R7
 32
-Z22 !s110 1707873962
+Z22 !s110 1708122097
 !i10b 1
-Z23 !s108 1707873962.000000
+Z23 !s108 1708122097.000000
 Z24 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/wicrux/Documents/GitHub/Nonograma/Quartus/DE10_Standard_nonogramaneitor.vhd|
 Z25 !s107 C:/Users/wicrux/Documents/GitHub/Nonograma/Quartus/DE10_Standard_nonogramaneitor.vhd|
 !i113 1
@@ -117,10 +117,10 @@ R1
 R2
 R3
 DEx4 work 29 de10_standard_nonogramaneitor 0 22 m5aKk4;odz=^3J81ZT@B=1
-l220
+l284
 L73
-VoNaf?QmOe1Bc>G3>3^IV60
-!s100 =[4B[QZFbzHzg]GHS=elA3
+VOGG`:OCIXK86KM:i1Roh[2
+!s100 ^Oc:6:H`Y9P<IF^A79L^E0
 R7
 32
 R22
@@ -227,9 +227,9 @@ VLZ^cSG4Rf>Xn]dN7z7a;W3
 !s100 B0N=]^59eHMOzE=6nkI:A0
 R7
 32
-Z44 !s110 1707873174
+Z44 !s110 1708115461
 !i10b 1
-Z45 !s108 1707873174.000000
+Z45 !s108 1708115461.000000
 Z46 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/wicrux/Documents/GitHub/Nonograma/FicherosVHDL/LCD_CTRL.vhd|
 Z47 !s107 C:/Users/wicrux/Documents/GitHub/Nonograma/FicherosVHDL/LCD_CTRL.vhd|
 !i113 1
@@ -255,7 +255,7 @@ R47
 R12
 R13
 Elcd_ctrl_tb
-Z48 w1707522801
+Z48 w1708026802
 R1
 R2
 R3
@@ -268,9 +268,9 @@ VR=H;djOX0AZhzT_Mh<72F0
 !s100 ^=afPRLR0U:l455JTVH2:3
 R7
 32
-R8
+R44
 !i10b 1
-R9
+R45
 Z51 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/wicrux/Documents/GitHub/Nonograma/FicherosVHDL/TESTBENCH/LCD_CTRL_tb.vhd|
 Z52 !s107 C:/Users/wicrux/Documents/GitHub/Nonograma/FicherosVHDL/TESTBENCH/LCD_CTRL_tb.vhd|
 !i113 1
@@ -283,20 +283,20 @@ R3
 DEx4 work 11 lcd_ctrl_tb 0 22 R=H;djOX0AZhzT_Mh<72F0
 l53
 L14
-VFY_9234LFCOGAm?D5LXhS0
-!s100 WciI9QEJhoV0`=3H9VlA=3
+VCY7[d331BKkP`<d[A[dT53
+!s100 Gj__;b:o6c1?kETZ[OLeJ3
 R7
 32
-R8
+R44
 !i10b 1
-R9
+R45
 R51
 R52
 !i113 1
 R12
 R13
 Elcd_drawing
-Z53 w1707873365
+Z53 w1708050097
 R1
 R2
 R3
@@ -309,11 +309,11 @@ VGUER?Nh]RiBe7?AjdQ^JZ2
 !s100 Vni`;ZSNC`9zHcRW1U34[2
 R7
 32
-Z56 !s110 1707873867
+R44
 !i10b 1
-Z57 !s108 1707873867.000000
-Z58 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/wicrux/Documents/GitHub/Nonograma/FicherosVHDL/LCD_DRAWING.2.0.vhd|
-Z59 !s107 C:/Users/wicrux/Documents/GitHub/Nonograma/FicherosVHDL/LCD_DRAWING.2.0.vhd|
+R45
+Z56 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/wicrux/Documents/GitHub/Nonograma/FicherosVHDL/LCD_DRAWING.2.0.vhd|
+Z57 !s107 C:/Users/wicrux/Documents/GitHub/Nonograma/FicherosVHDL/LCD_DRAWING.2.0.vhd|
 !i113 1
 R12
 R13
@@ -324,56 +324,37 @@ R3
 DEx4 work 11 lcd_drawing 0 22 GUER?Nh]RiBe7?AjdQ^JZ2
 l35
 L25
-VFb[a[Z3L3IlF]]GBC[Lh51
-!s100 ]>_V@FkF=@f:?1DNn@Sn`3
+V>9H=27>8a=I[ZjWE5@ECP3
+!s100 354^n^OkXQOVm]o@AB^gj3
 R7
 32
-R56
+R44
 !i10b 1
+R45
+R56
 R57
-R58
-R59
 !i113 1
 R12
 R13
 Elcd_drawing_tb
-Z60 w1707873303
+Z58 w1706317472
 R1
 R2
 R3
 R4
-Z61 8C:/Users/wicrux/Documents/GitHub/Nonograma/FicherosVHDL/TESTBENCH/LCD_DRAWING.2.0._tb_drawfig.vhd
-Z62 FC:/Users/wicrux/Documents/GitHub/Nonograma/FicherosVHDL/TESTBENCH/LCD_DRAWING.2.0._tb_drawfig.vhd
+Z59 8C:/Users/wicrux/Documents/GitHub/Nonograma/FicherosVHDL/TESTBENCH/LCD_DRAWING_tb_drawfig.vhd
+Z60 FC:/Users/wicrux/Documents/GitHub/Nonograma/FicherosVHDL/TESTBENCH/LCD_DRAWING_tb_drawfig.vhd
 l0
 L9
 VoMELcI[2RGS55TBZj3A_K2
 !s100 DQ[QfTnI4dWdOmTIMHDnE2
 R7
 32
-R56
+R8
 !i10b 1
-R57
-Z63 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/wicrux/Documents/GitHub/Nonograma/FicherosVHDL/TESTBENCH/LCD_DRAWING.2.0._tb_drawfig.vhd|
-Z64 !s107 C:/Users/wicrux/Documents/GitHub/Nonograma/FicherosVHDL/TESTBENCH/LCD_DRAWING.2.0._tb_drawfig.vhd|
-!i113 1
-R12
-R13
-Aarch_lcd_drawing_tb_drawfig2
-R1
-R2
-R3
-Z65 DEx4 work 14 lcd_drawing_tb 0 22 oMELcI[2RGS55TBZj3A_K2
-l84
-L14
-VC=9kMMgabYCe:nC2f<EEd1
-!s100 Z]jj=iaOMb3^SLhiI3G2C3
-R7
-32
-R56
-!i10b 1
-R57
-R63
-R64
+R9
+Z61 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/wicrux/Documents/GitHub/Nonograma/FicherosVHDL/TESTBENCH/LCD_DRAWING_tb_drawfig.vhd|
+Z62 !s107 C:/Users/wicrux/Documents/GitHub/Nonograma/FicherosVHDL/TESTBENCH/LCD_DRAWING_tb_drawfig.vhd|
 !i113 1
 R12
 R13
@@ -381,7 +362,7 @@ Aarch_lcd_drawing_tb_drawfig
 R1
 R2
 R3
-R65
+Z63 DEx4 work 14 lcd_drawing_tb 0 22 oMELcI[2RGS55TBZj3A_K2
 l74
 L14
 VG2ac7^ZkX;=18?aDM9_@g2
@@ -391,28 +372,25 @@ R7
 R8
 !i10b 1
 R9
-!s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/wicrux/Documents/GitHub/Nonograma/FicherosVHDL/TESTBENCH/LCD_DRAWING_tb_drawfig.vhd|
-!s107 C:/Users/wicrux/Documents/GitHub/Nonograma/FicherosVHDL/TESTBENCH/LCD_DRAWING_tb_drawfig.vhd|
+R61
+R62
 !i113 1
 R12
 R13
-FC:/Users/wicrux/Documents/GitHub/Nonograma/FicherosVHDL/TESTBENCH/LCD_DRAWING_tb_drawfig.vhd
-w1706317472
-8C:/Users/wicrux/Documents/GitHub/Nonograma/FicherosVHDL/TESTBENCH/LCD_DRAWING_tb_drawfig.vhd
 Aarch_lcd_drawing_tb_delscreen
 R1
 R2
 R3
-R65
+R63
 l74
 L14
 V7b5Pc?VNAa<?8mXVD]T;H1
 !s100 9AiI`?m]U]JB=z<:E<Ud@2
 R7
 32
-R8
+R44
 !i10b 1
-R9
+R45
 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/wicrux/Documents/GitHub/Nonograma/FicherosVHDL/TESTBENCH/LCD_DRAWING_tb_delscreen.vhd|
 !s107 C:/Users/wicrux/Documents/GitHub/Nonograma/FicherosVHDL/TESTBENCH/LCD_DRAWING_tb_delscreen.vhd|
 !i113 1
@@ -421,11 +399,33 @@ R13
 FC:/Users/wicrux/Documents/GitHub/Nonograma/FicherosVHDL/TESTBENCH/LCD_DRAWING_tb_delscreen.vhd
 w1706317448
 8C:/Users/wicrux/Documents/GitHub/Nonograma/FicherosVHDL/TESTBENCH/LCD_DRAWING_tb_delscreen.vhd
+Aarch_lcd_drawing_tb_drawfig2
+R1
+R2
+R3
+R63
+l84
+L14
+VC=9kMMgabYCe:nC2f<EEd1
+!s100 Z]jj=iaOMb3^SLhiI3G2C3
+R7
+32
+R44
+!i10b 1
+R45
+!s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/wicrux/Documents/GitHub/Nonograma/FicherosVHDL/TESTBENCH/LCD_DRAWING.2.0._tb_drawfig.vhd|
+!s107 C:/Users/wicrux/Documents/GitHub/Nonograma/FicherosVHDL/TESTBENCH/LCD_DRAWING.2.0._tb_drawfig.vhd|
+!i113 1
+R12
+R13
+FC:/Users/wicrux/Documents/GitHub/Nonograma/FicherosVHDL/TESTBENCH/LCD_DRAWING.2.0._tb_drawfig.vhd
+w1707873303
+8C:/Users/wicrux/Documents/GitHub/Nonograma/FicherosVHDL/TESTBENCH/LCD_DRAWING.2.0._tb_drawfig.vhd
 Aarch_lcd_drawing_tb
 R1
 R2
 R3
-R65
+R63
 l74
 L14
 VYJahgE?5V1@Yf7KH3nGO>3
@@ -445,24 +445,24 @@ FF:/DiseinoAvanzado/Proyecto_vhdl/LCD_DRAWING_tb_drawfig.vhd
 8F:/DiseinoAvanzado/Proyecto_vhdl/LCD_DRAWING_tb_drawfig.vhd
 R27
 Elcd_uart
-Z66 w1707051068
+Z64 w1707051068
 R1
 R2
 R3
 R27
-Z67 8F:/DiseinoAvanzado/Proyecto_vhdl/LCD_UART/LCD_UART.vhd
-Z68 FF:/DiseinoAvanzado/Proyecto_vhdl/LCD_UART/LCD_UART.vhd
+Z65 8F:/DiseinoAvanzado/Proyecto_vhdl/LCD_UART/LCD_UART.vhd
+Z66 FF:/DiseinoAvanzado/Proyecto_vhdl/LCD_UART/LCD_UART.vhd
 l0
 L10
 VgIR6bkm@6jG<>kGJ;__TX0
 !s100 jDLXJ72DbQGhhm8DB52if3
 R7
 32
-Z69 !s110 1707068131
+Z67 !s110 1707068131
 !i10b 1
-Z70 !s108 1707068130.000000
-Z71 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|F:/DiseinoAvanzado/Proyecto_vhdl/LCD_UART/LCD_UART.vhd|
-Z72 !s107 F:/DiseinoAvanzado/Proyecto_vhdl/LCD_UART/LCD_UART.vhd|
+Z68 !s108 1707068130.000000
+Z69 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|F:/DiseinoAvanzado/Proyecto_vhdl/LCD_UART/LCD_UART.vhd|
+Z70 !s107 F:/DiseinoAvanzado/Proyecto_vhdl/LCD_UART/LCD_UART.vhd|
 !i113 1
 R12
 R13
@@ -477,33 +477,33 @@ VPZZBk1R7kBBBoZi=30f8C1
 !s100 I@Rag;HHQYj]QRIDA3H@n3
 R7
 32
-R69
+R67
 !i10b 1
+R68
+R69
 R70
-R71
-R72
 !i113 1
 R12
 R13
 Elcd_uart_tb
-Z73 w1707051336
+Z71 w1707051336
 R1
 R2
 R3
 R27
-Z74 8F:/DiseinoAvanzado/Proyecto_vhdl/LCD_UART/LCD_UART_tb.vhd
-Z75 FF:/DiseinoAvanzado/Proyecto_vhdl/LCD_UART/LCD_UART_tb.vhd
+Z72 8F:/DiseinoAvanzado/Proyecto_vhdl/LCD_UART/LCD_UART_tb.vhd
+Z73 FF:/DiseinoAvanzado/Proyecto_vhdl/LCD_UART/LCD_UART_tb.vhd
 l0
 L9
 VSN=XeEoTeI5>gDlFC^ADz1
 !s100 Y[moC?8YTR?iUL@<kGBl=1
 R7
 32
-R69
+R67
 !i10b 1
-Z76 !s108 1707068131.000000
-Z77 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|F:/DiseinoAvanzado/Proyecto_vhdl/LCD_UART/LCD_UART_tb.vhd|
-Z78 !s107 F:/DiseinoAvanzado/Proyecto_vhdl/LCD_UART/LCD_UART_tb.vhd|
+Z74 !s108 1707068131.000000
+Z75 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|F:/DiseinoAvanzado/Proyecto_vhdl/LCD_UART/LCD_UART_tb.vhd|
+Z76 !s107 F:/DiseinoAvanzado/Proyecto_vhdl/LCD_UART/LCD_UART_tb.vhd|
 !i113 1
 R12
 R13
@@ -518,22 +518,22 @@ Vg?<9QcX@_EZcA@2edZ^>71
 !s100 ClBnb769FM124lNMmh]cU3
 R7
 32
-R69
+R67
 !i10b 1
+R74
+R75
 R76
-R77
-R78
 !i113 1
 R12
 R13
 Emod_uart
-Z79 w1707607649
+Z77 w1708047883
 R1
 R2
 R3
 R4
-Z80 8C:/Users/wicrux/Documents/GitHub/Nonograma/FicherosVHDL/MOD_UART.vhd
-Z81 FC:/Users/wicrux/Documents/GitHub/Nonograma/FicherosVHDL/MOD_UART.vhd
+Z78 8C:/Users/wicrux/Documents/GitHub/Nonograma/FicherosVHDL/MOD_UART.vhd
+Z79 FC:/Users/wicrux/Documents/GitHub/Nonograma/FicherosVHDL/MOD_UART.vhd
 l0
 L7
 VK?EZbMWM?PDaJh[zSmET=2
@@ -543,8 +543,8 @@ R7
 R8
 !i10b 1
 R9
-Z82 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/wicrux/Documents/GitHub/Nonograma/FicherosVHDL/MOD_UART.vhd|
-Z83 !s107 C:/Users/wicrux/Documents/GitHub/Nonograma/FicherosVHDL/MOD_UART.vhd|
+Z80 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/wicrux/Documents/GitHub/Nonograma/FicherosVHDL/MOD_UART.vhd|
+Z81 !s107 C:/Users/wicrux/Documents/GitHub/Nonograma/FicherosVHDL/MOD_UART.vhd|
 !i113 1
 R12
 R13
@@ -555,26 +555,26 @@ R3
 DEx4 work 8 mod_uart 0 22 K?EZbMWM?PDaJh[zSmET=2
 l54
 L22
-Va@V;W`d5Giikbm0;Kk28i0
-!s100 V2SnN;:YPkT1^i29XnSX^3
+V3>BOb=H=8inQ6cn20P4Mz2
+!s100 _He`2@ieL<<`3_]z9Q`ii0
 R7
 32
 R8
 !i10b 1
 R9
-R82
-R83
+R80
+R81
 !i113 1
 R12
 R13
 Emod_uart_tb
-Z84 w1707259864
+Z82 w1708048067
 R1
 R2
 R3
 R4
-Z85 8C:/Users/wicrux/Documents/GitHub/Nonograma/FicherosVHDL/TESTBENCH/MOD_UART_tb.vhd
-Z86 FC:/Users/wicrux/Documents/GitHub/Nonograma/FicherosVHDL/TESTBENCH/MOD_UART_tb.vhd
+Z83 8C:/Users/wicrux/Documents/GitHub/Nonograma/FicherosVHDL/TESTBENCH/MOD_UART_tb.vhd
+Z84 FC:/Users/wicrux/Documents/GitHub/Nonograma/FicherosVHDL/TESTBENCH/MOD_UART_tb.vhd
 l0
 L9
 Vo2T>4H<PkK9F6=i=1QJkh1
@@ -584,8 +584,8 @@ R7
 R8
 !i10b 1
 R9
-Z87 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/wicrux/Documents/GitHub/Nonograma/FicherosVHDL/TESTBENCH/MOD_UART_tb.vhd|
-Z88 !s107 C:/Users/wicrux/Documents/GitHub/Nonograma/FicherosVHDL/TESTBENCH/MOD_UART_tb.vhd|
+Z85 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/wicrux/Documents/GitHub/Nonograma/FicherosVHDL/TESTBENCH/MOD_UART_tb.vhd|
+Z86 !s107 C:/Users/wicrux/Documents/GitHub/Nonograma/FicherosVHDL/TESTBENCH/MOD_UART_tb.vhd|
 !i113 1
 R12
 R13
@@ -596,37 +596,37 @@ R3
 DEx4 work 11 mod_uart_tb 0 22 o2T>4H<PkK9F6=i=1QJkh1
 l44
 L14
-VMkbjAU7>NzUPn5ENYXknN1
-!s100 ZFCP@4f:XEaDD4_H0QNYE1
+V68RhH5cTg4;Ch`K?9IXJL2
+!s100 5W;TYTcUeLBTmVB?c=2Hc3
 R7
 32
 R8
 !i10b 1
 R9
-R87
-R88
+R85
+R86
 !i113 1
 R12
 R13
 Enono_cursor
-Z89 w1707775532
+Z87 w1707775534
 R1
 R2
 R3
 R4
-Z90 8C:/Users/wicrux/Documents/GitHub/Nonograma/FicherosVHDL/NONO_CURSOR.vhd
-Z91 FC:/Users/wicrux/Documents/GitHub/Nonograma/FicherosVHDL/NONO_CURSOR.vhd
+Z88 8C:/Users/wicrux/Documents/GitHub/Nonograma/FicherosVHDL/NONO_CURSOR.vhd
+Z89 FC:/Users/wicrux/Documents/GitHub/Nonograma/FicherosVHDL/NONO_CURSOR.vhd
 l0
 L10
 VSd8U<E>JH5k[:P6HH0>6@0
 !s100 WXUM1BRI0VTE:meWk@n_30
 R7
 32
-R8
+R44
 !i10b 1
-R9
-Z92 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/wicrux/Documents/GitHub/Nonograma/FicherosVHDL/NONO_CURSOR.vhd|
-Z93 !s107 C:/Users/wicrux/Documents/GitHub/Nonograma/FicherosVHDL/NONO_CURSOR.vhd|
+R45
+Z90 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/wicrux/Documents/GitHub/Nonograma/FicherosVHDL/NONO_CURSOR.vhd|
+Z91 !s107 C:/Users/wicrux/Documents/GitHub/Nonograma/FicherosVHDL/NONO_CURSOR.vhd|
 !i113 1
 R12
 R13
@@ -641,22 +641,22 @@ Vn=[F`P8m05?n4MDo]aioS0
 !s100 09DnWFPMBZiLoaZSbXKV]3
 R7
 32
-R8
+R44
 !i10b 1
-R9
-R92
-R93
+R45
+R90
+R91
 !i113 1
 R12
 R13
 Enono_cursor_tb
-Z94 w1707775199
+Z92 w1708025564
 R1
 R2
 R3
 R4
-Z95 8C:/Users/wicrux/Documents/GitHub/Nonograma/FicherosVHDL/TESTBENCH/NONO_CURSOR_tb.vhd
-Z96 FC:/Users/wicrux/Documents/GitHub/Nonograma/FicherosVHDL/TESTBENCH/NONO_CURSOR_tb.vhd
+Z93 8C:/Users/wicrux/Documents/GitHub/Nonograma/FicherosVHDL/TESTBENCH/NONO_CURSOR_tb.vhd
+Z94 FC:/Users/wicrux/Documents/GitHub/Nonograma/FicherosVHDL/TESTBENCH/NONO_CURSOR_tb.vhd
 l0
 L9
 Vo>]Am9<J:Z4M7zQG<FedE1
@@ -666,8 +666,8 @@ R7
 R8
 !i10b 1
 R9
-Z97 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/wicrux/Documents/GitHub/Nonograma/FicherosVHDL/TESTBENCH/NONO_CURSOR_tb.vhd|
-Z98 !s107 C:/Users/wicrux/Documents/GitHub/Nonograma/FicherosVHDL/TESTBENCH/NONO_CURSOR_tb.vhd|
+Z95 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/wicrux/Documents/GitHub/Nonograma/FicherosVHDL/TESTBENCH/NONO_CURSOR_tb.vhd|
+Z96 !s107 C:/Users/wicrux/Documents/GitHub/Nonograma/FicherosVHDL/TESTBENCH/NONO_CURSOR_tb.vhd|
 !i113 1
 R12
 R13
@@ -675,18 +675,18 @@ Aarch_nono_cursor_tb
 R1
 R2
 R3
-Z99 DEx4 work 14 nono_cursor_tb 0 22 o>]Am9<J:Z4M7zQG<FedE1
-l60
+Z97 DEx4 work 14 nono_cursor_tb 0 22 o>]Am9<J:Z4M7zQG<FedE1
+l170
 L14
-VLhKMn0UeXE<JD^n?C:_:L2
-!s100 YTgXTnB=PIKUgSgDFj`YG3
+VSWg8bMC]^bQMmTE[?IF0P1
+!s100 jb5GTj>oMPE?K6NeI>CKG2
 R7
 32
 R8
 !i10b 1
 R9
-R97
-R98
+R95
+R96
 !i113 1
 R12
 R13
@@ -694,7 +694,7 @@ Aarch_nono_cursor_limites_tb
 R1
 R2
 R3
-R99
+R97
 l59
 L14
 VdEX7V?C]I;hF]O^2ZZ;540
@@ -713,24 +713,24 @@ FC:/Users/wicrux/Documents/GitHub/Nonograma/FicherosVHDL/TESTBENCH/NONO_CURSOR_l
 w1707775263
 8C:/Users/wicrux/Documents/GitHub/Nonograma/FicherosVHDL/TESTBENCH/NONO_CURSOR_limites_tb.vhd
 Enono_gfx
-Z100 w1707873433
+Z98 w1707873433
 R1
 R2
 R3
 R4
-Z101 8C:/Users/wicrux/Documents/GitHub/Nonograma/FicherosVHDL/NONO_GFX.vhd
-Z102 FC:/Users/wicrux/Documents/GitHub/Nonograma/FicherosVHDL/NONO_GFX.vhd
+Z99 8C:/Users/wicrux/Documents/GitHub/Nonograma/FicherosVHDL/NONO_GFX.vhd
+Z100 FC:/Users/wicrux/Documents/GitHub/Nonograma/FicherosVHDL/NONO_GFX.vhd
 l0
 L7
 V_<6lk3UPm>9bFa^gdnkmM3
 !s100 MBK_MT^lzHTAefK]Sj[5?0
 R7
 32
-Z103 !s110 1707873868
+Z101 !s110 1707873868
 !i10b 1
-Z104 !s108 1707873868.000000
-Z105 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/wicrux/Documents/GitHub/Nonograma/FicherosVHDL/NONO_GFX.vhd|
-Z106 !s107 C:/Users/wicrux/Documents/GitHub/Nonograma/FicherosVHDL/NONO_GFX.vhd|
+Z102 !s108 1707873868.000000
+Z103 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/wicrux/Documents/GitHub/Nonograma/FicherosVHDL/NONO_GFX.vhd|
+Z104 !s107 C:/Users/wicrux/Documents/GitHub/Nonograma/FicherosVHDL/NONO_GFX.vhd|
 !i113 1
 R12
 R13
@@ -745,33 +745,33 @@ V9d1Q<0^IM5lFZANZL?UmA2
 !s100 Q7?PBY`zbmLhZUzhhA0kF2
 R7
 32
-R103
+R101
 !i10b 1
+R102
+R103
 R104
-R105
-R106
 !i113 1
 R12
 R13
 Enono_gfx_tb
-Z107 w1707871497
+Z105 w1707871497
 R1
 R2
 R3
 R4
-Z108 8C:/Users/wicrux/Documents/GitHub/Nonograma/FicherosVHDL/TESTBENCH/NONO_GFX_tb.vhd
-Z109 FC:/Users/wicrux/Documents/GitHub/Nonograma/FicherosVHDL/TESTBENCH/NONO_GFX_tb.vhd
+Z106 8C:/Users/wicrux/Documents/GitHub/Nonograma/FicherosVHDL/TESTBENCH/NONO_GFX_tb.vhd
+Z107 FC:/Users/wicrux/Documents/GitHub/Nonograma/FicherosVHDL/TESTBENCH/NONO_GFX_tb.vhd
 l0
 L9
 VnQLZQJzm43zk6KPY1XJ4h2
 !s100 kbh9S<hY]kTi]JEbFDh961
 R7
 32
-Z110 !s110 1707873177
+Z108 !s110 1707873177
 !i10b 1
-Z111 !s108 1707873177.000000
-Z112 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/wicrux/Documents/GitHub/Nonograma/FicherosVHDL/TESTBENCH/NONO_GFX_tb.vhd|
-Z113 !s107 C:/Users/wicrux/Documents/GitHub/Nonograma/FicherosVHDL/TESTBENCH/NONO_GFX_tb.vhd|
+Z109 !s108 1707873177.000000
+Z110 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/wicrux/Documents/GitHub/Nonograma/FicherosVHDL/TESTBENCH/NONO_GFX_tb.vhd|
+Z111 !s107 C:/Users/wicrux/Documents/GitHub/Nonograma/FicherosVHDL/TESTBENCH/NONO_GFX_tb.vhd|
 !i113 1
 R12
 R13
@@ -786,33 +786,74 @@ VI3E7eb?a_6=:U[2D:;_?91
 !s100 [B?Ae]UM[?1dTd`:bQz2f0
 R7
 32
-R110
+R108
 !i10b 1
+R109
+R110
 R111
-R112
-R113
 !i113 1
 R12
 R13
-Enono_graphics_cursor
-Z114 w1707870778
+Enono_graphics
+Z112 w1708048393
 R1
 R2
 R3
 R4
-Z115 8C:/Users/wicrux/Documents/GitHub/Nonograma/FicherosVHDL/NONO_GRAPHICS_cursor.vhd
-Z116 FC:/Users/wicrux/Documents/GitHub/Nonograma/FicherosVHDL/NONO_GRAPHICS_cursor.vhd
+Z113 8C:/Users/wicrux/Documents/GitHub/Nonograma/FicherosVHDL/NONO_GRAPHICS.vhd
+Z114 FC:/Users/wicrux/Documents/GitHub/Nonograma/FicherosVHDL/NONO_GRAPHICS.vhd
+l0
+L7
+VN59:IJM0MiNSgNXniLHWK1
+!s100 TZ69HG8R9kOb8OlV@C2JM1
+R7
+32
+R8
+!i10b 1
+R9
+Z115 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/wicrux/Documents/GitHub/Nonograma/FicherosVHDL/NONO_GRAPHICS.vhd|
+Z116 !s107 C:/Users/wicrux/Documents/GitHub/Nonograma/FicherosVHDL/NONO_GRAPHICS.vhd|
+!i113 1
+R12
+R13
+Aarch_nono_graphics
+R1
+R2
+R3
+DEx4 work 13 nono_graphics 0 22 N59:IJM0MiNSgNXniLHWK1
+l84
+L25
+V?6Z^^a2]KhAmB134:1=9l3
+!s100 4n1RBd_f]hJBZhmLXgEfJ2
+R7
+32
+R8
+!i10b 1
+R9
+R115
+R116
+!i113 1
+R12
+R13
+Enono_graphics_cursor
+Z117 w1708127261
+R1
+R2
+R3
+R4
+Z118 8C:/Users/wicrux/Documents/GitHub/Nonograma/FicherosVHDL/NONO_GRAPHICS_cursor.vhd
+Z119 FC:/Users/wicrux/Documents/GitHub/Nonograma/FicherosVHDL/NONO_GRAPHICS_cursor.vhd
 l0
 L7
 VW4:`XJbZ^ON9hi5C=^h:P0
 !s100 >=F`nDL07n8^Ld1MEDC`R2
 R7
 32
-R8
+Z120 !s110 1708127306
 !i10b 1
-R9
-Z117 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/wicrux/Documents/GitHub/Nonograma/FicherosVHDL/NONO_GRAPHICS_cursor.vhd|
-Z118 !s107 C:/Users/wicrux/Documents/GitHub/Nonograma/FicherosVHDL/NONO_GRAPHICS_cursor.vhd|
+Z121 !s108 1708127306.000000
+Z122 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/wicrux/Documents/GitHub/Nonograma/FicherosVHDL/NONO_GRAPHICS_cursor.vhd|
+Z123 !s107 C:/Users/wicrux/Documents/GitHub/Nonograma/FicherosVHDL/NONO_GRAPHICS_cursor.vhd|
 !i113 1
 R12
 R13
@@ -820,40 +861,40 @@ Anono_graphics_cursor_arch
 R1
 R2
 R3
-DEx4 work 20 nono_graphics_cursor 0 22 W4:`XJbZ^ON9hi5C=^h:P0
+Z124 DEx4 work 20 nono_graphics_cursor 0 22 W4:`XJbZ^ON9hi5C=^h:P0
 l91
 L31
-VN]R`gAc=nognK2?9^?Y_c1
-!s100 n=[RfC:1ijbK]iFRSMMa82
+VEBHX8hlh:EN`MN5PcPdih1
+!s100 5UlBd6^dJ34HRV_Z5`;<Z1
 R7
 32
-R8
+R120
 !i10b 1
-R9
-R117
-R118
+R121
+R122
+R123
 !i113 1
 R12
 R13
 Enono_graphics_cursor_tb
-Z119 w1707829348
+Z125 w1707829348
 R1
 R2
 R3
 R4
-Z120 8C:/Users/wicrux/Documents/GitHub/Nonograma/FicherosVHDL/TESTBENCH/NONO_GRAPHICS_cursor_tb.vhd
-Z121 FC:/Users/wicrux/Documents/GitHub/Nonograma/FicherosVHDL/TESTBENCH/NONO_GRAPHICS_cursor_tb.vhd
+Z126 8C:/Users/wicrux/Documents/GitHub/Nonograma/FicherosVHDL/TESTBENCH/NONO_GRAPHICS_cursor_tb.vhd
+Z127 FC:/Users/wicrux/Documents/GitHub/Nonograma/FicherosVHDL/TESTBENCH/NONO_GRAPHICS_cursor_tb.vhd
 l0
 L9
 Vck:JS;e0=zmCe=3P^_ja@3
 !s100 >DJEYVFABmj2CW>B_8O5T0
 R7
 32
-R110
+R8
 !i10b 1
-R111
-Z122 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/wicrux/Documents/GitHub/Nonograma/FicherosVHDL/TESTBENCH/NONO_GRAPHICS_cursor_tb.vhd|
-Z123 !s107 C:/Users/wicrux/Documents/GitHub/Nonograma/FicherosVHDL/TESTBENCH/NONO_GRAPHICS_cursor_tb.vhd|
+R9
+Z128 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/wicrux/Documents/GitHub/Nonograma/FicherosVHDL/TESTBENCH/NONO_GRAPHICS_cursor_tb.vhd|
+Z129 !s107 C:/Users/wicrux/Documents/GitHub/Nonograma/FicherosVHDL/TESTBENCH/NONO_GRAPHICS_cursor_tb.vhd|
 !i113 1
 R12
 R13
@@ -868,33 +909,33 @@ V>6hSMh=:JF;BSEnLJJjm21
 !s100 4HeoWTY07?iC7_5fRQMfG2
 R7
 32
-R110
+R8
 !i10b 1
-R111
-R122
-R123
+R9
+R128
+R129
 !i113 1
 R12
 R13
 Enono_graphics_grid
-Z124 w1707871148
+Z130 w1707871148
 R1
 R2
 R3
 R4
-Z125 8C:/Users/wicrux/Documents/GitHub/Nonograma/FicherosVHDL/NONO_GRAPHICS_grid.vhd
-Z126 FC:/Users/wicrux/Documents/GitHub/Nonograma/FicherosVHDL/NONO_GRAPHICS_grid.vhd
+Z131 8C:/Users/wicrux/Documents/GitHub/Nonograma/FicherosVHDL/NONO_GRAPHICS_grid.vhd
+Z132 FC:/Users/wicrux/Documents/GitHub/Nonograma/FicherosVHDL/NONO_GRAPHICS_grid.vhd
 l0
 L10
 VM:`nznkezgXblXhNX^CID1
 !s100 0QfaJzfYmMi1D6JE[`WV90
 R7
 32
-R110
+R108
 !i10b 1
-R111
-Z127 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/wicrux/Documents/GitHub/Nonograma/FicherosVHDL/NONO_GRAPHICS_grid.vhd|
-Z128 !s107 C:/Users/wicrux/Documents/GitHub/Nonograma/FicherosVHDL/NONO_GRAPHICS_grid.vhd|
+R109
+Z133 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/wicrux/Documents/GitHub/Nonograma/FicherosVHDL/NONO_GRAPHICS_grid.vhd|
+Z134 !s107 C:/Users/wicrux/Documents/GitHub/Nonograma/FicherosVHDL/NONO_GRAPHICS_grid.vhd|
 !i113 1
 R12
 R13
@@ -909,33 +950,33 @@ V;3I]Yf=K;IhEfij=bP5j]2
 !s100 1^:j_HOAHmmA@:DjmjAMo1
 R7
 32
-R110
+R108
 !i10b 1
-R111
-R127
-R128
+R109
+R133
+R134
 !i113 1
 R12
 R13
 Enono_graphics_grid_tb
-Z129 w1707864398
+Z135 w1707864398
 R1
 R2
 R3
 R4
-Z130 8C:/Users/wicrux/Documents/GitHub/Nonograma/FicherosVHDL/TESTBENCH/NONO_GRAPHICS_grid_tb.vhd
-Z131 FC:/Users/wicrux/Documents/GitHub/Nonograma/FicherosVHDL/TESTBENCH/NONO_GRAPHICS_grid_tb.vhd
+Z136 8C:/Users/wicrux/Documents/GitHub/Nonograma/FicherosVHDL/TESTBENCH/NONO_GRAPHICS_grid_tb.vhd
+Z137 FC:/Users/wicrux/Documents/GitHub/Nonograma/FicherosVHDL/TESTBENCH/NONO_GRAPHICS_grid_tb.vhd
 l0
 L9
 V3aeh_f5SS6Wz1Q9co`XV12
 !s100 W[QUl_VE9S<Ta8J0Q2JR=1
 R7
 32
-R110
+R108
 !i10b 1
-R111
-Z132 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/wicrux/Documents/GitHub/Nonograma/FicherosVHDL/TESTBENCH/NONO_GRAPHICS_grid_tb.vhd|
-Z133 !s107 C:/Users/wicrux/Documents/GitHub/Nonograma/FicherosVHDL/TESTBENCH/NONO_GRAPHICS_grid_tb.vhd|
+R109
+Z138 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/wicrux/Documents/GitHub/Nonograma/FicherosVHDL/TESTBENCH/NONO_GRAPHICS_grid_tb.vhd|
+Z139 !s107 C:/Users/wicrux/Documents/GitHub/Nonograma/FicherosVHDL/TESTBENCH/NONO_GRAPHICS_grid_tb.vhd|
 !i113 1
 R12
 R13
@@ -950,33 +991,74 @@ VibLa];n@?6JOWSa;gORQW0
 !s100 ZdY?NMb_27mbaW^X7;g713
 R7
 32
-R110
+R108
 !i10b 1
-R111
-R132
-R133
+R109
+R138
+R139
 !i113 1
 R12
 R13
-Esubmod_ram
-Z134 w1707870692
+Enono_graphics_tb
+Z140 w1708010532
 R1
 R2
 R3
 R4
-Z135 8C:/Users/wicrux/Documents/GitHub/Nonograma/FicherosVHDL/SUBMODULE_RAM.vhd
-Z136 FC:/Users/wicrux/Documents/GitHub/Nonograma/FicherosVHDL/SUBMODULE_RAM.vhd
+Z141 8C:/Users/wicrux/Documents/GitHub/Nonograma/FicherosVHDL/TESTBENCH/NONO_GRAPHICS_tb.vhd
+Z142 FC:/Users/wicrux/Documents/GitHub/Nonograma/FicherosVHDL/TESTBENCH/NONO_GRAPHICS_tb.vhd
+l0
+L6
+VmN@QMJ;Q>MR:VALffI8TX0
+!s100 <lXmz6[A00zDbIWzKMFn?1
+R7
+32
+R8
+!i10b 1
+R9
+Z143 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/wicrux/Documents/GitHub/Nonograma/FicherosVHDL/TESTBENCH/NONO_GRAPHICS_tb.vhd|
+Z144 !s107 C:/Users/wicrux/Documents/GitHub/Nonograma/FicherosVHDL/TESTBENCH/NONO_GRAPHICS_tb.vhd|
+!i113 1
+R12
+R13
+Aarch_nono_graphics_tb
+R1
+R2
+R3
+DEx4 work 16 nono_graphics_tb 0 22 mN@QMJ;Q>MR:VALffI8TX0
+l105
+L11
+VBeQk3Izn6L_4<gJYW_GBA3
+!s100 Db_Lce@ZSF=:>NSG4JP9F1
+R7
+32
+R8
+!i10b 1
+R9
+R143
+R144
+!i113 1
+R12
+R13
+Esubmod_ram
+Z145 w1707870694
+R1
+R2
+R3
+R4
+Z146 8C:/Users/wicrux/Documents/GitHub/Nonograma/FicherosVHDL/SUBMODULE_RAM.vhd
+Z147 FC:/Users/wicrux/Documents/GitHub/Nonograma/FicherosVHDL/SUBMODULE_RAM.vhd
 l0
 L6
 V7d?Q=8F[2Bc[X]J]7]S]?3
 !s100 aD_0<TWAhUHkaJ:1hVlO52
 R7
 32
-R110
+R8
 !i10b 1
 R9
-Z137 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/wicrux/Documents/GitHub/Nonograma/FicherosVHDL/SUBMODULE_RAM.vhd|
-Z138 !s107 C:/Users/wicrux/Documents/GitHub/Nonograma/FicherosVHDL/SUBMODULE_RAM.vhd|
+Z148 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/wicrux/Documents/GitHub/Nonograma/FicherosVHDL/SUBMODULE_RAM.vhd|
+Z149 !s107 C:/Users/wicrux/Documents/GitHub/Nonograma/FicherosVHDL/SUBMODULE_RAM.vhd|
 !i113 1
 R12
 R13
@@ -991,11 +1073,52 @@ VhI:<TWAc363@83DKkFaP03
 !s100 `R[71J?64_6XLMBB;HnQ92
 R7
 32
-R110
+R8
 !i10b 1
 R9
-R137
-R138
+R148
+R149
+!i113 1
+R12
+R13
+Etop_tb
+Z150 w1708126361
+R1
+R2
+R3
+R4
+Z151 8C:/Users/wicrux/Documents/GitHub/Nonograma/FicherosVHDL/TESTBENCH/TOP_tb.vhd
+Z152 FC:/Users/wicrux/Documents/GitHub/Nonograma/FicherosVHDL/TESTBENCH/TOP_tb.vhd
+l0
+L9
+V^PoYjj@2jlAmmnFFinQ363
+!s100 N@@cXO0fj6chPd@T6ZJ9<0
+R7
+32
+Z153 !s110 1708126367
+!i10b 1
+Z154 !s108 1708126367.000000
+Z155 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/wicrux/Documents/GitHub/Nonograma/FicherosVHDL/TESTBENCH/TOP_tb.vhd|
+Z156 !s107 C:/Users/wicrux/Documents/GitHub/Nonograma/FicherosVHDL/TESTBENCH/TOP_tb.vhd|
+!i113 1
+R12
+R13
+Aarch_top_tb
+R1
+R2
+R3
+DEx4 work 6 top_tb 0 22 ^PoYjj@2jlAmmnFFinQ363
+l187
+L14
+V^FcQW0V@K];[PCIDhoG>E1
+!s100 Ab^7:LR4L4AEN9GU0YgD01
+R7
+32
+R153
+!i10b 1
+R154
+R155
+R156
 !i113 1
 R12
 R13

@@ -1,5 +1,5 @@
 Flow report for DE10_Standard_nonogramaneitor
-Wed Feb 14 02:42:33 2024
+Sat Feb 17 00:50:14 2024
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -40,19 +40,19 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Flow Summary                                                                  ;
 +---------------------------------+---------------------------------------------+
-; Flow Status                     ; Successful - Wed Feb 14 02:42:27 2024       ;
+; Flow Status                     ; Successful - Sat Feb 17 00:50:09 2024       ;
 ; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                   ; DE10_Standard_nonogramaneitor               ;
 ; Top-level Entity Name           ; DE10_Standard_nonogramaneitor               ;
 ; Family                          ; Cyclone V                                   ;
 ; Device                          ; 5CSXFC6D6F31C6                              ;
 ; Timing Models                   ; Final                                       ;
-; Logic utilization (in ALMs)     ; 484 / 41,910 ( 1 % )                        ;
-; Total registers                 ; 582                                         ;
+; Logic utilization (in ALMs)     ; 649 / 41,910 ( 2 % )                        ;
+; Total registers                 ; 785                                         ;
 ; Total pins                      ; 38 / 499 ( 8 % )                            ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 0 / 5,662,720 ( 0 % )                       ;
-; Total DSP Blocks                ; 4 / 112 ( 4 % )                             ;
+; Total DSP Blocks                ; 2 / 112 ( 2 % )                             ;
 ; Total HSSI RX PCSs              ; 0 / 9 ( 0 % )                               ;
 ; Total HSSI PMA RX Deserializers ; 0 / 9 ( 0 % )                               ;
 ; Total HSSI TX PCSs              ; 0 / 9 ( 0 % )                               ;
@@ -67,7 +67,7 @@ refer to the applicable agreement for further details.
 +-------------------+-------------------------------+
 ; Option            ; Setting                       ;
 +-------------------+-------------------------------+
-; Start date & time ; 02/14/2024 02:41:09           ;
+; Start date & time ; 02/17/2024 00:49:04           ;
 ; Main task         ; Compilation                   ;
 ; Revision Name     ; DE10_Standard_nonogramaneitor ;
 +-------------------+-------------------------------+
@@ -78,7 +78,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------+----------------------------------------+---------------+-------------+------------+
 ; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id ;
 +-------------------------------------+----------------------------------------+---------------+-------------+------------+
-; COMPILER_SIGNATURE_ID               ; 264086609199069.170787486817424        ; --            ; --          ; --         ;
+; COMPILER_SIGNATURE_ID               ; 264086609199069.170812734315356        ; --            ; --          ; --         ;
 ; MAX_CORE_JUNCTION_TEMP              ; 85                                     ; --            ; --          ; --         ;
 ; MIN_CORE_JUNCTION_TEMP              ; 0                                      ; --            ; --          ; --         ;
 ; NUM_PARALLEL_PROCESSORS             ; All                                    ; --            ; --          ; --         ;
@@ -96,11 +96,11 @@ refer to the applicable agreement for further details.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:10     ; 1.0                     ; 4898 MB             ; 00:00:18                           ;
-; Fitter               ; 00:00:58     ; 1.1                     ; 7053 MB             ; 00:03:06                           ;
-; Assembler            ; 00:00:08     ; 1.0                     ; 4833 MB             ; 00:00:05                           ;
-; Timing Analyzer      ; 00:00:06     ; 1.4                     ; 5199 MB             ; 00:00:06                           ;
-; Total                ; 00:01:22     ; --                      ; --                  ; 00:03:35                           ;
+; Analysis & Synthesis ; 00:00:09     ; 1.0                     ; 4903 MB             ; 00:00:19                           ;
+; Fitter               ; 00:00:49     ; 1.1                     ; 7064 MB             ; 00:03:00                           ;
+; Assembler            ; 00:00:05     ; 1.0                     ; 4839 MB             ; 00:00:05                           ;
+; Timing Analyzer      ; 00:00:04     ; 1.6                     ; 5208 MB             ; 00:00:06                           ;
+; Total                ; 00:01:07     ; --                      ; --                  ; 00:03:30                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

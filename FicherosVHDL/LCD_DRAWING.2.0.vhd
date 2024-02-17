@@ -23,7 +23,7 @@ port(
 end LCD_DRAWING;
 
 architecture arch_LCD_DRAWING of LCD_DRAWING is
-    type estado is (E_CL_FIG,E_W8_CMD,E_LINE_PIX,E_DELCURSOR,E_DELCOLOUR,E_FIGCURSOR,E_FIGCOLOUR);
+    type estado is (E_CL_FIG,E_W8_CMD,E_LINE_PIX,E_DELCURSOR,E_DELCOLOUR,E_FIGCURSOR,E_FIGCOLOUR, E_DONE_FIG);
     signal epres,esig: estado;
 
     signal LD_TRIA,LD_CUAD,LD_LINE,LD_LINE_PIX,CL_FIG,INC_CUAD,INC_XYTRIA,INC_LINE,DEC_LINE_PIX,DEC_CUAD_PIX,DEC_TRIA_PIX,END_TRIA,END_LINE,END_CUAD: std_logic;
@@ -54,12 +54,13 @@ end process;
   process (epres,DEL_SCREEN,DRAW_TRIA,DRAW_CUAD,DRAW_LINE,DONE_CURSOR,DONE_COLOUR,SEL_FIG,END_TRIA,RVERTICAL,END_LINE,END_CUAD)
     begin
       case epres is
+  when E_DONE_FIG => esig<=E_CL_FIG;
 	when E_CL_FIG=> esig<=E_W8_CMD;
       -- una clausula when por cada estado
         when E_W8_CMD => if DEL_SCREEN='1' then esig<=E_DELCURSOR;
 		          elsif (DRAW_TRIA='1' OR DRAW_CUAD='1')  then esig<=E_FIGCURSOR;
               elsif (DRAW_LINE='1') then esig<=E_LINE_PIX;
-			else esig<=E_W8_CMD;
+			        else esig<=E_W8_CMD;
 				              end if;
       when E_LINE_PIX => esig<=E_FIGCURSOR;
       when E_DELCURSOR => if DONE_CURSOR='1' then esig<= E_DELCOLOUR;
@@ -72,7 +73,7 @@ end process;
                         else esig<=E_FIGCURSOR;
                         end if;
       when E_FIGCOLOUR => if DONE_COLOUR='1' then
-                            if (SEL_FIG="01" and END_TRIA='1') OR (SEL_FIG="11" and END_LINE='1')  OR (SEL_FIG="10" and END_CUAD='1') then esig<=E_CL_FIG;
+                            if (SEL_FIG="01" and END_TRIA='1') OR (SEL_FIG="11" and END_LINE='1')  OR (SEL_FIG="10" and END_CUAD='1') then esig<=E_DONE_FIG;
                             else esig<=E_FIGCURSOR;
                             end if;
                           else esig<=E_FIGCOLOUR;
@@ -92,7 +93,7 @@ OP_DRAWCOLOUR<='1' when (epres=E_DELCOLOUR or epres=E_FIGCOLOUR) else '0';
 --ACK para LCD_NONO
 DONE_DEL<='1' when (epres=E_DELCOLOUR and DONE_COLOUR='1') else '0';
 
-DONE_FIG<='1' when (epres=E_FIGCOLOUR and (END_LINE='1' or END_CUAD='1' or END_TRIA='1')) else '0';
+DONE_FIG<='1' when (epres=E_DONE_FIG) else '0';
 
 --Load Registros Figuras
 LD_TRIA<='1' when (epres=E_W8_CMD and DRAW_TRIA='1') else '0';
@@ -131,9 +132,9 @@ SEL_DEL<='1' when ((epres=E_W8_CMD and DEL_SCREEN='1') or epres=E_DELCURSOR or e
 
 
 --constantes
-TRIA_PIX_IN<=to_unsigned(101,17);
-CUAD_PIX_IN<=to_unsigned(16,17);
-LINE_PIX_HOR<=to_unsigned(204,17);
+TRIA_PIX_IN<=to_unsigned(17,17);
+CUAD_PIX_IN<=to_unsigned(17,17);
+LINE_PIX_HOR<=to_unsigned(214,17);
 LINE_PIX_VER<=to_unsigned(4,17);
 
 --CONTADOR XTRIA,YTRIA

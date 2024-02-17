@@ -1,5 +1,5 @@
 Analysis & Synthesis report for DE10_Standard_nonogramaneitor
-Wed Feb 14 02:41:19 2024
+Sat Feb 17 00:49:13 2024
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -14,29 +14,28 @@ Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
   8. Analysis & Synthesis DSP Block Usage Summary
-  9. State Machine - |DE10_Standard_nonogramaneitor|lcd_ctrl_ent:ctrl|epres
- 10. State Machine - |DE10_Standard_nonogramaneitor|LT24Setup:setup|LT24InitLCD:DUT_InitLCD|ep3
- 11. State Machine - |DE10_Standard_nonogramaneitor|LT24Setup:setup|LT24InitLCD:DUT_InitLCD|ep2
- 12. State Machine - |DE10_Standard_nonogramaneitor|LT24Setup:setup|LT24InitReset:DUT_RESET|ep
- 13. State Machine - |DE10_Standard_nonogramaneitor|LCD_DRAWING:draw|epres
- 14. State Machine - |DE10_Standard_nonogramaneitor|NONO_GFX:gfx|epres
- 15. State Machine - |DE10_Standard_nonogramaneitor|NONO_GFX:gfx|nono_graphics_cursor:nono_gfx_cursor|epres
- 16. State Machine - |DE10_Standard_nonogramaneitor|NONO_GFX:gfx|NONO_GRAPHICS_grid:nono_gfx_grid|epres
- 17. Registers Protected by Synthesis
- 18. Registers Removed During Synthesis
- 19. Removed Registers Triggering Further Register Optimizations
- 20. General Register Statistics
- 21. Inverted Register Statistics
- 22. Multiplexer Restructuring Statistics (Restructuring Performed)
- 23. Source assignments for LT24Setup:setup|LT24InitReset:DUT_RESET
- 24. Port Connectivity Checks: "LT24Setup:setup|LT24InitLCD:DUT_InitLCD|romsinc:DUT_ROM"
- 25. Port Connectivity Checks: "LT24Setup:setup"
- 26. Port Connectivity Checks: "NONO_GFX:gfx|SUBMOD_RAM:ram"
- 27. Port Connectivity Checks: "NONO_GFX:gfx|nono_graphics_cursor:nono_gfx_cursor|SUBMOD_RAM:RAM"
- 28. Port Connectivity Checks: "NONO_GFX:gfx"
- 29. Post-Synthesis Netlist Statistics for Top Partition
- 30. Elapsed Time Per Partition
- 31. Analysis & Synthesis Messages
+  9. State Machine - |DE10_Standard_nonogramaneitor|LT24Setup:setup|LT24InitLCD:DUT_InitLCD|ep3
+ 10. State Machine - |DE10_Standard_nonogramaneitor|LT24Setup:setup|LT24InitLCD:DUT_InitLCD|ep2
+ 11. State Machine - |DE10_Standard_nonogramaneitor|LT24Setup:setup|LT24InitReset:DUT_RESET|ep
+ 12. State Machine - |DE10_Standard_nonogramaneitor|nono_graphics:graphics|epres
+ 13. State Machine - |DE10_Standard_nonogramaneitor|nono_graphics:graphics|nono_graphics_cursor:graphics_cursor|epres
+ 14. State Machine - |DE10_Standard_nonogramaneitor|nono_cursor:cursor|epres
+ 15. State Machine - |DE10_Standard_nonogramaneitor|LCD_DRAWING:drawing|epres
+ 16. State Machine - |DE10_Standard_nonogramaneitor|cmd_process:process_cmd|epres
+ 17. State Machine - |DE10_Standard_nonogramaneitor|mod_uart:uart|epres
+ 18. State Machine - |DE10_Standard_nonogramaneitor|lcd_ctrl_ent:ctrl|epres
+ 19. Registers Protected by Synthesis
+ 20. Registers Removed During Synthesis
+ 21. General Register Statistics
+ 22. Inverted Register Statistics
+ 23. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 24. Source assignments for LT24Setup:setup|LT24InitReset:DUT_RESET
+ 25. Port Connectivity Checks: "LT24Setup:setup|LT24InitLCD:DUT_InitLCD|romsinc:DUT_ROM"
+ 26. Port Connectivity Checks: "LT24Setup:setup"
+ 27. Port Connectivity Checks: "nono_graphics:graphics|nono_graphics_cursor:graphics_cursor|SUBMOD_RAM:RAM"
+ 28. Post-Synthesis Netlist Statistics for Top Partition
+ 29. Elapsed Time Per Partition
+ 30. Analysis & Synthesis Messages
 
 
 
@@ -62,17 +61,17 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Wed Feb 14 02:41:19 2024       ;
+; Analysis & Synthesis Status     ; Successful - Sat Feb 17 00:49:13 2024       ;
 ; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                   ; DE10_Standard_nonogramaneitor               ;
 ; Top-level Entity Name           ; DE10_Standard_nonogramaneitor               ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 543                                         ;
+; Total registers                 ; 734                                         ;
 ; Total pins                      ; 38                                          ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 0                                           ;
-; Total DSP Blocks                ; 4                                           ;
+; Total DSP Blocks                ; 2                                           ;
 ; Total HSSI RX PCSs              ; 0                                           ;
 ; Total HSSI PMA RX Deserializers ; 0                                           ;
 ; Total HSSI TX PCSs              ; 0                                           ;
@@ -178,18 +177,18 @@ refer to the applicable agreement for further details.
 ; Number detected on machine ; 16          ;
 ; Maximum allowed            ; 8           ;
 ;                            ;             ;
-; Average used               ; 1.02        ;
+; Average used               ; 1.00        ;
 ; Maximum used               ; 8           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   0.2%      ;
-;     Processor 3            ;   0.2%      ;
-;     Processor 4            ;   0.2%      ;
-;     Processor 5            ;   0.2%      ;
-;     Processor 6            ;   0.2%      ;
-;     Processor 7            ;   0.2%      ;
-;     Processor 8            ;   0.2%      ;
+;     Processor 2            ;   0.0%      ;
+;     Processor 3            ;   0.0%      ;
+;     Processor 4            ;   0.0%      ;
+;     Processor 5            ;   0.0%      ;
+;     Processor 6            ;   0.0%      ;
+;     Processor 7            ;   0.0%      ;
+;     Processor 8            ;   0.0%      ;
 +----------------------------+-------------+
 
 
@@ -198,11 +197,13 @@ refer to the applicable agreement for further details.
 +------------------------------------------+-----------------+-----------------+--------------------------------------------------------------------------------------+---------+
 ; File Name with User-Entered Path         ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                         ; Library ;
 +------------------------------------------+-----------------+-----------------+--------------------------------------------------------------------------------------+---------+
+; ../FicherosVHDL/NONO_CURSOR.vhd          ; yes             ; User VHDL File  ; C:/Users/wicrux/Documents/GitHub/Nonograma/FicherosVHDL/NONO_CURSOR.vhd              ;         ;
+; ../FicherosVHDL/NONO_GRAPHICS.vhd        ; yes             ; User VHDL File  ; C:/Users/wicrux/Documents/GitHub/Nonograma/FicherosVHDL/NONO_GRAPHICS.vhd            ;         ;
+; ../FicherosVHDL/MOD_UART.vhd             ; yes             ; User VHDL File  ; C:/Users/wicrux/Documents/GitHub/Nonograma/FicherosVHDL/MOD_UART.vhd                 ;         ;
+; ../FicherosVHDL/CMD_PROCESS.vhd          ; yes             ; User VHDL File  ; C:/Users/wicrux/Documents/GitHub/Nonograma/FicherosVHDL/CMD_PROCESS.vhd              ;         ;
 ; ../FicherosVHDL/LCD_CTRL.vhd             ; yes             ; User VHDL File  ; C:/Users/wicrux/Documents/GitHub/Nonograma/FicherosVHDL/LCD_CTRL.vhd                 ;         ;
 ; ../FicherosVHDL/SUBMODULE_RAM.vhd        ; yes             ; User VHDL File  ; C:/Users/wicrux/Documents/GitHub/Nonograma/FicherosVHDL/SUBMODULE_RAM.vhd            ;         ;
-; ../FicherosVHDL/NONO_GRAPHICS_grid.vhd   ; yes             ; User VHDL File  ; C:/Users/wicrux/Documents/GitHub/Nonograma/FicherosVHDL/NONO_GRAPHICS_grid.vhd       ;         ;
 ; ../FicherosVHDL/NONO_GRAPHICS_cursor.vhd ; yes             ; User VHDL File  ; C:/Users/wicrux/Documents/GitHub/Nonograma/FicherosVHDL/NONO_GRAPHICS_cursor.vhd     ;         ;
-; ../FicherosVHDL/NONO_GFX.vhd             ; yes             ; User VHDL File  ; C:/Users/wicrux/Documents/GitHub/Nonograma/FicherosVHDL/NONO_GFX.vhd                 ;         ;
 ; ../FicherosVHDL/LCD_DRAWING.2.0.vhd      ; yes             ; User VHDL File  ; C:/Users/wicrux/Documents/GitHub/Nonograma/FicherosVHDL/LCD_DRAWING.2.0.vhd          ;         ;
 ; DE10_Standard_nonogramaneitor.vhd        ; yes             ; User VHDL File  ; C:/Users/wicrux/Documents/GitHub/Nonograma/Quartus/DE10_Standard_nonogramaneitor.vhd ;         ;
 ; ../LT24Setup/romsinc.vhd                 ; yes             ; User VHDL File  ; C:/Users/wicrux/Documents/GitHub/Nonograma/LT24Setup/romsinc.vhd                     ;         ;
@@ -218,45 +219,47 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+----------------+
 ; Resource                                    ; Usage          ;
 +---------------------------------------------+----------------+
-; Estimate of Logic utilization (ALMs needed) ; 497            ;
+; Estimate of Logic utilization (ALMs needed) ; 723            ;
 ;                                             ;                ;
-; Combinational ALUT usage for logic          ; 830            ;
-;     -- 7 input functions                    ; 65             ;
-;     -- 6 input functions                    ; 92             ;
-;     -- 5 input functions                    ; 92             ;
-;     -- 4 input functions                    ; 195            ;
-;     -- <=3 input functions                  ; 386            ;
+; Combinational ALUT usage for logic          ; 1098           ;
+;     -- 7 input functions                    ; 96             ;
+;     -- 6 input functions                    ; 242            ;
+;     -- 5 input functions                    ; 121            ;
+;     -- 4 input functions                    ; 202            ;
+;     -- <=3 input functions                  ; 437            ;
 ;                                             ;                ;
-; Dedicated logic registers                   ; 543            ;
+; Dedicated logic registers                   ; 734            ;
 ;                                             ;                ;
 ; I/O pins                                    ; 38             ;
 ;                                             ;                ;
-; Total DSP Blocks                            ; 4              ;
+; Total DSP Blocks                            ; 2              ;
 ;                                             ;                ;
 ; Maximum fan-out node                        ; CLOCK_50~input ;
-; Maximum fan-out                             ; 543            ;
-; Total fan-out                               ; 5341           ;
-; Average fan-out                             ; 3.68           ;
+; Maximum fan-out                             ; 734            ;
+; Total fan-out                               ; 7335           ;
+; Average fan-out                             ; 3.84           ;
 +---------------------------------------------+----------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                    ;
-+----------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------------------------------------------------------------+-------------------------------+--------------+
-; Compilation Hierarchy Node                   ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                             ; Entity Name                   ; Library Name ;
-+----------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------------------------------------------------------------+-------------------------------+--------------+
-; |DE10_Standard_nonogramaneitor               ; 830 (0)             ; 543 (0)                   ; 0                 ; 4          ; 38   ; 0            ; |DE10_Standard_nonogramaneitor                                                                  ; DE10_Standard_nonogramaneitor ; work         ;
-;    |LCD_DRAWING:draw|                        ; 198 (198)           ; 113 (113)                 ; 0                 ; 0          ; 0    ; 0            ; |DE10_Standard_nonogramaneitor|LCD_DRAWING:draw                                                 ; LCD_DRAWING                   ; work         ;
-;    |LT24Setup:setup|                         ; 182 (48)            ; 135 (19)                  ; 0                 ; 0          ; 0    ; 0            ; |DE10_Standard_nonogramaneitor|LT24Setup:setup                                                  ; LT24Setup                     ; work         ;
-;       |LT24InitLCD:DUT_InitLCD|              ; 30 (24)             ; 31 (24)                   ; 0                 ; 0          ; 0    ; 0            ; |DE10_Standard_nonogramaneitor|LT24Setup:setup|LT24InitLCD:DUT_InitLCD                          ; LT24InitLCD                   ; work         ;
-;          |romsinc:DUT_ROM|                   ; 6 (6)               ; 7 (7)                     ; 0                 ; 0          ; 0    ; 0            ; |DE10_Standard_nonogramaneitor|LT24Setup:setup|LT24InitLCD:DUT_InitLCD|romsinc:DUT_ROM          ; romsinc                       ; work         ;
-;       |LT24InitReset:DUT_RESET|              ; 104 (104)           ; 85 (85)                   ; 0                 ; 0          ; 0    ; 0            ; |DE10_Standard_nonogramaneitor|LT24Setup:setup|LT24InitReset:DUT_RESET                          ; LT24InitReset                 ; work         ;
-;    |NONO_GFX:gfx|                            ; 398 (23)            ; 226 (4)                   ; 0                 ; 4          ; 0    ; 0            ; |DE10_Standard_nonogramaneitor|NONO_GFX:gfx                                                     ; NONO_GFX                      ; work         ;
-;       |NONO_GRAPHICS_grid:nono_gfx_grid|     ; 70 (70)             ; 43 (43)                   ; 0                 ; 2          ; 0    ; 0            ; |DE10_Standard_nonogramaneitor|NONO_GFX:gfx|NONO_GRAPHICS_grid:nono_gfx_grid                    ; NONO_GRAPHICS_grid            ; work         ;
-;       |nono_graphics_cursor:nono_gfx_cursor| ; 305 (62)            ; 179 (50)                  ; 0                 ; 2          ; 0    ; 0            ; |DE10_Standard_nonogramaneitor|NONO_GFX:gfx|nono_graphics_cursor:nono_gfx_cursor                ; nono_graphics_cursor          ; work         ;
-;          |SUBMOD_RAM:RAM|                    ; 243 (243)           ; 129 (129)                 ; 0                 ; 0          ; 0    ; 0            ; |DE10_Standard_nonogramaneitor|NONO_GFX:gfx|nono_graphics_cursor:nono_gfx_cursor|SUBMOD_RAM:RAM ; SUBMOD_RAM                    ; work         ;
-;    |lcd_ctrl_ent:ctrl|                       ; 52 (52)             ; 69 (69)                   ; 0                 ; 0          ; 0    ; 0            ; |DE10_Standard_nonogramaneitor|lcd_ctrl_ent:ctrl                                                ; lcd_ctrl_ent                  ; work         ;
-+----------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------------------------------------------------------------+-------------------------------+--------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                              ;
++----------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------------------------------------------------------------------+-------------------------------+--------------+
+; Compilation Hierarchy Node                   ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                       ; Entity Name                   ; Library Name ;
++----------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------------------------------------------------------------------+-------------------------------+--------------+
+; |DE10_Standard_nonogramaneitor               ; 1098 (1)            ; 734 (0)                   ; 0                 ; 2          ; 38   ; 0            ; |DE10_Standard_nonogramaneitor                                                                            ; DE10_Standard_nonogramaneitor ; work         ;
+;    |LCD_DRAWING:drawing|                     ; 196 (196)           ; 114 (114)                 ; 0                 ; 0          ; 0    ; 0            ; |DE10_Standard_nonogramaneitor|LCD_DRAWING:drawing                                                        ; LCD_DRAWING                   ; work         ;
+;    |LT24Setup:setup|                         ; 179 (43)            ; 135 (19)                  ; 0                 ; 0          ; 0    ; 0            ; |DE10_Standard_nonogramaneitor|LT24Setup:setup                                                            ; LT24Setup                     ; work         ;
+;       |LT24InitLCD:DUT_InitLCD|              ; 32 (24)             ; 31 (24)                   ; 0                 ; 0          ; 0    ; 0            ; |DE10_Standard_nonogramaneitor|LT24Setup:setup|LT24InitLCD:DUT_InitLCD                                    ; LT24InitLCD                   ; work         ;
+;          |romsinc:DUT_ROM|                   ; 8 (8)               ; 7 (7)                     ; 0                 ; 0          ; 0    ; 0            ; |DE10_Standard_nonogramaneitor|LT24Setup:setup|LT24InitLCD:DUT_InitLCD|romsinc:DUT_ROM                    ; romsinc                       ; work         ;
+;       |LT24InitReset:DUT_RESET|              ; 104 (104)           ; 85 (85)                   ; 0                 ; 0          ; 0    ; 0            ; |DE10_Standard_nonogramaneitor|LT24Setup:setup|LT24InitReset:DUT_RESET                                    ; LT24InitReset                 ; work         ;
+;    |cmd_process:process_cmd|                 ; 34 (34)             ; 27 (27)                   ; 0                 ; 0          ; 0    ; 0            ; |DE10_Standard_nonogramaneitor|cmd_process:process_cmd                                                    ; cmd_process                   ; work         ;
+;    |lcd_ctrl_ent:ctrl|                       ; 60 (60)             ; 69 (69)                   ; 0                 ; 0          ; 0    ; 0            ; |DE10_Standard_nonogramaneitor|lcd_ctrl_ent:ctrl                                                          ; lcd_ctrl_ent                  ; work         ;
+;    |mod_uart:uart|                           ; 35 (35)             ; 26 (26)                   ; 0                 ; 0          ; 0    ; 0            ; |DE10_Standard_nonogramaneitor|mod_uart:uart                                                              ; mod_uart                      ; work         ;
+;    |nono_cursor:cursor|                      ; 22 (22)             ; 18 (18)                   ; 0                 ; 0          ; 0    ; 0            ; |DE10_Standard_nonogramaneitor|nono_cursor:cursor                                                         ; nono_cursor                   ; work         ;
+;    |nono_graphics:graphics|                  ; 571 (274)           ; 345 (164)                 ; 0                 ; 2          ; 0    ; 0            ; |DE10_Standard_nonogramaneitor|nono_graphics:graphics                                                     ; nono_graphics                 ; work         ;
+;       |nono_graphics_cursor:graphics_cursor| ; 297 (62)            ; 181 (52)                  ; 0                 ; 2          ; 0    ; 0            ; |DE10_Standard_nonogramaneitor|nono_graphics:graphics|nono_graphics_cursor:graphics_cursor                ; nono_graphics_cursor          ; work         ;
+;          |SUBMOD_RAM:RAM|                    ; 235 (235)           ; 129 (129)                 ; 0                 ; 0          ; 0    ; 0            ; |DE10_Standard_nonogramaneitor|nono_graphics:graphics|nono_graphics_cursor:graphics_cursor|SUBMOD_RAM:RAM ; SUBMOD_RAM                    ; work         ;
++----------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------------------------------------------------------------------+-------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
@@ -265,35 +268,11 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +---------------------------------+-------------+
 ; Statistic                       ; Number Used ;
 +---------------------------------+-------------+
-; Independent 9x9                 ; 4           ;
-; Total number of DSP blocks      ; 4           ;
+; Independent 9x9                 ; 2           ;
+; Total number of DSP blocks      ; 2           ;
 ;                                 ;             ;
-; Fixed Point Unsigned Multiplier ; 4           ;
+; Fixed Point Unsigned Multiplier ; 2           ;
 +---------------------------------+-------------+
-
-
-Encoding Type:  One-Hot
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; State Machine - |DE10_Standard_nonogramaneitor|lcd_ctrl_ent:ctrl|epres                                                                                                              ;
-+-----------+-----------+-----------+-----------+-----------+-----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+
-; Name      ; epres.E14 ; epres.E13 ; epres.E12 ; epres.E11 ; epres.E10 ; epres.E9 ; epres.E8 ; epres.E7 ; epres.E6 ; epres.E5 ; epres.E4 ; epres.E3 ; epres.E2 ; epres.E1 ; epres.E0 ;
-+-----------+-----------+-----------+-----------+-----------+-----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+
-; epres.E0  ; 0         ; 0         ; 0         ; 0         ; 0         ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ;
-; epres.E1  ; 0         ; 0         ; 0         ; 0         ; 0         ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 1        ; 1        ;
-; epres.E2  ; 0         ; 0         ; 0         ; 0         ; 0         ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 1        ; 0        ; 1        ;
-; epres.E3  ; 0         ; 0         ; 0         ; 0         ; 0         ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 1        ; 0        ; 0        ; 1        ;
-; epres.E4  ; 0         ; 0         ; 0         ; 0         ; 0         ; 0        ; 0        ; 0        ; 0        ; 0        ; 1        ; 0        ; 0        ; 0        ; 1        ;
-; epres.E5  ; 0         ; 0         ; 0         ; 0         ; 0         ; 0        ; 0        ; 0        ; 0        ; 1        ; 0        ; 0        ; 0        ; 0        ; 1        ;
-; epres.E6  ; 0         ; 0         ; 0         ; 0         ; 0         ; 0        ; 0        ; 0        ; 1        ; 0        ; 0        ; 0        ; 0        ; 0        ; 1        ;
-; epres.E7  ; 0         ; 0         ; 0         ; 0         ; 0         ; 0        ; 0        ; 1        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 1        ;
-; epres.E8  ; 0         ; 0         ; 0         ; 0         ; 0         ; 0        ; 1        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 1        ;
-; epres.E9  ; 0         ; 0         ; 0         ; 0         ; 0         ; 1        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 1        ;
-; epres.E10 ; 0         ; 0         ; 0         ; 0         ; 1         ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 1        ;
-; epres.E11 ; 0         ; 0         ; 0         ; 1         ; 0         ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 1        ;
-; epres.E12 ; 0         ; 0         ; 1         ; 0         ; 0         ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 1        ;
-; epres.E13 ; 0         ; 1         ; 0         ; 0         ; 0         ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 1        ;
-; epres.E14 ; 1         ; 0         ; 0         ; 0         ; 0         ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 1        ;
-+-----------+-----------+-----------+-----------+-----------+-----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+
 
 
 Encoding Type:  One-Hot
@@ -342,78 +321,129 @@ Encoding Type:  One-Hot
 
 
 Encoding Type:  One-Hot
-+--------------------------------------------------------------------------------------------------------------------------------------------------------+
-; State Machine - |DE10_Standard_nonogramaneitor|LCD_DRAWING:draw|epres                                                                                  ;
-+-------------------+-------------------+-------------------+-------------------+-------------------+------------------+----------------+----------------+
-; Name              ; epres.E_FIGCOLOUR ; epres.E_FIGCURSOR ; epres.E_DELCOLOUR ; epres.E_DELCURSOR ; epres.E_LINE_PIX ; epres.E_W8_CMD ; epres.E_CL_FIG ;
-+-------------------+-------------------+-------------------+-------------------+-------------------+------------------+----------------+----------------+
-; epres.E_CL_FIG    ; 0                 ; 0                 ; 0                 ; 0                 ; 0                ; 0              ; 0              ;
-; epres.E_W8_CMD    ; 0                 ; 0                 ; 0                 ; 0                 ; 0                ; 1              ; 1              ;
-; epres.E_LINE_PIX  ; 0                 ; 0                 ; 0                 ; 0                 ; 1                ; 0              ; 1              ;
-; epres.E_DELCURSOR ; 0                 ; 0                 ; 0                 ; 1                 ; 0                ; 0              ; 1              ;
-; epres.E_DELCOLOUR ; 0                 ; 0                 ; 1                 ; 0                 ; 0                ; 0              ; 1              ;
-; epres.E_FIGCURSOR ; 0                 ; 1                 ; 0                 ; 0                 ; 0                ; 0              ; 1              ;
-; epres.E_FIGCOLOUR ; 1                 ; 0                 ; 0                 ; 0                 ; 0                ; 0              ; 1              ;
-+-------------------+-------------------+-------------------+-------------------+-------------------+------------------+----------------+----------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |DE10_Standard_nonogramaneitor|nono_graphics:graphics|epres                                                                                   ;
++-------------------+-------------------+-----------------+----------------+----------------+----------------+----------------+----------------+----------------+
+; Name              ; epres.E_W8_CURSOR ; epres.E_DIB_FIG ; epres.E_LD_POS ; epres.E_CL_FIG ; epres.E_W8_DEL ; epres.E_LD_SOL ; epres.E_W8_CMD ; epres.E_W8_INI ;
++-------------------+-------------------+-----------------+----------------+----------------+----------------+----------------+----------------+----------------+
+; epres.E_W8_INI    ; 0                 ; 0               ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ;
+; epres.E_W8_CMD    ; 0                 ; 0               ; 0              ; 0              ; 0              ; 0              ; 1              ; 1              ;
+; epres.E_LD_SOL    ; 0                 ; 0               ; 0              ; 0              ; 0              ; 1              ; 0              ; 1              ;
+; epres.E_W8_DEL    ; 0                 ; 0               ; 0              ; 0              ; 1              ; 0              ; 0              ; 1              ;
+; epres.E_CL_FIG    ; 0                 ; 0               ; 0              ; 1              ; 0              ; 0              ; 0              ; 1              ;
+; epres.E_LD_POS    ; 0                 ; 0               ; 1              ; 0              ; 0              ; 0              ; 0              ; 1              ;
+; epres.E_DIB_FIG   ; 0                 ; 1               ; 0              ; 0              ; 0              ; 0              ; 0              ; 1              ;
+; epres.E_W8_CURSOR ; 1                 ; 0               ; 0              ; 0              ; 0              ; 0              ; 0              ; 1              ;
++-------------------+-------------------+-----------------+----------------+----------------+----------------+----------------+----------------+----------------+
 
 
 Encoding Type:  One-Hot
-+-------------------------------------------------------------------------------------------------------------------+
-; State Machine - |DE10_Standard_nonogramaneitor|NONO_GFX:gfx|epres                                                 ;
-+--------------------------+---------------+--------------------------+-----------------------+---------------------+
-; Name                     ; epres.E_SLAVE ; epres.E_SLAVE_MODE_START ; epres.E_GRID_BUILDING ; epres.E_W8_INI_NONO ;
-+--------------------------+---------------+--------------------------+-----------------------+---------------------+
-; epres.E_W8_INI_NONO      ; 0             ; 0                        ; 0                     ; 0                   ;
-; epres.E_GRID_BUILDING    ; 0             ; 0                        ; 1                     ; 1                   ;
-; epres.E_SLAVE_MODE_START ; 0             ; 1                        ; 0                     ; 1                   ;
-; epres.E_SLAVE            ; 1             ; 0                        ; 0                     ; 1                   ;
-+--------------------------+---------------+--------------------------+-----------------------+---------------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |DE10_Standard_nonogramaneitor|nono_graphics:graphics|nono_graphics_cursor:graphics_cursor|epres                                                                                                                                                                                 ;
++------------------------+-------------+------------------------+-----------------+-------------------+------------------+---------------------+-----------------+----------------+---------------------+------------------+--------------+--------------+---------------------+-------------------+
+; Name                   ; epres.E_WIN ; epres.E_INCR_SAMECOUNT ; epres.E_W8_RAMS ; epres.E_CHECK_WIN ; epres.E_DRAWTRIA ; epres.E_TRADUCCION2 ; epres.E_ESPERA2 ; epres.E_ESPERA ; epres.E_DONE_UPDATE ; epres.E_DRAWCUAD ; epres.E_FLIP ; epres.E_READ ; epres.E_TRADUCCION1 ; epres.E_W8_CURSOR ;
++------------------------+-------------+------------------------+-----------------+-------------------+------------------+---------------------+-----------------+----------------+---------------------+------------------+--------------+--------------+---------------------+-------------------+
+; epres.E_W8_CURSOR      ; 0           ; 0                      ; 0               ; 0                 ; 0                ; 0                   ; 0               ; 0              ; 0                   ; 0                ; 0            ; 0            ; 0                   ; 0                 ;
+; epres.E_TRADUCCION1    ; 0           ; 0                      ; 0               ; 0                 ; 0                ; 0                   ; 0               ; 0              ; 0                   ; 0                ; 0            ; 0            ; 1                   ; 1                 ;
+; epres.E_READ           ; 0           ; 0                      ; 0               ; 0                 ; 0                ; 0                   ; 0               ; 0              ; 0                   ; 0                ; 0            ; 1            ; 0                   ; 1                 ;
+; epres.E_FLIP           ; 0           ; 0                      ; 0               ; 0                 ; 0                ; 0                   ; 0               ; 0              ; 0                   ; 0                ; 1            ; 0            ; 0                   ; 1                 ;
+; epres.E_DRAWCUAD       ; 0           ; 0                      ; 0               ; 0                 ; 0                ; 0                   ; 0               ; 0              ; 0                   ; 1                ; 0            ; 0            ; 0                   ; 1                 ;
+; epres.E_DONE_UPDATE    ; 0           ; 0                      ; 0               ; 0                 ; 0                ; 0                   ; 0               ; 0              ; 1                   ; 0                ; 0            ; 0            ; 0                   ; 1                 ;
+; epres.E_ESPERA         ; 0           ; 0                      ; 0               ; 0                 ; 0                ; 0                   ; 0               ; 1              ; 0                   ; 0                ; 0            ; 0            ; 0                   ; 1                 ;
+; epres.E_ESPERA2        ; 0           ; 0                      ; 0               ; 0                 ; 0                ; 0                   ; 1               ; 0              ; 0                   ; 0                ; 0            ; 0            ; 0                   ; 1                 ;
+; epres.E_TRADUCCION2    ; 0           ; 0                      ; 0               ; 0                 ; 0                ; 1                   ; 0               ; 0              ; 0                   ; 0                ; 0            ; 0            ; 0                   ; 1                 ;
+; epres.E_DRAWTRIA       ; 0           ; 0                      ; 0               ; 0                 ; 1                ; 0                   ; 0               ; 0              ; 0                   ; 0                ; 0            ; 0            ; 0                   ; 1                 ;
+; epres.E_CHECK_WIN      ; 0           ; 0                      ; 0               ; 1                 ; 0                ; 0                   ; 0               ; 0              ; 0                   ; 0                ; 0            ; 0            ; 0                   ; 1                 ;
+; epres.E_W8_RAMS        ; 0           ; 0                      ; 1               ; 0                 ; 0                ; 0                   ; 0               ; 0              ; 0                   ; 0                ; 0            ; 0            ; 0                   ; 1                 ;
+; epres.E_INCR_SAMECOUNT ; 0           ; 1                      ; 0               ; 0                 ; 0                ; 0                   ; 0               ; 0              ; 0                   ; 0                ; 0            ; 0            ; 0                   ; 1                 ;
+; epres.E_WIN            ; 1           ; 0                      ; 0               ; 0                 ; 0                ; 0                   ; 0               ; 0              ; 0                   ; 0                ; 0            ; 0            ; 0                   ; 1                 ;
++------------------------+-------------+------------------------+-----------------+-------------------+------------------+---------------------+-----------------+----------------+---------------------+------------------+--------------+--------------+---------------------+-------------------+
 
 
 Encoding Type:  One-Hot
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; State Machine - |DE10_Standard_nonogramaneitor|NONO_GFX:gfx|nono_graphics_cursor:nono_gfx_cursor|epres                                                                                                                                                   ;
-+------------------------+-------------+------------------------+-----------------+-------------------+------------------+---------------------+----------------+------------------+--------------+--------------+---------------------+-------------------+
-; Name                   ; epres.E_WIN ; epres.E_INCR_SAMECOUNT ; epres.E_W8_RAMS ; epres.E_CHECK_WIN ; epres.E_DRAWTRIA ; epres.E_TRADUCCION2 ; epres.E_ESPERA ; epres.E_DRAWCUAD ; epres.E_FLIP ; epres.E_READ ; epres.E_TRADUCCION1 ; epres.E_W8_CURSOR ;
-+------------------------+-------------+------------------------+-----------------+-------------------+------------------+---------------------+----------------+------------------+--------------+--------------+---------------------+-------------------+
-; epres.E_W8_CURSOR      ; 0           ; 0                      ; 0               ; 0                 ; 0                ; 0                   ; 0              ; 0                ; 0            ; 0            ; 0                   ; 0                 ;
-; epres.E_TRADUCCION1    ; 0           ; 0                      ; 0               ; 0                 ; 0                ; 0                   ; 0              ; 0                ; 0            ; 0            ; 1                   ; 1                 ;
-; epres.E_READ           ; 0           ; 0                      ; 0               ; 0                 ; 0                ; 0                   ; 0              ; 0                ; 0            ; 1            ; 0                   ; 1                 ;
-; epres.E_FLIP           ; 0           ; 0                      ; 0               ; 0                 ; 0                ; 0                   ; 0              ; 0                ; 1            ; 0            ; 0                   ; 1                 ;
-; epres.E_DRAWCUAD       ; 0           ; 0                      ; 0               ; 0                 ; 0                ; 0                   ; 0              ; 1                ; 0            ; 0            ; 0                   ; 1                 ;
-; epres.E_ESPERA         ; 0           ; 0                      ; 0               ; 0                 ; 0                ; 0                   ; 1              ; 0                ; 0            ; 0            ; 0                   ; 1                 ;
-; epres.E_TRADUCCION2    ; 0           ; 0                      ; 0               ; 0                 ; 0                ; 1                   ; 0              ; 0                ; 0            ; 0            ; 0                   ; 1                 ;
-; epres.E_DRAWTRIA       ; 0           ; 0                      ; 0               ; 0                 ; 1                ; 0                   ; 0              ; 0                ; 0            ; 0            ; 0                   ; 1                 ;
-; epres.E_CHECK_WIN      ; 0           ; 0                      ; 0               ; 1                 ; 0                ; 0                   ; 0              ; 0                ; 0            ; 0            ; 0                   ; 1                 ;
-; epres.E_W8_RAMS        ; 0           ; 0                      ; 1               ; 0                 ; 0                ; 0                   ; 0              ; 0                ; 0            ; 0            ; 0                   ; 1                 ;
-; epres.E_INCR_SAMECOUNT ; 0           ; 1                      ; 0               ; 0                 ; 0                ; 0                   ; 0              ; 0                ; 0            ; 0            ; 0                   ; 1                 ;
-; epres.E_WIN            ; 1           ; 0                      ; 0               ; 0                 ; 0                ; 0                   ; 0              ; 0                ; 0            ; 0            ; 0                   ; 1                 ;
-+------------------------+-------------+------------------------+-----------------+-------------------+------------------+---------------------+----------------+------------------+--------------+--------------+---------------------+-------------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |DE10_Standard_nonogramaneitor|nono_cursor:cursor|epres                                                                                    ;
++-----------------------+--------------+----------------+-----------------------+---------------------+--------------------+----------------+----------------+
+; Name                  ; epres.E_DONE ; epres.E_TOGGLE ; epres.E_REDRAW_CURSOR ; epres.E_REDRAW_CELL ; epres.E_CMD_DECODE ; epres.E_W8_CMD ; epres.E_W8_INI ;
++-----------------------+--------------+----------------+-----------------------+---------------------+--------------------+----------------+----------------+
+; epres.E_W8_INI        ; 0            ; 0              ; 0                     ; 0                   ; 0                  ; 0              ; 0              ;
+; epres.E_W8_CMD        ; 0            ; 0              ; 0                     ; 0                   ; 0                  ; 1              ; 1              ;
+; epres.E_CMD_DECODE    ; 0            ; 0              ; 0                     ; 0                   ; 1                  ; 0              ; 1              ;
+; epres.E_REDRAW_CELL   ; 0            ; 0              ; 0                     ; 1                   ; 0                  ; 0              ; 1              ;
+; epres.E_REDRAW_CURSOR ; 0            ; 0              ; 1                     ; 0                   ; 0                  ; 0              ; 1              ;
+; epres.E_TOGGLE        ; 0            ; 1              ; 0                     ; 0                   ; 0                  ; 0              ; 1              ;
+; epres.E_DONE          ; 1            ; 0              ; 0                     ; 0                   ; 0                  ; 0              ; 1              ;
++-----------------------+--------------+----------------+-----------------------+---------------------+--------------------+----------------+----------------+
 
 
 Encoding Type:  One-Hot
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; State Machine - |DE10_Standard_nonogramaneitor|NONO_GFX:gfx|NONO_GRAPHICS_grid:nono_gfx_grid|epres                                                                                                                                                                                                                     ;
-+---------------------+-------------------+------------------+-----------------+----------------+----------------+----------------+----------------+----------------+----------------+------------------+------------------+------------------+---------------------+-------------------+----------------+---------------+
-; Name                ; epres.E_DONE_GRID ; epres.E_DRAWTRIA ; epres.E_00_TRIA ; epres.E_INCR_Y ; epres.E_DRAWLH ; epres.E_LINEAH ; epres.E_INCR_X ; epres.E_DRAWLV ; epres.E_LINEAV ; epres.E_INCR_COL ; epres.E_INCR_ROW ; epres.E_DRAWCUAD ; epres.E_TRADUCCION1 ; epres.E_BEGIN_ROW ; epres.E_W8_DEL ; epres.E_W8_OP ;
-+---------------------+-------------------+------------------+-----------------+----------------+----------------+----------------+----------------+----------------+----------------+------------------+------------------+------------------+---------------------+-------------------+----------------+---------------+
-; epres.E_W8_OP       ; 0                 ; 0                ; 0               ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0                ; 0                ; 0                ; 0                   ; 0                 ; 0              ; 0             ;
-; epres.E_W8_DEL      ; 0                 ; 0                ; 0               ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0                ; 0                ; 0                ; 0                   ; 0                 ; 1              ; 1             ;
-; epres.E_BEGIN_ROW   ; 0                 ; 0                ; 0               ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0                ; 0                ; 0                ; 0                   ; 1                 ; 0              ; 1             ;
-; epres.E_TRADUCCION1 ; 0                 ; 0                ; 0               ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0                ; 0                ; 0                ; 1                   ; 0                 ; 0              ; 1             ;
-; epres.E_DRAWCUAD    ; 0                 ; 0                ; 0               ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0                ; 0                ; 1                ; 0                   ; 0                 ; 0              ; 1             ;
-; epres.E_INCR_ROW    ; 0                 ; 0                ; 0               ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0                ; 1                ; 0                ; 0                   ; 0                 ; 0              ; 1             ;
-; epres.E_INCR_COL    ; 0                 ; 0                ; 0               ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 1                ; 0                ; 0                ; 0                   ; 0                 ; 0              ; 1             ;
-; epres.E_LINEAV      ; 0                 ; 0                ; 0               ; 0              ; 0              ; 0              ; 0              ; 0              ; 1              ; 0                ; 0                ; 0                ; 0                   ; 0                 ; 0              ; 1             ;
-; epres.E_DRAWLV      ; 0                 ; 0                ; 0               ; 0              ; 0              ; 0              ; 0              ; 1              ; 0              ; 0                ; 0                ; 0                ; 0                   ; 0                 ; 0              ; 1             ;
-; epres.E_INCR_X      ; 0                 ; 0                ; 0               ; 0              ; 0              ; 0              ; 1              ; 0              ; 0              ; 0                ; 0                ; 0                ; 0                   ; 0                 ; 0              ; 1             ;
-; epres.E_LINEAH      ; 0                 ; 0                ; 0               ; 0              ; 0              ; 1              ; 0              ; 0              ; 0              ; 0                ; 0                ; 0                ; 0                   ; 0                 ; 0              ; 1             ;
-; epres.E_DRAWLH      ; 0                 ; 0                ; 0               ; 0              ; 1              ; 0              ; 0              ; 0              ; 0              ; 0                ; 0                ; 0                ; 0                   ; 0                 ; 0              ; 1             ;
-; epres.E_INCR_Y      ; 0                 ; 0                ; 0               ; 1              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0                ; 0                ; 0                ; 0                   ; 0                 ; 0              ; 1             ;
-; epres.E_00_TRIA     ; 0                 ; 0                ; 1               ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0                ; 0                ; 0                ; 0                   ; 0                 ; 0              ; 1             ;
-; epres.E_DRAWTRIA    ; 0                 ; 1                ; 0               ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0                ; 0                ; 0                ; 0                   ; 0                 ; 0              ; 1             ;
-; epres.E_DONE_GRID   ; 1                 ; 0                ; 0               ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0                ; 0                ; 0                ; 0                   ; 0                 ; 0              ; 1             ;
-+---------------------+-------------------+------------------+-----------------+----------------+----------------+----------------+----------------+----------------+----------------+------------------+------------------+------------------+---------------------+-------------------+----------------+---------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |DE10_Standard_nonogramaneitor|LCD_DRAWING:drawing|epres                                                                                                  ;
++-------------------+------------------+-------------------+-------------------+-------------------+-------------------+------------------+----------------+----------------+
+; Name              ; epres.E_DONE_FIG ; epres.E_FIGCOLOUR ; epres.E_FIGCURSOR ; epres.E_DELCOLOUR ; epres.E_DELCURSOR ; epres.E_LINE_PIX ; epres.E_W8_CMD ; epres.E_CL_FIG ;
++-------------------+------------------+-------------------+-------------------+-------------------+-------------------+------------------+----------------+----------------+
+; epres.E_CL_FIG    ; 0                ; 0                 ; 0                 ; 0                 ; 0                 ; 0                ; 0              ; 0              ;
+; epres.E_W8_CMD    ; 0                ; 0                 ; 0                 ; 0                 ; 0                 ; 0                ; 1              ; 1              ;
+; epres.E_LINE_PIX  ; 0                ; 0                 ; 0                 ; 0                 ; 0                 ; 1                ; 0              ; 1              ;
+; epres.E_DELCURSOR ; 0                ; 0                 ; 0                 ; 0                 ; 1                 ; 0                ; 0              ; 1              ;
+; epres.E_DELCOLOUR ; 0                ; 0                 ; 0                 ; 1                 ; 0                 ; 0                ; 0              ; 1              ;
+; epres.E_FIGCURSOR ; 0                ; 0                 ; 1                 ; 0                 ; 0                 ; 0                ; 0              ; 1              ;
+; epres.E_FIGCOLOUR ; 0                ; 1                 ; 0                 ; 0                 ; 0                 ; 0                ; 0              ; 1              ;
+; epres.E_DONE_FIG  ; 1                ; 0                 ; 0                 ; 0                 ; 0                 ; 0                ; 0              ; 1              ;
++-------------------+------------------+-------------------+-------------------+-------------------+-------------------+------------------+----------------+----------------+
+
+
+Encoding Type:  One-Hot
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |DE10_Standard_nonogramaneitor|cmd_process:process_cmd|epres                                                                                                  ;
++------------------------+------------------------+-------------------+-----------------------+------------------+--------------------+--------------------+--------------------+
+; Name                   ; epres.E_HANDSHAKE_NONO ; epres.E_MODE_NONO ; epres.E_HANDSHAKE_SOL ; epres.E_MODE_INI ; epres.E_NOTIFY_INI ; epres.E_CHECK_CODE ; epres.E_W8_UART_GO ;
++------------------------+------------------------+-------------------+-----------------------+------------------+--------------------+--------------------+--------------------+
+; epres.E_W8_UART_GO     ; 0                      ; 0                 ; 0                     ; 0                ; 0                  ; 0                  ; 0                  ;
+; epres.E_CHECK_CODE     ; 0                      ; 0                 ; 0                     ; 0                ; 0                  ; 1                  ; 1                  ;
+; epres.E_NOTIFY_INI     ; 0                      ; 0                 ; 0                     ; 0                ; 1                  ; 0                  ; 1                  ;
+; epres.E_MODE_INI       ; 0                      ; 0                 ; 0                     ; 1                ; 0                  ; 0                  ; 1                  ;
+; epres.E_HANDSHAKE_SOL  ; 0                      ; 0                 ; 1                     ; 0                ; 0                  ; 0                  ; 1                  ;
+; epres.E_MODE_NONO      ; 0                      ; 1                 ; 0                     ; 0                ; 0                  ; 0                  ; 1                  ;
+; epres.E_HANDSHAKE_NONO ; 1                      ; 0                 ; 0                     ; 0                ; 0                  ; 0                  ; 1                  ;
++------------------------+------------------------+-------------------+-----------------------+------------------+--------------------+--------------------+--------------------+
+
+
+Encoding Type:  One-Hot
++----------------------------------------------------------------------------------+
+; State Machine - |DE10_Standard_nonogramaneitor|mod_uart:uart|epres               ;
++-----------------+-----------------+--------------+---------------+---------------+
+; Name            ; epres.E_W8_TICK ; epres.E_LOOP ; epres.E_MITAD ; epres.E_W8_RX ;
++-----------------+-----------------+--------------+---------------+---------------+
+; epres.E_W8_RX   ; 0               ; 0            ; 0             ; 0             ;
+; epres.E_MITAD   ; 0               ; 0            ; 1             ; 1             ;
+; epres.E_LOOP    ; 0               ; 1            ; 0             ; 1             ;
+; epres.E_W8_TICK ; 1               ; 0            ; 0             ; 1             ;
++-----------------+-----------------+--------------+---------------+---------------+
+
+
+Encoding Type:  One-Hot
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |DE10_Standard_nonogramaneitor|lcd_ctrl_ent:ctrl|epres                                                                                                              ;
++-----------+-----------+-----------+-----------+-----------+-----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+
+; Name      ; epres.E14 ; epres.E13 ; epres.E12 ; epres.E11 ; epres.E10 ; epres.E9 ; epres.E8 ; epres.E7 ; epres.E6 ; epres.E5 ; epres.E4 ; epres.E3 ; epres.E2 ; epres.E1 ; epres.E0 ;
++-----------+-----------+-----------+-----------+-----------+-----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+
+; epres.E0  ; 0         ; 0         ; 0         ; 0         ; 0         ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ;
+; epres.E1  ; 0         ; 0         ; 0         ; 0         ; 0         ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 1        ; 1        ;
+; epres.E2  ; 0         ; 0         ; 0         ; 0         ; 0         ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 1        ; 0        ; 1        ;
+; epres.E3  ; 0         ; 0         ; 0         ; 0         ; 0         ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 1        ; 0        ; 0        ; 1        ;
+; epres.E4  ; 0         ; 0         ; 0         ; 0         ; 0         ; 0        ; 0        ; 0        ; 0        ; 0        ; 1        ; 0        ; 0        ; 0        ; 1        ;
+; epres.E5  ; 0         ; 0         ; 0         ; 0         ; 0         ; 0        ; 0        ; 0        ; 0        ; 1        ; 0        ; 0        ; 0        ; 0        ; 1        ;
+; epres.E6  ; 0         ; 0         ; 0         ; 0         ; 0         ; 0        ; 0        ; 0        ; 1        ; 0        ; 0        ; 0        ; 0        ; 0        ; 1        ;
+; epres.E7  ; 0         ; 0         ; 0         ; 0         ; 0         ; 0        ; 0        ; 1        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 1        ;
+; epres.E8  ; 0         ; 0         ; 0         ; 0         ; 0         ; 0        ; 1        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 1        ;
+; epres.E9  ; 0         ; 0         ; 0         ; 0         ; 0         ; 1        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 1        ;
+; epres.E10 ; 0         ; 0         ; 0         ; 0         ; 1         ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 1        ;
+; epres.E11 ; 0         ; 0         ; 0         ; 1         ; 0         ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 1        ;
+; epres.E12 ; 0         ; 0         ; 1         ; 0         ; 0         ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 1        ;
+; epres.E13 ; 0         ; 1         ; 0         ; 0         ; 0         ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 1        ;
+; epres.E14 ; 1         ; 0         ; 0         ; 0         ; 0         ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 1        ;
++-----------+-----------+-----------+-----------+-----------+-----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+
 
 
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -434,28 +464,15 @@ Encoding Type:  One-Hot
 +---------------------------------------------------+------------------------------------------------------------------+--------------------------------------------+
 
 
-+--------------------------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                                     ;
-+---------------------------------------------------------------+----------------------------------------+
-; Register name                                                 ; Reason for Removal                     ;
-+---------------------------------------------------------------+----------------------------------------+
-; LT24Setup:setup|LT24_RD_N                                     ; Stuck at VCC due to stuck port data_in ;
-; NONO_GFX:gfx|SUBMOD_RAM:ram|data[0..127]                      ; Stuck at GND due to stuck port data_in ;
-; NONO_GFX:gfx|SUBMOD_RAM:ram|data_out                          ; Stuck at GND due to stuck port data_in ;
-; NONO_GFX:gfx|epres.E_SLAVE                                    ; Lost fanout                            ;
-; NONO_GFX:gfx|nono_graphics_cursor:nono_gfx_cursor|epres.E_WIN ; Lost fanout                            ;
-; Total Number of Removed Registers = 132                       ;                                        ;
-+---------------------------------------------------------------+----------------------------------------+
-
-
-+----------------------------------------------------------------------------------------------------------+
-; Removed Registers Triggering Further Register Optimizations                                              ;
-+-------------------------------------+---------------------------+----------------------------------------+
-; Register name                       ; Reason for Removal        ; Registers Removed due to This Register ;
-+-------------------------------------+---------------------------+----------------------------------------+
-; NONO_GFX:gfx|SUBMOD_RAM:ram|data[0] ; Stuck at GND              ; NONO_GFX:gfx|SUBMOD_RAM:ram|data_out   ;
-;                                     ; due to stuck port data_in ;                                        ;
-+-------------------------------------+---------------------------+----------------------------------------+
++------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                               ;
++-------------------------------------------------------------------------+----------------------------------------+
+; Register name                                                           ; Reason for Removal                     ;
++-------------------------------------------------------------------------+----------------------------------------+
+; LT24Setup:setup|LT24_RD_N                                               ; Stuck at VCC due to stuck port data_in ;
+; nono_graphics:graphics|nono_graphics_cursor:graphics_cursor|epres.E_WIN ; Lost fanout                            ;
+; Total Number of Removed Registers = 2                                   ;                                        ;
++-------------------------------------------------------------------------+----------------------------------------+
 
 
 +------------------------------------------------------+
@@ -463,12 +480,12 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 543   ;
-; Number of registers using Synchronous Clear  ; 216   ;
-; Number of registers using Synchronous Load   ; 64    ;
-; Number of registers using Asynchronous Clear ; 536   ;
+; Total registers                              ; 734   ;
+; Number of registers using Synchronous Clear  ; 208   ;
+; Number of registers using Synchronous Load   ; 52    ;
+; Number of registers using Asynchronous Clear ; 726   ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 228   ;
+; Number of registers using Clock Enable       ; 262   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -479,47 +496,53 @@ Encoding Type:  One-Hot
 ; Inverted Register                      ; Fan out ;
 +----------------------------------------+---------+
 ; LT24Setup:setup|LT24_RS                ; 1       ;
+; nono_graphics:graphics|CONT_SOL[0]     ; 30      ;
 ; LT24Setup:setup|LT24_WR_N              ; 1       ;
 ; lcd_ctrl_ent:ctrl|LCD_RS               ; 2       ;
-; Total number of inverted registers = 3 ;         ;
+; Total number of inverted registers = 4 ;         ;
 +----------------------------------------+---------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                             ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                   ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------------------------+
-; 3:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DE10_Standard_nonogramaneitor|LT24Setup:setup|LT24InitReset:DUT_RESET|cont_15usec[7]        ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DE10_Standard_nonogramaneitor|LT24Setup:setup|LT24InitReset:DUT_RESET|cont_10usec[2]        ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DE10_Standard_nonogramaneitor|LT24Setup:setup|LT24InitReset:DUT_RESET|cont_5msec[7]         ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DE10_Standard_nonogramaneitor|LCD_DRAWING:draw|XCUAD[7]                                     ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DE10_Standard_nonogramaneitor|LCD_DRAWING:draw|XLINE[3]                                     ;
-; 3:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |DE10_Standard_nonogramaneitor|NONO_GFX:gfx|nono_graphics_cursor:nono_gfx_cursor|cont_dir[5] ;
-; 3:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |DE10_Standard_nonogramaneitor|NONO_GFX:gfx|nono_graphics_cursor:nono_gfx_cursor|same[6]     ;
-; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |DE10_Standard_nonogramaneitor|NONO_GFX:gfx|NONO_GRAPHICS_grid:nono_gfx_grid|true_coordx[1]  ;
-; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |DE10_Standard_nonogramaneitor|NONO_GFX:gfx|NONO_GRAPHICS_grid:nono_gfx_grid|true_coordy[1]  ;
-; 3:1                ; 32 bits   ; 64 LEs        ; 0 LEs                ; 64 LEs                 ; Yes        ; |DE10_Standard_nonogramaneitor|LT24Setup:setup|LT24InitReset:DUT_RESET|NumTicsXmSec[27]      ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DE10_Standard_nonogramaneitor|LT24Setup:setup|LT24InitReset:DUT_RESET|NumTicsXuSec[7]       ;
-; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DE10_Standard_nonogramaneitor|lcd_ctrl_ent:ctrl|numpix_internal[9]                          ;
-; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |DE10_Standard_nonogramaneitor|lcd_ctrl_ent:ctrl|numpix_internal[13]                         ;
-; 4:1                ; 17 bits   ; 34 LEs        ; 34 LEs               ; 0 LEs                  ; Yes        ; |DE10_Standard_nonogramaneitor|lcd_ctrl_ent:ctrl|RXCOL[4]                                    ;
-; 4:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; Yes        ; |DE10_Standard_nonogramaneitor|lcd_ctrl_ent:ctrl|QDAT[0]                                     ;
-; 4:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |DE10_Standard_nonogramaneitor|LCD_DRAWING:draw|TRIA_PIX[16]                                 ;
-; 4:1                ; 14 bits   ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; Yes        ; |DE10_Standard_nonogramaneitor|LCD_DRAWING:draw|LINE_PIX[14]                                 ;
-; 4:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; Yes        ; |DE10_Standard_nonogramaneitor|LCD_DRAWING:draw|LINE_PIX[7]                                  ;
-; 4:1                ; 17 bits   ; 34 LEs        ; 17 LEs               ; 17 LEs                 ; Yes        ; |DE10_Standard_nonogramaneitor|LCD_DRAWING:draw|CUAD_PIX[16]                                 ;
-; 4:1                ; 9 bits    ; 18 LEs        ; 0 LEs                ; 18 LEs                 ; Yes        ; |DE10_Standard_nonogramaneitor|LCD_DRAWING:draw|YLINE[0]                                     ;
-; 4:1                ; 9 bits    ; 18 LEs        ; 0 LEs                ; 18 LEs                 ; Yes        ; |DE10_Standard_nonogramaneitor|LCD_DRAWING:draw|YCUAD[2]                                     ;
-; 4:1                ; 17 bits   ; 34 LEs        ; 0 LEs                ; 34 LEs                 ; Yes        ; |DE10_Standard_nonogramaneitor|LCD_DRAWING:draw|XTRIA[4]                                     ;
-; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; Yes        ; |DE10_Standard_nonogramaneitor|NONO_GFX:gfx|NONO_GRAPHICS_grid:nono_gfx_grid|grid_mode[1]    ;
-; 10:1               ; 8 bits    ; 48 LEs        ; 0 LEs                ; 48 LEs                 ; Yes        ; |DE10_Standard_nonogramaneitor|LT24Setup:setup|LT24_D[10]                                    ;
-; 10:1               ; 7 bits    ; 42 LEs        ; 42 LEs               ; 0 LEs                  ; Yes        ; |DE10_Standard_nonogramaneitor|LT24Setup:setup|LT24_D[7]                                     ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |DE10_Standard_nonogramaneitor|LCD_DRAWING:draw|SEL_FIG[1]                                   ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |DE10_Standard_nonogramaneitor|NONO_GFX:gfx|NONO_GRAPHICS_grid:nono_gfx_grid|esig            ;
-; 5:1                ; 2 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |DE10_Standard_nonogramaneitor|NONO_GFX:gfx|COLOUR_CODE[0]                                   ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |DE10_Standard_nonogramaneitor|LCD_DRAWING:draw|RGB[11]                                      ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                                       ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                             ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------------------------------------------+
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |DE10_Standard_nonogramaneitor|mod_uart:uart|RLOOP[2]                                                  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DE10_Standard_nonogramaneitor|LT24Setup:setup|LT24InitReset:DUT_RESET|cont_15usec[2]                  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DE10_Standard_nonogramaneitor|LT24Setup:setup|LT24InitReset:DUT_RESET|cont_10usec[1]                  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DE10_Standard_nonogramaneitor|LT24Setup:setup|LT24InitReset:DUT_RESET|cont_5msec[4]                   ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |DE10_Standard_nonogramaneitor|nono_graphics:graphics|CONT_SOL[1]                                      ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |DE10_Standard_nonogramaneitor|nono_graphics:graphics|CONT_SOL[3]                                      ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |DE10_Standard_nonogramaneitor|nono_graphics:graphics|CONT_FIG[0]                                      ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |DE10_Standard_nonogramaneitor|nono_graphics:graphics|RXPOS[3]                                         ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |DE10_Standard_nonogramaneitor|nono_graphics:graphics|RYPOS[0]                                         ;
+; 3:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |DE10_Standard_nonogramaneitor|nono_graphics:graphics|nono_graphics_cursor:graphics_cursor|cont_dir[0] ;
+; 3:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |DE10_Standard_nonogramaneitor|nono_graphics:graphics|nono_graphics_cursor:graphics_cursor|same[2]     ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DE10_Standard_nonogramaneitor|LCD_DRAWING:drawing|XCUAD[7]                                            ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DE10_Standard_nonogramaneitor|LCD_DRAWING:drawing|XLINE[7]                                            ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 0 LEs                ; 64 LEs                 ; Yes        ; |DE10_Standard_nonogramaneitor|LT24Setup:setup|LT24InitReset:DUT_RESET|NumTicsXmSec[2]                 ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DE10_Standard_nonogramaneitor|LT24Setup:setup|LT24InitReset:DUT_RESET|NumTicsXuSec[0]                 ;
+; 4:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; Yes        ; |DE10_Standard_nonogramaneitor|lcd_ctrl_ent:ctrl|numpix_internal[8]                                    ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |DE10_Standard_nonogramaneitor|lcd_ctrl_ent:ctrl|numpix_internal[10]                                   ;
+; 4:1                ; 17 bits   ; 34 LEs        ; 34 LEs               ; 0 LEs                  ; Yes        ; |DE10_Standard_nonogramaneitor|lcd_ctrl_ent:ctrl|RYROW[0]                                              ;
+; 4:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |DE10_Standard_nonogramaneitor|LCD_DRAWING:drawing|TRIA_PIX[6]                                         ;
+; 4:1                ; 13 bits   ; 26 LEs        ; 13 LEs               ; 13 LEs                 ; Yes        ; |DE10_Standard_nonogramaneitor|LCD_DRAWING:drawing|LINE_PIX[15]                                        ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |DE10_Standard_nonogramaneitor|LCD_DRAWING:drawing|LINE_PIX[7]                                         ;
+; 4:1                ; 17 bits   ; 34 LEs        ; 17 LEs               ; 17 LEs                 ; Yes        ; |DE10_Standard_nonogramaneitor|LCD_DRAWING:drawing|CUAD_PIX[0]                                         ;
+; 4:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; Yes        ; |DE10_Standard_nonogramaneitor|mod_uart:uart|RCONT[8]                                                  ;
+; 4:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; Yes        ; |DE10_Standard_nonogramaneitor|mod_uart:uart|RCONT[9]                                                  ;
+; 4:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; Yes        ; |DE10_Standard_nonogramaneitor|lcd_ctrl_ent:ctrl|QDAT[2]                                               ;
+; 4:1                ; 9 bits    ; 18 LEs        ; 0 LEs                ; 18 LEs                 ; Yes        ; |DE10_Standard_nonogramaneitor|LCD_DRAWING:drawing|YLINE[7]                                            ;
+; 4:1                ; 9 bits    ; 18 LEs        ; 0 LEs                ; 18 LEs                 ; Yes        ; |DE10_Standard_nonogramaneitor|LCD_DRAWING:drawing|YCUAD[8]                                            ;
+; 4:1                ; 17 bits   ; 34 LEs        ; 0 LEs                ; 34 LEs                 ; Yes        ; |DE10_Standard_nonogramaneitor|LCD_DRAWING:drawing|YTRIA[4]                                            ;
+; 10:1               ; 8 bits    ; 48 LEs        ; 0 LEs                ; 48 LEs                 ; Yes        ; |DE10_Standard_nonogramaneitor|LT24Setup:setup|LT24_D[8]                                               ;
+; 10:1               ; 7 bits    ; 42 LEs        ; 42 LEs               ; 0 LEs                  ; Yes        ; |DE10_Standard_nonogramaneitor|LT24Setup:setup|LT24_D[5]                                               ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |DE10_Standard_nonogramaneitor|LCD_DRAWING:drawing|SEL_FIG[0]                                          ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |DE10_Standard_nonogramaneitor|nono_graphics:graphics|SEL_FIG[0]                                       ;
+; 5:1                ; 17 bits   ; 51 LEs        ; 51 LEs               ; 0 LEs                  ; No         ; |DE10_Standard_nonogramaneitor|nono_graphics:graphics|XCOOR[7]                                         ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |DE10_Standard_nonogramaneitor|LCD_DRAWING:drawing|RGB[11]                                             ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------------------------------------------+
 
 
 +----------------------------------------------------------------+
@@ -566,35 +589,13 @@ Encoding Type:  One-Hot
 +---------------+-------+----------+--------------+
 
 
-+---------------------------------------------------------+
-; Port Connectivity Checks: "NONO_GFX:gfx|SUBMOD_RAM:ram" ;
-+---------+-------+----------+----------------------------+
-; Port    ; Type  ; Severity ; Details                    ;
-+---------+-------+----------+----------------------------+
-; data_in ; Input ; Info     ; Stuck at GND               ;
-; wr      ; Input ; Info     ; Stuck at GND               ;
-+---------+-------+----------+----------------------------+
-
-
-+----------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "NONO_GFX:gfx|nono_graphics_cursor:nono_gfx_cursor|SUBMOD_RAM:RAM" ;
-+---------+-------+----------+-----------------------------------------------------------------+
-; Port    ; Type  ; Severity ; Details                                                         ;
-+---------+-------+----------+-----------------------------------------------------------------+
-; data_in ; Input ; Info     ; Stuck at GND                                                    ;
-+---------+-------+----------+-----------------------------------------------------------------+
-
-
-+-----------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "NONO_GFX:gfx"                                                                              ;
-+-------------+--------+----------+-------------------------------------------------------------------------------------+
-; Port        ; Type   ; Severity ; Details                                                                             ;
-+-------------+--------+----------+-------------------------------------------------------------------------------------+
-; cmd_px_go   ; Input  ; Info     ; Stuck at GND                                                                        ;
-; command     ; Input  ; Info     ; Stuck at GND                                                                        ;
-; done_update ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; done_toggle ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+-------------+--------+----------+-------------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "nono_graphics:graphics|nono_graphics_cursor:graphics_cursor|SUBMOD_RAM:RAM" ;
++---------+-------+----------+---------------------------------------------------------------------------+
+; Port    ; Type  ; Severity ; Details                                                                   ;
++---------+-------+----------+---------------------------------------------------------------------------+
+; data_in ; Input ; Info     ; Stuck at GND                                                              ;
++---------+-------+----------+---------------------------------------------------------------------------+
 
 
 +-----------------------------------------------------+
@@ -602,36 +603,37 @@ Encoding Type:  One-Hot
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 543                         ;
-;     CLR               ; 231                         ;
+; arriav_ff             ; 734                         ;
+;     CLR               ; 386                         ;
 ;     CLR SCLR          ; 76                          ;
-;     CLR SLD           ; 1                           ;
-;     ENA CLR           ; 68                          ;
+;     CLR SLD           ; 2                           ;
+;     ENA CLR           ; 115                         ;
 ;     ENA CLR SCLR      ; 97                          ;
-;     ENA CLR SCLR SLD  ; 43                          ;
-;     ENA CLR SLD       ; 20                          ;
-;     plain             ; 7                           ;
-; arriav_lcell_comb     ; 833                         ;
-;     arith             ; 240                         ;
-;         1 data inputs ; 228                         ;
-;         2 data inputs ; 9                           ;
-;         3 data inputs ; 2                           ;
-;         4 data inputs ; 1                           ;
-;     extend            ; 65                          ;
-;         7 data inputs ; 65                          ;
-;     normal            ; 528                         ;
-;         0 data inputs ; 1                           ;
-;         1 data inputs ; 10                          ;
-;         2 data inputs ; 66                          ;
-;         3 data inputs ; 73                          ;
-;         4 data inputs ; 194                         ;
-;         5 data inputs ; 92                          ;
-;         6 data inputs ; 92                          ;
-; arriav_mac            ; 4                           ;
+;     ENA CLR SCLR SLD  ; 35                          ;
+;     ENA CLR SLD       ; 15                          ;
+;     plain             ; 8                           ;
+; arriav_lcell_comb     ; 1101                        ;
+;     arith             ; 267                         ;
+;         1 data inputs ; 226                         ;
+;         2 data inputs ; 17                          ;
+;         3 data inputs ; 18                          ;
+;         4 data inputs ; 3                           ;
+;         5 data inputs ; 3                           ;
+;     extend            ; 96                          ;
+;         7 data inputs ; 96                          ;
+;     normal            ; 738                         ;
+;         0 data inputs ; 2                           ;
+;         1 data inputs ; 14                          ;
+;         2 data inputs ; 85                          ;
+;         3 data inputs ; 78                          ;
+;         4 data inputs ; 199                         ;
+;         5 data inputs ; 118                         ;
+;         6 data inputs ; 242                         ;
+; arriav_mac            ; 2                           ;
 ; boundary_port         ; 38                          ;
 ;                       ;                             ;
 ; Max LUT depth         ; 7.10                        ;
-; Average LUT depth     ; 3.22                        ;
+; Average LUT depth     ; 3.06                        ;
 +-----------------------+-----------------------------+
 
 
@@ -640,7 +642,7 @@ Encoding Type:  One-Hot
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:02     ;
+; Top            ; 00:00:01     ;
 +----------------+--------------+
 
 
@@ -650,24 +652,30 @@ Encoding Type:  One-Hot
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Wed Feb 14 02:41:08 2024
+    Info: Processing started: Sat Feb 17 00:49:03 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off DE10_Standard_nonogramaneitor -c DE10_Standard_nonogramaneitor
 Info (20030): Parallel compilation is enabled and will use 8 of the 8 processors detected
+Info (12021): Found 2 design units, including 1 entities, in source file /users/wicrux/documents/github/nonograma/ficherosvhdl/nono_cursor.vhd
+    Info (12022): Found design unit 1: nono_cursor-nono_cursor_arch File: C:/Users/wicrux/Documents/GitHub/Nonograma/FicherosVHDL/NONO_CURSOR.vhd Line: 33
+    Info (12023): Found entity 1: nono_cursor File: C:/Users/wicrux/Documents/GitHub/Nonograma/FicherosVHDL/NONO_CURSOR.vhd Line: 10
+Info (12021): Found 2 design units, including 1 entities, in source file /users/wicrux/documents/github/nonograma/ficherosvhdl/nono_graphics.vhd
+    Info (12022): Found design unit 1: nono_graphics-arch_nono_graphics File: C:/Users/wicrux/Documents/GitHub/Nonograma/FicherosVHDL/NONO_GRAPHICS.vhd Line: 25
+    Info (12023): Found entity 1: nono_graphics File: C:/Users/wicrux/Documents/GitHub/Nonograma/FicherosVHDL/NONO_GRAPHICS.vhd Line: 7
+Info (12021): Found 2 design units, including 1 entities, in source file /users/wicrux/documents/github/nonograma/ficherosvhdl/mod_uart.vhd
+    Info (12022): Found design unit 1: mod_uart-mod_uart_arch File: C:/Users/wicrux/Documents/GitHub/Nonograma/FicherosVHDL/MOD_UART.vhd Line: 22
+    Info (12023): Found entity 1: mod_uart File: C:/Users/wicrux/Documents/GitHub/Nonograma/FicherosVHDL/MOD_UART.vhd Line: 7
+Info (12021): Found 2 design units, including 1 entities, in source file /users/wicrux/documents/github/nonograma/ficherosvhdl/cmd_process.vhd
+    Info (12022): Found design unit 1: cmd_process-cmd_process_arch File: C:/Users/wicrux/Documents/GitHub/Nonograma/FicherosVHDL/CMD_PROCESS.vhd Line: 26
+    Info (12023): Found entity 1: cmd_process File: C:/Users/wicrux/Documents/GitHub/Nonograma/FicherosVHDL/CMD_PROCESS.vhd Line: 7
 Info (12021): Found 2 design units, including 1 entities, in source file /users/wicrux/documents/github/nonograma/ficherosvhdl/lcd_ctrl.vhd
     Info (12022): Found design unit 1: lcd_ctrl_ent-lcd_ctrl_arch File: C:/Users/wicrux/Documents/GitHub/Nonograma/FicherosVHDL/LCD_CTRL.vhd Line: 30
     Info (12023): Found entity 1: lcd_ctrl_ent File: C:/Users/wicrux/Documents/GitHub/Nonograma/FicherosVHDL/LCD_CTRL.vhd Line: 10
 Info (12021): Found 2 design units, including 1 entities, in source file /users/wicrux/documents/github/nonograma/ficherosvhdl/submodule_ram.vhd
     Info (12022): Found design unit 1: SUBMOD_RAM-SUBMOD_RAM_arch File: C:/Users/wicrux/Documents/GitHub/Nonograma/FicherosVHDL/SUBMODULE_RAM.vhd Line: 20
     Info (12023): Found entity 1: SUBMOD_RAM File: C:/Users/wicrux/Documents/GitHub/Nonograma/FicherosVHDL/SUBMODULE_RAM.vhd Line: 6
-Info (12021): Found 2 design units, including 1 entities, in source file /users/wicrux/documents/github/nonograma/ficherosvhdl/nono_graphics_grid.vhd
-    Info (12022): Found design unit 1: NONO_GRAPHICS_grid-NONO_GRAPHICS_grid_arch File: C:/Users/wicrux/Documents/GitHub/Nonograma/FicherosVHDL/NONO_GRAPHICS_grid.vhd Line: 35
-    Info (12023): Found entity 1: NONO_GRAPHICS_grid File: C:/Users/wicrux/Documents/GitHub/Nonograma/FicherosVHDL/NONO_GRAPHICS_grid.vhd Line: 10
 Info (12021): Found 2 design units, including 1 entities, in source file /users/wicrux/documents/github/nonograma/ficherosvhdl/nono_graphics_cursor.vhd
     Info (12022): Found design unit 1: nono_graphics_cursor-nono_graphics_cursor_arch File: C:/Users/wicrux/Documents/GitHub/Nonograma/FicherosVHDL/NONO_GRAPHICS_cursor.vhd Line: 31
     Info (12023): Found entity 1: nono_graphics_cursor File: C:/Users/wicrux/Documents/GitHub/Nonograma/FicherosVHDL/NONO_GRAPHICS_cursor.vhd Line: 7
-Info (12021): Found 2 design units, including 1 entities, in source file /users/wicrux/documents/github/nonograma/ficherosvhdl/nono_gfx.vhd
-    Info (12022): Found design unit 1: NONO_GFX-NONO_GFX_arch File: C:/Users/wicrux/Documents/GitHub/Nonograma/FicherosVHDL/NONO_GFX.vhd Line: 32
-    Info (12023): Found entity 1: NONO_GFX File: C:/Users/wicrux/Documents/GitHub/Nonograma/FicherosVHDL/NONO_GFX.vhd Line: 7
 Info (12021): Found 2 design units, including 1 entities, in source file /users/wicrux/documents/github/nonograma/ficherosvhdl/lcd_drawing.2.0.vhd
     Info (12022): Found design unit 1: LCD_DRAWING-arch_LCD_DRAWING File: C:/Users/wicrux/Documents/GitHub/Nonograma/FicherosVHDL/LCD_DRAWING.2.0.vhd Line: 25
     Info (12023): Found entity 1: LCD_DRAWING File: C:/Users/wicrux/Documents/GitHub/Nonograma/FicherosVHDL/LCD_DRAWING.2.0.vhd Line: 5
@@ -690,40 +698,50 @@ Info (12021): Found 2 design units, including 0 entities, in source file /users/
     Info (12022): Found design unit 1: romData_pkg File: C:/Users/wicrux/Documents/GitHub/Nonograma/LT24Setup/Init128rom_pkg.vhd Line: 5
     Info (12022): Found design unit 2: romData_pkg-body File: C:/Users/wicrux/Documents/GitHub/Nonograma/LT24Setup/Init128rom_pkg.vhd Line: 14
 Info (12127): Elaborating entity "DE10_Standard_nonogramaneitor" for the top level hierarchy
-Warning (10036): Verilog HDL or VHDL warning at DE10_Standard_nonogramaneitor.vhd(209): object "done_update_local" assigned a value but never read File: C:/Users/wicrux/Documents/GitHub/Nonograma/Quartus/DE10_Standard_nonogramaneitor.vhd Line: 209
-Warning (10036): Verilog HDL or VHDL warning at DE10_Standard_nonogramaneitor.vhd(209): object "done_toggle_local" assigned a value but never read File: C:/Users/wicrux/Documents/GitHub/Nonograma/Quartus/DE10_Standard_nonogramaneitor.vhd Line: 209
-Info (12128): Elaborating entity "NONO_GFX" for hierarchy "NONO_GFX:gfx" File: C:/Users/wicrux/Documents/GitHub/Nonograma/Quartus/DE10_Standard_nonogramaneitor.vhd Line: 235
-Info (12128): Elaborating entity "NONO_GRAPHICS_grid" for hierarchy "NONO_GFX:gfx|NONO_GRAPHICS_grid:nono_gfx_grid" File: C:/Users/wicrux/Documents/GitHub/Nonograma/FicherosVHDL/NONO_GFX.vhd Line: 186
-Info (12128): Elaborating entity "nono_graphics_cursor" for hierarchy "NONO_GFX:gfx|nono_graphics_cursor:nono_gfx_cursor" File: C:/Users/wicrux/Documents/GitHub/Nonograma/FicherosVHDL/NONO_GFX.vhd Line: 206
-Info (12128): Elaborating entity "SUBMOD_RAM" for hierarchy "NONO_GFX:gfx|nono_graphics_cursor:nono_gfx_cursor|SUBMOD_RAM:RAM" File: C:/Users/wicrux/Documents/GitHub/Nonograma/FicherosVHDL/NONO_GRAPHICS_cursor.vhd Line: 94
-Info (12128): Elaborating entity "LCD_DRAWING" for hierarchy "LCD_DRAWING:draw" File: C:/Users/wicrux/Documents/GitHub/Nonograma/Quartus/DE10_Standard_nonogramaneitor.vhd Line: 261
-Info (12128): Elaborating entity "LT24Setup" for hierarchy "LT24Setup:setup" File: C:/Users/wicrux/Documents/GitHub/Nonograma/Quartus/DE10_Standard_nonogramaneitor.vhd Line: 290
+Info (12128): Elaborating entity "lcd_ctrl_ent" for hierarchy "lcd_ctrl_ent:ctrl" File: C:/Users/wicrux/Documents/GitHub/Nonograma/Quartus/DE10_Standard_nonogramaneitor.vhd Line: 293
+Info (12128): Elaborating entity "mod_uart" for hierarchy "mod_uart:uart" File: C:/Users/wicrux/Documents/GitHub/Nonograma/Quartus/DE10_Standard_nonogramaneitor.vhd Line: 319
+Info (12128): Elaborating entity "cmd_process" for hierarchy "cmd_process:process_cmd" File: C:/Users/wicrux/Documents/GitHub/Nonograma/Quartus/DE10_Standard_nonogramaneitor.vhd Line: 330
+Info (12128): Elaborating entity "LCD_DRAWING" for hierarchy "LCD_DRAWING:drawing" File: C:/Users/wicrux/Documents/GitHub/Nonograma/Quartus/DE10_Standard_nonogramaneitor.vhd Line: 350
+Info (12128): Elaborating entity "nono_cursor" for hierarchy "nono_cursor:cursor" File: C:/Users/wicrux/Documents/GitHub/Nonograma/Quartus/DE10_Standard_nonogramaneitor.vhd Line: 379
+Info (12128): Elaborating entity "nono_graphics" for hierarchy "nono_graphics:graphics" File: C:/Users/wicrux/Documents/GitHub/Nonograma/Quartus/DE10_Standard_nonogramaneitor.vhd Line: 399
+Info (12128): Elaborating entity "nono_graphics_cursor" for hierarchy "nono_graphics:graphics|nono_graphics_cursor:graphics_cursor" File: C:/Users/wicrux/Documents/GitHub/Nonograma/FicherosVHDL/NONO_GRAPHICS.vhd Line: 90
+Info (12128): Elaborating entity "SUBMOD_RAM" for hierarchy "nono_graphics:graphics|nono_graphics_cursor:graphics_cursor|SUBMOD_RAM:RAM" File: C:/Users/wicrux/Documents/GitHub/Nonograma/FicherosVHDL/NONO_GRAPHICS_cursor.vhd Line: 94
+Info (12128): Elaborating entity "LT24Setup" for hierarchy "LT24Setup:setup" File: C:/Users/wicrux/Documents/GitHub/Nonograma/Quartus/DE10_Standard_nonogramaneitor.vhd Line: 439
 Info (12128): Elaborating entity "LT24InitReset" for hierarchy "LT24Setup:setup|LT24InitReset:DUT_RESET" File: C:/Users/wicrux/Documents/GitHub/Nonograma/LT24Setup/LT24setup.vhd Line: 108
 Info (12128): Elaborating entity "LT24InitLCD" for hierarchy "LT24Setup:setup|LT24InitLCD:DUT_InitLCD" File: C:/Users/wicrux/Documents/GitHub/Nonograma/LT24Setup/LT24setup.vhd Line: 122
 Info (12128): Elaborating entity "romsinc" for hierarchy "LT24Setup:setup|LT24InitLCD:DUT_InitLCD|romsinc:DUT_ROM" File: C:/Users/wicrux/Documents/GitHub/Nonograma/LT24Setup/LT24InitLCD.vhd Line: 85
-Info (12128): Elaborating entity "lcd_ctrl_ent" for hierarchy "lcd_ctrl_ent:ctrl" File: C:/Users/wicrux/Documents/GitHub/Nonograma/Quartus/DE10_Standard_nonogramaneitor.vhd Line: 313
 Info (276014): Found 1 instances of uninferred RAM logic
     Info (276004): RAM logic "LT24Setup:setup|LT24InitLCD:DUT_InitLCD|romsinc:DUT_ROM|rom" is uninferred due to inappropriate RAM size File: C:/Users/wicrux/Documents/GitHub/Nonograma/LT24Setup/romsinc.vhd Line: 16
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "LT24_LCD_ON" is stuck at VCC File: C:/Users/wicrux/Documents/GitHub/Nonograma/Quartus/DE10_Standard_nonogramaneitor.vhd Line: 17
     Warning (13410): Pin "LT24_RD_N" is stuck at VCC File: C:/Users/wicrux/Documents/GitHub/Nonograma/Quartus/DE10_Standard_nonogramaneitor.vhd Line: 20
 Info (286030): Timing-Driven Synthesis is running
-Info (17049): 2 registers lost all their fanouts during netlist optimizations.
+Info (17049): 1 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 3 input pin(s) that do not drive logic
+Warning (21074): Design contains 13 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "KEY[1]" File: C:/Users/wicrux/Documents/GitHub/Nonograma/Quartus/DE10_Standard_nonogramaneitor.vhd Line: 10
+    Warning (15610): No output dependent on input pin "KEY[2]" File: C:/Users/wicrux/Documents/GitHub/Nonograma/Quartus/DE10_Standard_nonogramaneitor.vhd Line: 10
+    Warning (15610): No output dependent on input pin "KEY[3]" File: C:/Users/wicrux/Documents/GitHub/Nonograma/Quartus/DE10_Standard_nonogramaneitor.vhd Line: 10
+    Warning (15610): No output dependent on input pin "SW[0]" File: C:/Users/wicrux/Documents/GitHub/Nonograma/Quartus/DE10_Standard_nonogramaneitor.vhd Line: 14
+    Warning (15610): No output dependent on input pin "SW[1]" File: C:/Users/wicrux/Documents/GitHub/Nonograma/Quartus/DE10_Standard_nonogramaneitor.vhd Line: 14
+    Warning (15610): No output dependent on input pin "SW[2]" File: C:/Users/wicrux/Documents/GitHub/Nonograma/Quartus/DE10_Standard_nonogramaneitor.vhd Line: 14
+    Warning (15610): No output dependent on input pin "SW[3]" File: C:/Users/wicrux/Documents/GitHub/Nonograma/Quartus/DE10_Standard_nonogramaneitor.vhd Line: 14
+    Warning (15610): No output dependent on input pin "SW[4]" File: C:/Users/wicrux/Documents/GitHub/Nonograma/Quartus/DE10_Standard_nonogramaneitor.vhd Line: 14
+    Warning (15610): No output dependent on input pin "SW[5]" File: C:/Users/wicrux/Documents/GitHub/Nonograma/Quartus/DE10_Standard_nonogramaneitor.vhd Line: 14
+    Warning (15610): No output dependent on input pin "SW[6]" File: C:/Users/wicrux/Documents/GitHub/Nonograma/Quartus/DE10_Standard_nonogramaneitor.vhd Line: 14
+    Warning (15610): No output dependent on input pin "SW[7]" File: C:/Users/wicrux/Documents/GitHub/Nonograma/Quartus/DE10_Standard_nonogramaneitor.vhd Line: 14
     Warning (15610): No output dependent on input pin "SW[8]" File: C:/Users/wicrux/Documents/GitHub/Nonograma/Quartus/DE10_Standard_nonogramaneitor.vhd Line: 14
     Warning (15610): No output dependent on input pin "SW[9]" File: C:/Users/wicrux/Documents/GitHub/Nonograma/Quartus/DE10_Standard_nonogramaneitor.vhd Line: 14
-    Warning (15610): No output dependent on input pin "UART_RX" File: C:/Users/wicrux/Documents/GitHub/Nonograma/Quartus/DE10_Standard_nonogramaneitor.vhd Line: 26
-Info (21057): Implemented 943 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 1236 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 16 input pins
     Info (21059): Implemented 22 output pins
-    Info (21061): Implemented 901 logic cells
-    Info (21062): Implemented 4 DSP elements
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 9 warnings
-    Info: Peak virtual memory: 4898 megabytes
-    Info: Processing ended: Wed Feb 14 02:41:19 2024
-    Info: Elapsed time: 00:00:11
-    Info: Total CPU time (on all processors): 00:00:18
+    Info (21061): Implemented 1196 logic cells
+    Info (21062): Implemented 2 DSP elements
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 17 warnings
+    Info: Peak virtual memory: 4903 megabytes
+    Info: Processing ended: Sat Feb 17 00:49:13 2024
+    Info: Elapsed time: 00:00:10
+    Info: Total CPU time (on all processors): 00:00:19
 
 

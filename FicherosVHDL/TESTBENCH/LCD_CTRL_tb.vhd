@@ -13,7 +13,7 @@ end lcd_ctrl_tb;
 -- Definición arquitectura 
 architecture arch_lcd_ctrl_tb of lcd_ctrl_tb is
 -- Declaración del módulo que queremos testear con sus entradas y saidas
-component lcd_ctrl_ent is 
+component mod_uart is 
    port
       (
             clk,reset_l:  in std_logic;
@@ -53,7 +53,7 @@ signal CLK: std_logic:='0';
 begin -- comienzo de la arquitectura
 
 -- Mapeamos las señales internas con las entradas salidas del módulo .
-DUT: lcd_ctrl_ent port map (
+DUT: mod_uart port map (
       LCD_init_done     =>LCD_init_done,
       XCOL              => XCOL,
       YROW              => YROW,

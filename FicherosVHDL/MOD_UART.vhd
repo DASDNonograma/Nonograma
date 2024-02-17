@@ -148,8 +148,8 @@ process (clk, reset_l)
 begin
   if reset_l = '0' then RCONT <= (others => '0');
   elsif clk'event and clk='1' then 
-    if PR_CONT_HALF = '1' then RCONT <= to_unsigned(325,10);
-    elsif PR_CONT_FULL = '1' then RCONT <= to_unsigned(651,10);
+    if PR_CONT_HALF = '1' then RCONT <= to_unsigned(434,10);
+    elsif PR_CONT_FULL = '1' then RCONT <= to_unsigned(868,10);
     elsif DECR_CONT = '1' then RCONT <= RCONT - 1;
     end if;
   end if;

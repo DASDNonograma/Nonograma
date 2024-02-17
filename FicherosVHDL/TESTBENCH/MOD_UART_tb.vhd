@@ -69,31 +69,31 @@ reset_l<='0';
 wait for 4 ns; -- introduciendo un retardo de 4 ns para no estar justo en el flanco de reloj
 reset_l<='1';
 
--- Simular la recepcion de un caracter "T" por el puerto serie a 76800 baudios
--- 1 bit cada 13.02 us
-wait for 13.02 us; -- 1 start bit
+-- Simular la recepcion de un caracter "T" por el puerto serie a 57600 baudios
+-- 1 bit cada 17.36 us
+wait for 17.36 us; -- 1 start bit
 rx<='0';
 
-wait for 13.02 us; -- bit 0 (0) del caracter T en ASCII que es 74 en decimal y 0101 0100 en binario, bit menos significativo primero
+wait for 17.36 us; -- bit 0 (0) del caracter T en ASCII que es 74 en decimal y 0101 0100 en binario, bit menos significativo primero
 rx<='0';
-wait for 13.02 us; -- bit 1 (0) del caracter T
+wait for 17.36 us; -- bit 1 (0) del caracter T
 rx<='0';
-wait for 13.02 us; -- bit 2 (1) del caracter T
+wait for 17.36 us; -- bit 2 (1) del caracter T
 rx<='1';
-wait for 13.02 us; -- bit 3 (0) del caracter T
+wait for 17.36 us; -- bit 3 (0) del caracter T
 rx<='0';
 
-wait for 13.02 us; -- bit 4 (1) del caracter T
+wait for 17.36 us; -- bit 4 (1) del caracter T
 rx<='1';
-wait for 13.02 us; -- bit 5 (0) del caracter T
+wait for 17.36 us; -- bit 5 (0) del caracter T
 rx<='0';
-wait for 13.02 us; -- bit 6 (1) del caracter T
+wait for 17.36 us; -- bit 6 (1) del caracter T
 rx<='1';
-wait for 13.02 us; -- bit 7 (0) del caracter T
+wait for 17.36 us; -- bit 7 (0) del caracter T
 rx<='0';
 
 
-wait for 13.02 us; -- bit end
+wait for 17.36 us; -- bit end
 rx <= '1';
 
 

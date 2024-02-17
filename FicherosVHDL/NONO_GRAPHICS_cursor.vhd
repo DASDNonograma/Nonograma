@@ -50,7 +50,7 @@ architecture nono_graphics_cursor_arch of nono_graphics_cursor is
 
   -- declaracion de tipos y señales internas del sistema
   --	tipo nuevo para el estado de la UC y dos señales de ese tipo
-  type tipo_estado is (E_W8_CURSOR, E_TRADUCCION1, E_READ, E_FLIP, E_DRAWCUAD, E_ESPERA, E_TRADUCCION2, E_DRAWTRIA, E_CHECK_WIN, E_W8_RAMS, E_INCR_SAMECOUNT, E_WIN);
+  type tipo_estado is (E_W8_CURSOR, E_TRADUCCION1, E_READ, E_FLIP, E_DRAWCUAD, E_DONE_UPDATE, E_ESPERA, E_ESPERA2, E_TRADUCCION2, E_DRAWTRIA, E_CHECK_WIN, E_W8_RAMS, E_INCR_SAMECOUNT, E_WIN);
    
   -- UC
   signal epres,esig: tipo_estado;
@@ -106,8 +106,10 @@ architecture nono_graphics_cursor_arch of nono_graphics_cursor is
   ----------------------------------------
   
 
-  offset_x_int <= to_unsigned (23, 9);--"00000000";
-  offset_y_int <= to_unsigned (17, 9);--"000000000";
+  offset_x_int <= to_unsigned (17, 9);--"00000000";
+  offset_y_int <= to_unsigned (57, 9);--"000000000";
+  
+
 
   -- MUX para seleccionar direccion a memoria
   mux_dir <= dir when (sel = '0') else cont_dir;
@@ -121,8 +123,8 @@ architecture nono_graphics_cursor_arch of nono_graphics_cursor is
   -- mux para seleccionar color
   -- cuando esta en el estado drawtria, el color es 010, cuando es drawcuad, el color depende de data_out, si es 0, es 000, si es 1, es 111
   colour_code_inte <=   "010" when (epres = E_DRAWTRIA) else
-                        "000" when (data_out = '0') else
-                        "111" when (data_out = '1') 
+                        "111" when (data_out = '0') else
+                        "000" when (data_out = '1') 
                         else "110";
   
   colour_code_int <= colour_code_inte;
@@ -172,9 +174,11 @@ architecture nono_graphics_cursor_arch of nono_graphics_cursor is
         when E_DRAWCUAD => 
           if (done_fig = '0') then esig <= E_DRAWCUAD;
           elsif (done_fig = '1' and TOGGLE_CURSOR = '1') then esig <= E_CHECK_WIN;
-          else esig <= E_ESPERA;
+          else esig <= E_DONE_UPDATE;
           end if;
-        when E_ESPERA => esig <= E_TRADUCCION2;
+        when E_DONE_UPDATE => esig <= E_ESPERA;
+        when E_ESPERA => esig <= E_Espera2;
+        when E_Espera2 => esig <= E_TRADUCCION2;
         when E_TRADUCCION2 => esig <= E_DRAWTRIA;
         when E_CHECK_WIN => esig <= E_W8_RAMS;
         when E_W8_RAMS => esig <= E_INCR_SAMECOUNT;
@@ -197,9 +201,9 @@ architecture nono_graphics_cursor_arch of nono_graphics_cursor is
   
   -- seinales de control por estado
 
-  DONE_UPDATE <= '1' when ((epres = E_DRAWCUAD and done_fig = '1' and TOGGLE_CURSOR = '0') or (epres = E_DRAWTRIA and DONE_FIG = '1' and TOGGLE_CURSOR = '0')) else '0';
+  DONE_UPDATE <= '1' when (epres = E_DRAWCUAD and done_fig = '1' and TOGGLE_CURSOR = '0') or (epres = E_DONE_UPDATE) else '0';
   RD <= '1' when (epres = E_READ or epres = E_FLIP or epres = E_CHECK_WIN) else '0';
-  LD_CURSOR <= '1' when ((epres = E_W8_CURSOR and action='1') or epres = E_ESPERA) else '0';
+  LD_CURSOR <= '1' when ((epres = E_W8_CURSOR and action='1') or (epres = E_ESPERA) or (epres = E_ESPERA2)) else '0';
   LD_COORDS_INT <= '1' when (epres = E_TRADUCCION1 or epres = E_TRADUCCION2) else '0';
 
   -- E_FLIP

@@ -2,7 +2,7 @@ library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
-entity DE10_Standard_nonogramaneitor is
+entity DE10_Standard_nonogramaneitor_uart is
  port(
 	-- CLOCK ----------------
 	CLOCK_50	: in	std_logic;
@@ -115,85 +115,107 @@ entity DE10_Standard_nonogramaneitor is
 
 end;
 
-architecture rtl of DE10_Standard_nonogramaneitor is 
+architecture rtl of DE10_Standard_nonogramaneitor_uart is 
 	signal clk, reset_l   : std_logic;
 
-		
-	-- LCD_SETUP <-> LCD_CTRL
-  signal d: unsigned (15 downto 0);
-	signal cs_n, wr_n, rs, init_done : std_logic;
-	
+	--- LCD_CTRL <-> LCD_DRAWING
+signal LCD_init_done_top, OP_SETCURSOR_top, OP_DRAWCOLOUR_top:   std_logic;
+signal XCOL_top:         unsigned ( 7 downto 0);
+signal YROW_top:         unsigned ( 8 downto 0);
+signal RGB_top:          unsigned ( 15 downto 0);
+signal NUM_PIX_top:      unsigned ( 16 downto 0);
 
-  -- LCD_CTRL <-> LCD_DRAWING
-  signal OP_SETCURSOR_local, OP_DRAWCOLOUR_local : std_logic;
-  signal DONE_COLOUR_local, DONE_CURSOR_local: std_logic;
-	signal rgb_local : unsigned (15 downto 0);
-  signal xcol_local : unsigned (7 downto 0);
-  signal yrow_local :unsigned (8 downto 0);
-  signal numpix_local : unsigned (16 downto 0);
+signal DONE_CURSOR_top, DONE_COLOUR_top, LCD_CS_N_top, LCD_WR_N_top, LCD_RS_top:   std_logic;
+signal LCD_DATA_top:     unsigned ( 15 downto 0);  
+
+
+signal RX_top: std_logic:= '0';
+signal to_send: std_logic_vector(9 downto 0);
+
+
+-- mod_uart <-> cmd_process
+signal char_top: unsigned(7 downto 0);
+signal cmd_px_go_top: std_logic;
+
+-- cmd_process
+signal COMMAND_top: std_logic_vector(2 downto 0);
+signal OUT_CMD_top: std_logic;
+-- cmd_process <-> nono_cursor
+signal DONE_CMD_top: std_logic;
+-- cmd_process <-> nono_graphics
+signal NONO_INI_top: std_logic;
+signal DONE_BIT_top: std_logic;
+
+-- nono_cursor <-> nono_graphics
+signal CURSOR_POSX_top, CURSOR_POSY_top: unsigned(3 downto 0);
+signal UPDATE_CURSOR_top, TOGGLE_CURSOR_top: std_logic;
+signal DONE_UPDATE_top, DONE_TOGGLE_top, NONO_init_DONE_top: std_logic;
+
+
+-- nono_graphics <-> LCD_DRAWING
+signal DEL_SCREEN_top: std_logic;
+signal DRAW_TRIA_top, DRAW_CUAD_top, DRAW_LINE_top, VERTICAL_top: std_logic;
+signal DONE_DEL_top, DONE_FIG_top: std_logic;
+signal XCOR_top: unsigned(7 downto 0);
+signal YCOR_top: unsigned(8 downto 0);
+signal COLOUR_CODE_top: unsigned(2 downto 0);
+
 
   
-  -- LCD_DRAWING
-  signal COLOUR_CODE_local : unsigned(2 downto 0);
-  signal DEL_SCREEN_local, DRAW_FIG_local : std_logic;
 
-  -- CMD_PROCESS <-> MOD_UART
-  signal CMD_PX_GO_local : std_logic;
-  signal CHAR_local : unsigned(7 downto 0);
-
-  -- CMD_PROCESS <-> this
-  signal NONO_Init_Done_local : std_logic;
-  signal DONE_CMD_local : std_logic;
-  signal COMMAND_local : std_logic_vector(2 downto 0);
-  signal OUT_CMD_local : std_logic;
-  signal NONO_INI_local : std_logic;
-
-  
-
-component LCD_DRAWING  
+component LCD_DRAWING is 
 port(
-    Clk,RESET_L: in STD_LOGIC;
-	 -- in
-    COLOUR_CODE: in unsigned(2 downto 0);
-    DEL_SCREEN,DRAW_FIG,DONE_CURSOR,DONE_COLOUR: in std_logic;
-	 -- out
-    OP_SETCURSOR,OP_DRAWCOLOUR: out STD_LOGIC;
-    XCOL: out unsigned(7 downto 0);
-    YROW: out unsigned(8 downto 0);
-    RGB:out unsigned(15 downto 0);
-    NUM_PIX: out unsigned(16 downto 0)
+    Clk,RESET_L : in STD_LOGIC;
+    --IN
+    COLOUR_CODE : in unsigned(2 downto 0);
+    DEL_SCREEN,DRAW_TRIA,DONE_CURSOR,DONE_COLOUR,DRAW_CUAD,DRAW_LINE,VERTICAL : in std_logic;
+    XCOR : in unsigned(7 downto 0);
+    YCOR : in unsigned(8 downto 0);
+    --OUT
+    OP_SETCURSOR, OP_DRAWCOLOUR : out STD_LOGIC;
+    DONE_FIG, DONE_DEL : out std_logic;
+    XCOL : out unsigned(7 downto 0);
+    YROW : out unsigned(8 downto 0);
+    RGB : out unsigned(15 downto 0);
+    NUM_PIX : out unsigned(16 downto 0)
 );
 end component;
 
-component mod_uart is
-  port (
-	clk,reset_l:  in std_logic;
+component cmd_process is 
+   port
+      (
+      clk,reset_l:  in std_logic;
 
-  -- In
-  RX : in std_logic;
-
-  -- Out
-  CMD_PX_GO : out std_logic;
-  CHAR : out unsigned(7 downto 0)
-  
-  );
+      -- In
+      CHAR : unsigned(7 downto 0);
+      CMD_PX_GO : in std_logic;
+      DONE_CMD: in std_logic;
+      DONE_BIT: in std_logic;
+      
+      -- Out
+      COMMAND:  out std_logic_vector(2 downto 0);
+      OUT_CMD:  out std_logic;
+      INI_NONO: out  std_logic
+      );
 end component;
 
-component cmd_process is
-  port (
-	clk,reset_l:  in std_logic;
 
-  -- In
-  CHAR : unsigned(7 downto 0);
-  CMD_PX_GO : in std_logic;
-  NONO_Init_Done : in std_logic;
-  DONE_CMD: in std_logic;
 
-  -- Out
-  COMMAND:  out std_logic_vector(2 downto 0);
-  OUT_CMD:  out std_logic;
-  NONO_INI: out  std_logic
-  );
+
+component mod_uart is 
+   port
+      (
+            clk,reset_l:  in std_logic;
+
+       
+      -- In
+      RX : in std_logic;
+
+      -- Out
+      CMD_PX_GO : out std_logic;
+      CHAR : out unsigned(7 downto 0)
+
+      );
 end component;
 	
 component lcd_ctrl_ent 
@@ -251,48 +273,78 @@ begin
   --DEL_SCREEN_local <= not (KEY(1));
   --DRAW_FIG_local <= not (KEY(2));
 	
-  del_screen_local <= nono_ini_local;
+  del_screen_top <= nono_ini_top;
   -- draw_fig_local = '1' cuando el comando no es "111" y commandgo = '1'
-  draw_fig_local <= '1' when (command_local /= "111" and out_cmd_local = '1') else '0';
-  nono_init_done_local <= '1';
-  done_cmd_local <= '1';
+  draw_cuad_top <= '1' when (command_top/= "111" and out_cmd_top = '1') else '0';
+  nono_init_done_top <= '1';
+  done_cmd_top <= '1';
   
+  XCOR_top <= to_unsigned(37,8);
+  YCOR_top <= to_unsigned(37,9);
 	
 -- portmaps
   
--- portmap cmd_process
-  cmd_proc: cmd_process port map (
-    clk => clk,
+-- LCD_CTRL
+ctrl: lcd_ctrl_Ent port map(
+    clk => CLK,
     reset_l => reset_l,
-  --in
-    CHAR => CHAR_local,
-    CMD_PX_GO => CMD_PX_GO_local,
-    NONO_Init_Done => NONO_Init_Done_local,
-    DONE_CMD => DONE_CMD_local,
-  --out
-    COMMAND => COMMAND_local,
-    OUT_CMD => OUT_CMD_local,
-    NONO_INI => NONO_INI_local
-  );
+    -- IN LT24 SETUP
+    LCD_init_done => LCD_init_done_top,
 
-  -- portmap mod_uart
-  uart: mod_uart port map (
-    clk => clk,
-    reset_l => reset_l,
+    -- IN LCD_DRAWING
+    OP_SETCURSOR => OP_SETCURSOR_top,
+    OP_DRAWCOLOUR => OP_DRAWCOLOUR_top,
+    XCOL => XCOL_top,
+    YROW => YROW_top,
+    RGB => RGB_top,
+    NUM_PIX => NUM_PIX_top,
 
-    RX => UART_RX,
+    -- OUT LCD_DRAWING
+    DONE_CURSOR => DONE_CURSOR_top,
+    DONE_COLOUR => DONE_COLOUR_top,
 
-    CMD_PX_GO => CMD_PX_GO_local,
-    CHAR => CHAR_local
-    );
+    -- OUT LT24 SETUP
+    LCD_CS_N => LCD_CS_N_top,
+    LCD_WR_N => LCD_WR_N_top,
+    LCD_RS => LCD_RS_top,
+    LCD_DATA => LCD_DATA_top
+);
 
+-- mod_uart
+uart: mod_uart port map(
+      clk => CLK,
+      reset_l => reset_l,
+      -- IN placa de desarrollo
+      RX => UART_RX,
+      -- OUT cmd_process
+      CMD_PX_GO => cmd_px_go_top,
+      CHAR => char_top
+);
 
+-- cmd_process
+process_cmd: cmd_process port map(
+      clk => CLK,
+      reset_l => reset_l,
+      -- IN mod_uart
+      CHAR => char_top,
+      CMD_PX_GO => cmd_px_go_top,
+
+      -- IN nono_cursor
+      DONE_CMD => DONE_CMD_top,
+      -- IN nono_graphics
+      DONE_BIT => DONE_BIT_top,
+      -- OUT nono_cursor and nono_graphics
+      COMMAND => COMMAND_top,
+      OUT_CMD => OUT_CMD_top,
+      --OUT nono_graphics
+      INI_NONO => NONO_INI_top
+);
   setup: LT24Setup port map (
 	    -- CLOCK and Reset_l ----------------
       clk => clk,           
       reset_l => reset_l,       
 
-      LT24_LCD_ON => LT24_LCD_ON,     
+      LT24_LCD_ON => '1',     
       LT24_RESET_N  => LT24_RESET_N,    
       LT24_CS_N => LT24_CS_N,       
       LT24_RS => LT24_RS,         
@@ -301,57 +353,41 @@ begin
       LT24_D => LT24_D,           
 
 
-      LT24_CS_N_Int => cs_n,        
-      LT24_RS_Int => rs,          
-      LT24_WR_N_Int => wr_n,        
+      LT24_CS_N_Int => LCD_CS_N_top,        
+      LT24_RS_Int => LCD_RS_top,          
+      LT24_WR_N_Int => LCD_WR_N_top,        
       LT24_RD_N_Int => '1',        
-      LT24_D_Int => std_logic_vector(d),           
+      LT24_D_Int => std_logic_vector(LCD_DATA_top),           
       
-      LT24_Init_Done=> init_done       
+      LT24_Init_Done=> LCD_init_done_top       
 	);
   
-  ctrl: lcd_ctrl_ent port map(
-    clk           => clk,
-    reset_l         => reset_l,
+  COLOUR_CODE_top <= unsigned(SW(2 downto 0));
+drawing: LCD_DRAWING port map(
+      Clk => CLK,
+      RESET_L => reset_l,
+      -- IN NONO_GRAPHICS
+      COLOUR_CODE => COLOUR_CODE_top,
+      DEL_SCREEN => DEL_SCREEN_top,
+      DRAW_TRIA => DRAW_TRIA_top,
+      DRAW_CUAD => DRAW_CUAD_top,
+      DRAW_LINE => DRAW_LINE_top,
+      VERTICAL => VERTICAL_top,
+      XCOR => XCOR_top,
+      YCOR => YCOR_top,
+      -- IN LCD_CTRL
+      DONE_CURSOR => DONE_CURSOR_top,
+      DONE_COLOUR => DONE_COLOUR_top,
 
-    -- In
-    LCD_init_done => init_done,
-    OP_SETCURSOR  => OP_SETCURSOR_local,
-    OP_DRAWCOLOUR => OP_DRAWCOLOUR_local,
-    XCOL          => xcol_local,
-    YROW          => yrow_local,
-    RGB           => rgb_local,
-    NUM_PIX       => numpix_local,
-    
-    -- Out
-    DONE_CURSOR => DONE_CURSOR_local,
-    DONE_COLOUR => DONE_COLOUR_local,
-    
-    LCD_CS_N      => cs_n,
-    LCD_WR_N      => wr_n,
-    LCD_RS        => rs,
-    LCD_DATA      => d
-	
-  );
-  
-  COLOUR_CODE_local <= unsigned(SW(2 downto 0));
-  drw: LCD_DRAWING port map(
-      Clk         => clk,
-      RESET_L     => reset_l,
-    -- in
-      COLOUR_CODE   => COLOUR_CODE_local,
-      DEL_SCREEN    => DEL_SCREEN_local,
-      DRAW_FIG      => DRAW_FIG_local,
-      DONE_CURSOR   => DONE_CURSOR_local,
-      DONE_COLOUR   => DONE_COLOUR_local,
-    -- out
-      OP_SETCURSOR  => OP_SETCURSOR_local,
-      OP_DRAWCOLOUR => OP_DRAWCOLOUR_local,
-      XCOL          => XCOL_local,
-      YROW          => YROW_local,
-      RGB           => RGB_local,
-      NUM_PIX       => NUMPIX_local
+      -- OUT LCD_CTRL
+      OP_SETCURSOR => OP_SETCURSOR_top,
+      OP_DRAWCOLOUR => OP_DRAWCOLOUR_top,
+      DONE_FIG => DONE_FIG_top,
+      DONE_DEL => DONE_DEL_top,
+      XCOL => XCOL_top,
+      YROW => YROW_top,
+      RGB => RGB_top,
+      NUM_PIX => NUM_PIX_top
 );
-
 
 end rtl;
